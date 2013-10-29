@@ -58,21 +58,12 @@ header h1 {
     font-size: 25px;
     margin: 0px 8px 0px 0px;
 	line-height: 35px;
-/*	 border-bottom: #FFFFFF solid;	 */
-/*    padding: 5px 0;	 */
 }
 .navDiv:hover {
      color: #500000;
      background-color: #FFFFFF;
 }
 
-/*
-section {
-	background-color: #FFFFFF;
-	margin: -10px 0px 20px 0px; 
-	padding: 0em 5px 0em 5px; 
-}
-*/
 section h1 {
 	font-size: 218%;
     color: #6a6a6a;
@@ -108,10 +99,6 @@ p{
   margin-top: 10px;
 }
 
-pre {
-	margin-left: 2em;
-}
-
 img, object{
   margin: auto;
   display: block;
@@ -125,11 +112,7 @@ img, object{
 	border: 0px;
 
 }
-.leftimg {
-	float: left;
-	margin-right: 20px;
-	margin-bottom: 10px;
-}
+
 .clear {
 	clear: both;
 }
