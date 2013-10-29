@@ -43,12 +43,12 @@ header h1 {
 
 .contentDiv{
   background-color: #FFFFFF;
-  padding: 20px 5px 20px 10px;
+  padding: 10px 5px 20px 10px;
   margin: 10px 0px 10px 0px;
 }
 
 .navDiv {
-    float: left; 
+   /* float: left; */
     width: 92px;
     background-color: #FFFFFF;
 	display: inline-block;
@@ -57,7 +57,7 @@ header h1 {
 	letter-spacing: -1px;
     font-size: 25px;
     margin: 0px 8px 0px 0px;
-	line-height: 35px;
+	/*line-height: 35px;*/
 }
 .navDiv:hover {
      color: #500000;
