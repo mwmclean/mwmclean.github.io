@@ -88,32 +88,32 @@ function showThanks()
 
   <nav style="margin: auto; text-align: center;">
     <div class="navDiv" style="background-color: #ffff80;">
-	  <a href="javascript:toggle('about', 'papers', 'talks', 'research', 'teaching', 'r code', 'misc');" style="border-bottom: #ffff80;" >	
+	  <a href="javascript:toggle('about');" style="border-bottom: #ffff80;" >	
       About
 	  </a>
     </div>
     <div class="navDiv">
-	  <a href="javascript:toggle('papers', 'talks', 'about', 'research', 'teaching', 'r code', 'misc');">
+	  <a href="javascript:toggle('papers');">
       Papers
 	  </a>
     </div>
     <div class="navDiv">
-	  <a href="javascript:toggle('talks', 'papers', 'about', 'research', 'teaching', 'r code', 'misc');">
+	  <a href="javascript:toggle('talks');">
       Talks
 	  </a>
     </div>
     <div class="navDiv">
-  	  <a href="javascript:toggle('research', 'about', 'papers', 'talks', 'teaching', 'r code', 'misc');">
+  	  <a href="javascript:toggle('research');">
       Research
       </a>	  
     </div>
     <div class="navDiv">
-	  <a href="javascript:toggle('r code', 'about', 'papers', 'talks', 'research', 'teaching', 'misc');">
+	  <a href="javascript:toggle('r code');">
       R Code
 	  </a>
     </div>
     <div class="navDiv" style="width: 92px;">
-	  <a href="javascript:toggle('teaching', 'about', 'papers', 'talks', 'research', 'r code', 'misc');">
+	  <a href="javascript:toggle('teaching');">
       Teaching
 	  </a>
     </div>
@@ -123,7 +123,7 @@ function showThanks()
 	  </a>
     </div>
     <div class="navDiv" style="margin: 0px 0px 0px 0px;">
-	  <a href="javascript:toggle('misc', 'about', 'papers', 'talks', 'research', 'r code', 'teaching');">
+	  <a href="javascript:toggle('misc');">
       Misc
 	  </a>
     </div>
@@ -134,8 +134,7 @@ function showThanks()
   <div style="clear:both;"></div>
 
   <!--<div class="contentDiv">-->
-  <section>
-    <div id="about" style="display: block;" class="contentDiv">
+    <section id="about" style="display: block;" class="contentDiv">
 	
     <!-- <h2> About </h2> -->
    
@@ -185,7 +184,6 @@ document.write("<a href='mailto:"+link+"'>"+link+"</a>")
 	</p>
 <!--    <a href="http://www.smart-stats.org/">SMART</a> working group<br /> -->
 
-    </div>
   </section>
 
 
@@ -195,8 +193,7 @@ document.write("<a href='mailto:"+link+"'>"+link+"</a>")
   <div style="clear:both;"></div>
 
   <!--<div class="contentDiv">-->
-  <section>
-    <div id="papers" style="display: none;" class="contentDiv">
+    <section id="papers" style="display: none;" class="contentDiv">
 
 	<h4> To Appear </h4> 
 
@@ -242,7 +239,6 @@ document.write("<a href='mailto:"+link+"'>"+link+"</a>")
 
     <br />
 
-    </div>
   </section>
 
 <!--Talks-->
@@ -250,7 +246,7 @@ document.write("<a href='mailto:"+link+"'>"+link+"</a>")
   <div style="clear:both;"></div>
 
   <!--<div class="contentDiv">-->
-  
+ 
     <section id="talks" style="display: none;"  class="contentDiv">
 
 	<h4> Functional Generalized Additive Models </h4> 
@@ -268,18 +264,19 @@ document.write("<a href='mailto:"+link+"'>"+link+"</a>")
 
 	 <h4> Functional Generalized Additive Models </h4> 
 
-	  <p> ORIE PhD Reunion / Jack Muckstadt Retirement Celebration, Ithaca, NY (2012)
+	 <p> ORIE PhD Reunion / Jack Muckstadt Retirement Celebration, Ithaca, NY (2012)
 	   <br/>[<a href="Downloads/FGAMposterJAM.pdf" target="_blank">Poster (PDF)</a>]
-       </p>
+     </p>
+	 <p>
 	   Statistical Methods for Very Large Datasets Conference, Baltimore, MD (2011)
         <br /> 
 		SAMSI Analysis of Object Data Closing Workshop, Research Triangle Park, NC (2011)
         <br /> 
 		Imaging, Communications and Finance: Stochastic Modeling of Real-world Problems, New York, NY (2011)
-	<br /> [<a href="Downloads/FGAMposter.pdf" target="_blank">Poster (PDF)</a>]
-    <br />
+		<br /> [<a href="Downloads/FGAMposter.pdf" target="_blank">Poster (PDF)</a>]
+     </p>
 
-    <!-- </div>-->
+    
   </section>
 
 <!--Research-->
@@ -287,89 +284,84 @@ document.write("<a href='mailto:"+link+"'>"+link+"</a>")
   <div style="clear:both;"></div>
 
   <!--<div class="contentDiv">-->
-  <section>
-    <div id="research" style="display: none;">
-	
-	<blockquote style="padding-top: 35px;"> I am an applied statistician whose research currently focuses on using semiparametric methods to model longitudinal and functional data.  
+  
+    <section id="research" style="display: none;" class="contentDiv">
+	<p>
+	I am an applied statistician whose research currently focuses on using semiparametric methods to model longitudinal and functional data.  
 	My research in graduate school concentrated on functional regression.  In this setting at least one of the predictors or the response are functions.  
 	I am also interested in Bayesian hierarchical modelling and problems involving missing data.  Past work has involved time series analysis; specifically various types of GARCH models.  
 	Previous areas of application have included diffusion tensor imaging, forecasting emergency medical service call arrival rates, and financial time series.
-	</blockquote>
-
-	<blockquote> Below is an introduction to a couple of applied problems I have worked on.
-	</blockquote>
-
+	</p>
+	<p>Below is an introduction to a couple of applied problems I have worked on.</p>
+	
 	<hr width=100% size=3 align="center" color=#6a6a6a>
 	<details>
 	<summary> Functional Generalized Additive Models </summary>
-	<blockquote> We have data from a study comparing certain white matter tracts of multiple sclerosis (MS) patients with control subjects. MS is a central nervous system disorder that leads to lesions in the white matter of the brain which disrupts the ability of cells in the brain to communicate with each other. Below is a human brain with two major white matter tracts, the corpus callosum and corticospinal tracts in red and blue, respectively (thanks to <a href="http://jeffgoldsmith.com/" target="_blank">Jeff Goldsmith</a>).
+	 <p>
+	 We have data from a study comparing certain white matter tracts of multiple sclerosis (MS) patients with control subjects. 
+	 MS is a central nervous system disorder that leads to lesions in the white matter of the brain which disrupts the ability of cells in the brain to 
+	 communicate with each other. Below is a human brain with two major white matter tracts, the corpus callosum and corticospinal tracts in red and blue, 
+	 respectively (thanks to <a href="http://jeffgoldsmith.com/" target="_blank">Jeff Goldsmith</a>).
+	 </p>
 
-       <a href="img/CCA_CStracts.gif"> <img alt="Brain and tracts" src="img/CCA_CStracts.gif" width=358 height=267 style="margin:auto;display:block;" /></a>
-        Using a Magnetic Resonance Imaging technique called Diffusion Tensor Imaging we obtain several measurements at each location in the white matter tracts.  Here it makes sense to treat these measurements as being from a continuous function <i>X(t)</i> where t is location along the tract and use tools from functional data analysis.  We wish to use the functions <i>X(t)</i> to predict a scalar health outcome <i>Y</i>.  For example, <i>Y</i> might be score on a cognitive test or disease status (case or control).  The typical approach in functional data analysis is to use the Functional Linear Model (FLM)
-        <br />
-        <br />
+       <a href="img/CCA_CStracts.gif"> <img alt="Brain and tracts" src="img/CCA_CStracts.gif" width=358 height=267 /></a>
+       <p> 
+	   Using a Magnetic Resonance Imaging technique called Diffusion Tensor Imaging we obtain several measurements at each location in the white matter tracts.  
+	   Here it makes sense to treat these measurements as being from a continuous function <i>X(t)</i> where t is location along the tract and use tools from functional data analysis.  
+	   We wish to use the functions <i>X(t)</i> to predict a scalar health outcome <i>Y</i>.  For example, <i>Y</i> might be score on a cognitive test or disease status (case or control).  
+	   The typical approach in functional data analysis is to use the Functional Linear Model (FLM)
+        </p>
 <!--	<img alt="FLM formula" src="FLMeqn.svg" height="25px" style="margin:auto;display:block;" /> -->
         <object type="image/svg+xml" data="img/FLMeqn.svg" style="margin:auto;display:block;" >Your browser does not support SVG</object>
-        <br />
+        <p>
         where <i>&beta;(t)</i> is an unknown coefficient function that needs to be estimated and <i>g(&bull;)</i> is a known monotonic function called the link function.  Below is a plot of some of the curves <i>X<sub>i</sub>(t)</i> as well as a corresponding estimated <i>&beta;(t)</i>.
-        <br />
-        <a href="img/l0rcstFLM.jpeg"> <img alt="FLM fit" src="img/l0rcstFLM.jpeg" width=400 height=350 style="margin:auto;display:block;" /></a>
-        However, this model is often not flexible enough to model the true underlying relationship between the response and predictor.  We propose the new model
-        <br />
-	<br />
+        </p>
+        <a href="img/l0rcstFLM.jpeg"> <img alt="FLM fit" src="img/l0rcstFLM.jpeg" width=400 height=350 /></a>
+		<p>However, this model is often not flexible enough to model the true underlying relationship between the response and predictor.  We propose the new model</p>
 <!--        <img alt="FGAM formula" src="FGAMeqn.svg" height="25px" /> -->
         <object type="image/svg+xml" data="img/FGAMeqn.svg" style="margin:auto;display:block;" >Your browser does not support SVG</object>
-        <br />
-        where <i>F(x,t)</i> is an unknown smooth bivariate function that we estimate using penalized regression splines.  The model is much more general than the FLM, but retains the ease of interpretation.  Below is an example estimated surface.
-        <br />
-	<a href="img/FMSltRevised.jpg"> <img alt="FGAM fit" src="img/FMSltRevised.jpg" height="350px" style="margin:auto;display:block;" /></a>
-        Here <i>Y</i>  is 1 if the subject has MS and 0 if they do not and <i>g[E(Y|X)]</i> gives the estimated probability that subject <i>i</i> has MS.  The red plotted curve is <i>X(t)</i> for one subject with MS and blue curve is for a subject without MS.  We see that since the red curve traces out a higher path on the surface than the red curve, the subject corresponding to the red curve is more likely to be classified as having MS.
-
-		<br />
-        </blockquote>
-        <blockquote>
-		You may fit the FGAM and FLM yourself to several different data sets using 
-		<a href="javascript:toggleRand('shiny', 'rss');javascript:toggle('misc', 'about', 'papers', 'talks', 'research', 'r code', 'teaching');">an app I created</a>.
-		</blockquote>
+        <p>
+        where <i>F(x,t)</i> is an unknown smooth bivariate function that we estimate using penalized regression splines.  The model is much more general than the FLM, 
+		but retains the ease of interpretation.  Below is an example estimated surface.
+        </p>
+		<a href="img/FMSltRevised.jpg"> <img alt="FGAM fit" src="img/FMSltRevised.jpg" height="350px" /></a>
+		<p>
+        Here <i>Y</i>  is 1 if the subject has MS and 0 if they do not and <i>g[E(Y|X)]</i> gives the estimated probability that subject <i>i</i> has MS.  
+		The red plotted curve is <i>X(t)</i> for one subject with MS and blue curve is for a subject without MS.  We see that since the red curve traces out a higher path 
+		on the surface than the red curve, the subject corresponding to the red curve is more likely to be classified as having MS.
+		</p>
+ 
+		<p>
+			You may fit the FGAM and FLM yourself to several different data sets using 
+			<a href="javascript:toggleRand('shiny', 'rss');javascript:toggle('misc');">an app I created</a>.
+		</p>
 	  </details>	
 	<hr width=100% size=3 align="center" color=#6a6a6a>
 	<details>
 	<summary> Forecasting EMS Call Arrival Rates </summary>
-	  <blockquote>
-
-        In this project we are interested in determining how to best deploy ambulances in a given city to minimize response times to emergency calls while keeping costs low.  More specifically, we have data on every ambulance trip and every emergency call received by Toronto EMS between January 2007 and December 2008.  The operations research models that address these deployment problems require accurate estimates of the number of calls that will be received during each time period.  Below is a plot of the mean number of calls per hour for each day of the week.
-        <br />
-        <br />
-     <a href="img/FEMSCAp5.png"><img alt="Mean Calls" src="img/FEMSCAp5.png" height="400px" style="margin:auto;display:block;" /></a>
+       <p>
+		In this project we are interested in determining how to best deploy ambulances in a given city to minimize response times to emergency calls while keeping costs low.  
+		More specifically, we have data on every ambulance trip and every emergency call received by Toronto EMS between January 2007 and December 2008.  
+		The operations research models that address these deployment problems require accurate estimates of the number of calls that will be received during each time period.  
+		Below is a plot of the mean number of calls per hour for each day of the week.
+       </p> 
+     <a href="img/FEMSCAp5.png"><img alt="Mean Calls" src="img/FEMSCAp5.png" height="400px" /></a>
  <!--             <a href="FEMSCAp5.svg"><object type="image/svg+xml" data="FEMSCAp5.svg" style="margin:auto;display:block;" >Your browser does not support SVG</object></a> -->
-        <br />
-        <br />
+        <p>
         Methods used in practice to obtain estimates are quite ad hoc.  Instead, what we do is build what is called a factor model with constraints.  This provides dimension reduction, accounts for seasonal and intra-day patterns in the call arrival rate process, and lets us incorporate additional covariates.   The factor model is estimated using penalized regression splines so that the factors and loading in the factor model vary smoothly over time.  Using the factor model we obtain smooth estimates for the arrival process for every day of 2008 which is plotted below.  As is to be expected, there is a very noticeable difference between the estimates for weekdays and weekends.
-
-        <br />
-        <br />
-        <a href="img/FEMSCAp162.png"><img alt="Estimated Factor Model" src="img/FEMSCAp162.png" height="450px" style="margin:auto;display:block;" /></a>
-        <br />
-        Finally, an integer-value GARCH model is fit to the residual process to account for any remaining dependence.  Below is a plot of the estimated number of calls for each hour of weeks 8 and 9 of 2007 as well as a plot of the estimated integer-value GARCH model fit to the residual process.
-        <br />
-        <br />
-        <a href="img/FEMSCAp18.png"><img alt="Estimated IntGARCH" src="img/FEMSCAp18.png" height="450px" style="margin:auto;display:block;" /></a>
-        <br />
-        <br />
-
-        <br />
-		<b>How do we check whether our model improves staffing levels and response times?</b>
-        <br />
+		</p>
+        <a href="img/FEMSCAp162.png"><img alt="Estimated Factor Model" src="img/FEMSCAp162.png" height="450px" /></a>
+        <p>
+        Finally, an integer-value GARCH model is fit to the residual process to account for any remaining dependence.  
+		Below is a plot of the estimated number of calls for each hour of weeks 8 and 9 of 2007 as well as a plot of the estimated integer-value GARCH model fit to the residual process.
+        </p>
+        <a href="img/FEMSCAp18.png"><img alt="Estimated IntGARCH" src="img/FEMSCAp18.png" height="450px" /></a>
+		<p style="font-weight: bold;">How do we check whether our model improves staffing levels and response times?</p>
+        <p>
 		By simulating an M/M/s queueing system where the servers represent ambulances, calls for emergency medical services in hour, t, occur at rate &lambda;<sub>t</sub>, and each ambulance services callers at rate &nu;.  We use our model to obtain estimates of the number of callers for each period and these determine the number of ambulances to staff, say s<sub>t</sub>, in each period.  After fitting the model to 2007 data, to initialize are queueing system we assume the number of arrivals each hour is the observed number of calls for the corresponding hour for 2008 and simulate inter-hour arrival times and service times for each caller.
-		<br /><br />
+		</p>
 	    <a href="img/MMsqueue.png"><img alt="EMSqueue" src="img/MMsQueue.png" height="250px" /></a>
-	  </blockquote>
-	</details>
-
-
-    <br />
-
-    </div>
+    
   </section>
 
 
@@ -378,8 +370,8 @@ document.write("<a href='mailto:"+link+"'>"+link+"</a>")
   <div style="clear:both;"></div>
 
   <!--<div class="contentDiv">-->
-  <section>
-    <div id="misc" style="display: none;">
+  
+    <section id="misc" style="display: none;" class="contentDiv">
 		
 <!--
   <div align = "center">
@@ -395,7 +387,7 @@ document.write("<a href='mailto:"+link+"'>"+link+"</a>")
   </a>
     </div>
 	-->
-	<ul style="padding-top: 35px;">
+	<ul>
 	<li><a href="javascript:toggleRand('rss', 'shiny');">RSS feeds for several statistics journals</a></li>
 	<li><a href="javascript:toggleRand('shiny', 'rss');">Shiny FGAM</a></li>
 	</ul>
@@ -403,7 +395,7 @@ document.write("<a href='mailto:"+link+"'>"+link+"</a>")
   	<hr width=100% size=3 align="center" color=#6a6a6a>
   <article id="rss" style="display: none">
 	<h4> OPP: Other People's Papers (RSS feeds for some popular statistics journals)</h4>
-	<blockquote>
+	<p>
 	<a href="#feeds" onMouseDown="changeSrc(20,0)">All</a> &#9642;
 	<a href="#feeds" onMouseDown="changeSrc(1,0)">JASA</a> &#9642;
 	<a href="#feeds" onMouseDown="changeSrc(2,0)">JRSS-B</a> &#9642;
@@ -427,8 +419,7 @@ document.write("<a href='mailto:"+link+"'>"+link+"</a>")
 	<a href="#feeds" onMouseDown="changeSrc(18,0)">CSDA</a> &#9642;
 	<a href="#feeds" onMouseDown="changeSrc(19,0)">JSPI</a> &#9642;
 	<a href="#feeds" onMouseDown="changeSrc(3,0)">arXiv</a>
-	</blockquote>
-	<br>
+	</p>
 	<div id='feeds'></div>
 	<button onclick="changeSrc(-1,10)" style="float: right; display: none; background: #d4d4e8; font-weight: bold;" id="extraFeeds">More Articles</button>
   </article>
@@ -503,19 +494,16 @@ a.sort,d=c.sort;else b=c.sort,d=a.sort;if("date"==e.sort)return new Date(b)-new 
   
 <div id="shiny"  style="display: none">
 <h4> Dynamic Fitting Of Functional Regression Models With <a href="http://www.rstudio.com/shiny/" target="_blank">Shiny</a> </h4>
-<blockquote>
+<p>
 Below is a <a href="http://www.rstudio.com/shiny/" target="_blank">Shiny</a> app I created that performs estimation, visualization, inference, and prediction for the 
 functional generalized additive model (FGAM) and the functional linear model (FLM).  More information on these models can be found in the Research tab and in my papers from the Papers tab.  Begin by selecting a data set and choosing model parameters and an estimation method
 (if you are familar with penalized splines).  You may also specify options for displaying the fits, conducting a hypothesis test of FLM vs. FGAM, and performing out-of-sample prediction.  
 When you have selected the setting you want, you may fit the models by clicking the &quot;Fit Models&quot; button.
-</blockquote>
+</p>
 <iframe data-src="http://spark.rstudio.com/mmclean/fgam/" style="border: 0px solid #CCC; width: 790px; height: 1800px; seamless" id="shinyframe"></iframe>
 </div>
     <br />
-    <br />
 
-  
-  </div>
   </section>
 
 
@@ -524,12 +512,13 @@ When you have selected the setting you want, you may fit the models by clicking 
   <div style="clear:both;"></div>
 
   <!--<div class="contentDiv">-->
-  <section>
-    <div id="r code" style="display: none; padding-top: 30px;">
-    <blockquote>
+  
+    <section id="r code" style="display: none;" class="contentDiv">
+    
 	<h3> Packages </h3>
 	<h4> <tt>refund</tt> </h4>
-	The following functions were contributed to the <a href="http://cran.r-project.org/web/packages/refund/index.html" target="_blank"> <tt>refund</tt></a> package available on <a href="http://cran.r-project.org/" target="_blank"><tt>CRAN</tt></a>:
+	<p>The following functions were contributed to the <a href="http://cran.r-project.org/web/packages/refund/index.html" target="_blank"> <tt>refund</tt></a> package available on 
+	<a href="http://cran.r-project.org/" target="_blank"><tt>CRAN</tt></a>:</p>
 	<ul>
 	  <li> <tt> fgam</tt> - a wrapper for the <tt> gam</tt> function in package <tt> mgcv</tt> to fit functional generalized additive models. </li>
 	  <li> <tt> predict.fgam</tt> - wrapper for  the <tt> predict.gam</tt> function in package <tt> mgcv</tt> for prediction with <tt> fgam</tt> fits. </li>
@@ -537,7 +526,7 @@ When you have selected the setting you want, you may fit the models by clicking 
 	  <li> <tt> af</tt> - internal function for building fgam terms specified in model formulas passed to <tt> fgam</tt>. </li>
 	  <li> <tt> lf</tt> - internal function for building functional linear model terms specified in model formulas passed to <tt> fgam</tt>. </li>
 	</ul>
-        You can run all these functions as a stand-alone package by installing the .zip file <tt> <a href="Downloads/fgampkg_1.0.2.zip">here</a></tt> in <tt> R</tt>.
+      <p>  You can run all these functions as a stand-alone package by installing the .zip file <tt> <a href="Downloads/fgampkg_1.0.2.zip">here</a></tt> in <tt> R</tt>.</p>
 
 	<h3> Article Supplements </h3>
 	<ul>
@@ -546,52 +535,48 @@ When you have selected the setting you want, you may fit the models by clicking 
 	</ul>
 
 	<h3>A reference manager for <tt>R</tt> </h3>
-	  I have written some code for storing references in a data.frame in <tt>R</tt>.  Adding to the data frame is done by providing a <tt>BibTeX</tt> entry such as provided by Google Scholar 
+	 <p>
+  	  I have written some code for storing references in a data.frame in <tt>R</tt>.  Adding to the data frame is done by providing a <tt>BibTeX</tt> entry such as provided by Google Scholar 
 	  (note that the <tt>bibentry</tt> function in the <tt>utils</tt> package in <tt>R</tt> requires a different syntax).  The code provides six functions: an add function for adding references and creating 
 	  the database; a search function; a print function; a function for opening documents in the database via a doi, url, eprint number (available for biblatex), or local copy; a remove function for removing entries; and a function for returning the original <tt>BibTeX</tt> 
 	  entry.  Just source in <tt>RefManager.R</tt> and try the examples in <tt>RefManagerTest.R</tt> if you'd like to give it a try.  I would appreciate any feedback or bug reports.  I have my 
 	  <tt>.Rprofile</tt> set up to automatically load my database of references and the functions for editing it into a separate environment when R starts and to automatically save the database when 
 	  <tt>R</tt> closes; I can provide the code for that if you send me an email.
+	 </p>
 	<ul>
 <li> <a href="Downloads/RefManager.R">Functions defining the reference manager</a></li>
 <li> <a href="Downloads/RefManagerTest.R"> A test script demonstrating its use</a> </li>
 	</ul>
 	
     <br />
-    </blockquote>
-    </div>
   </section>
 
     <div style="clear:both;"></div>
 
   <!--<div class="contentDiv">-->
-  <section>
-    <div id="teaching" style="display: none;">
-	<blockquote style="padding-top: 30px;">
+  
+    <section id="teaching" style="display: none;" class="contentDiv">
 	 <h4> Cornell University </h4>
 
 	<h4> Summer 2012 </h4>
-	<p> ENGRD 2700: Basic Engineering Probability and Statistics, Lead TA.
+	<p> ENGRD 2700: Basic Engineering Probability and Statistics, Lead TA.</p>
 
 	<h4> Spring 2011 </h4>
-	ORIE 4740, Statistical Data Mining, Co-Lead TA.
+	<p>ORIE 4740, Statistical Data Mining, Co-Lead TA.</p>
 	
 	<h4> Fall 2010 </h4>
-	ENGRD 2700: Basic Engineering Probability and Statistics, Lead TA.
+	<p>ENGRD 2700: Basic Engineering Probability and Statistics, Lead TA.</p>
 
 	<h4> Fall 2009 </h4>
-	ENGRD 2700: Basic Engineering Probability and Statistics.
+	<p>ENGRD 2700: Basic Engineering Probability and Statistics.</p>
 
 	<h4> Spring 2009 </h4>
-	ORIE 3510: Introductory Engineering Stochastic Processes I.
+	<p>ORIE 3510: Introductory Engineering Stochastic Processes I.</p>
 
 	<h4> Fall 2008 </h4>
-	ENGRD 2700: Basic Engineering Probability and Statistics.
-</blockquote>
-    <br />
-    <br />
+	<p>ENGRD 2700: Basic Engineering Probability and Statistics.</p>
 
-    </div>
+
   </section>
 
 

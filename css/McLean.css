@@ -41,7 +41,7 @@ header h1 {
 	color: #FFFFFF;
 }
 
-.contentDiv,section{
+.contentDiv{
   background-color: #FFFFFF;
   padding: 20px 5px 20px 10px;
   margin: 10px 0px 10px 0px;
@@ -90,6 +90,11 @@ section h4 ,summary{
     color: #4a4a4a;
 }
 
+h1, h2, h3, h4, h5, h6{
+  margin: 10px 0px 10px 0px;
+  padding: 0px;
+ }
+
 code, tt {
 	margin: 0 2px;
 	padding: 0px 5px;
@@ -98,9 +103,21 @@ code, tt {
 	border-radius: 3px;
 }
 
+p{ 
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
 pre {
 	margin-left: 2em;
 }
+
+img, object{
+  margin: auto;
+  display: block;
+}
+
+
 .rightimg {
 	float: right;
 	margin-left: 20px;
