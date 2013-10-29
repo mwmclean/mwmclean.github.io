@@ -1,0 +1,642 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"> -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <title> Mathew W. McLean  </title>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=iso-8859-1" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <link rel="stylesheet" href="css/McLean.css" type="text/css" />
+    <link rel="shortcut icon" href="img/favicon.ico" />
+<link href="css/jquery.zrssfeed.css" rel="stylesheet" type="text/css">
+<!-- <script src="jquery.zrssfeed.min.js" type="text/javascript"></script> -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+
+<!--<script src="analytics.js" type="text/javascript"></script> -->
+
+<script src="js/toggle.js" type="text/javascript"></script>
+<script src="js/toggleRand.js" type="text/javascript"></script>
+<!--
+<script>
+function showThanks()
+{
+        var w=window.outerWidth;
+                if (w < 1100){
+                    document.getElementById("thanksTwo").style.display="none";
+                    document.getElementById("thanks").style.display="none";
+             }
+}
+</script>
+
+<script>
+ $(document).ready(function() {
+   $(window).resize(function() {
+     var w=window.outerWidth;
+        var x = document.getElementById("showShiny").rel;
+        var y = document.getElementById("showJeff").rel;
+
+        if (x=="license"){
+                if (w > 1000){
+                    document.getElementById("thanksTwo").style.display="block";
+            /* $(window).bind('resize', function(){
+
+                if ($(window).width() > 1600) {
+                 $('#thanksTwo').hide();
+                }
+                });
+                */
+                }
+                else{
+                    document.getElementById("thanksTwo").style.display="none";
+                }
+        }
+        else  if (y=="license"){
+                if (w > 1000){
+                    document.getElementById("thanks").style.display="block";
+                }
+                else{
+                    document.getElementById("thanks").style.display="none";
+                }
+        }
+}); });
+</script>
+-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44188300-1', 'tamu.edu');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+<body>
+
+<!--Head-->
+
+  <header>
+    <h1> <br />Mathew W. McLean </h1>
+  </header>
+
+
+  <hr width=100% size=3 align="center" color=#F8F8FF>
+
+  <nav style="margin: auto; text-align: center;">
+    <div class="navDiv" style="background-color: #ffff80;">
+	  <a href="javascript:toggle('about', 'papers', 'talks', 'research', 'teaching', 'r code', 'misc');" style="bottom-border: #ffff80;" >	
+      About
+	  </a>
+    </div>
+    <div class="navDiv">
+	  <a href="javascript:toggle('papers', 'talks', 'about', 'research', 'teaching', 'r code', 'misc');">
+      Papers
+	  </a>
+    </div>
+    <div class="navDiv">
+	  <a href="javascript:toggle('talks', 'papers', 'about', 'research', 'teaching', 'r code', 'misc');">
+      Talks
+	  </a>
+    </div>
+    <div class="navDiv">
+  	  <a href="javascript:toggle('research', 'about', 'papers', 'talks', 'teaching', 'r code', 'misc');">
+      Research
+      </a>	  
+    </div>
+    <div class="navDiv">
+	  <a href="javascript:toggle('r code', 'about', 'papers', 'talks', 'research', 'teaching', 'misc');">
+      R Code
+	  </a>
+    </div>
+    <div class="navDiv" style="width: 92px;">
+	  <a href="javascript:toggle('teaching', 'about', 'papers', 'talks', 'research', 'r code', 'misc');">
+      Teaching
+	  </a>
+    </div>
+    <div class="navDiv">
+	  <a href="Downloads/MattMcLeanCV.pdf">
+      CV
+	  </a>
+    </div>
+    <div class="navDiv" style="margin: 0px 0px 0px 0px;">
+	  <a href="javascript:toggle('misc', 'about', 'papers', 'talks', 'research', 'r code', 'teaching');">
+      Misc
+	  </a>
+    </div>
+</nav>
+
+<!--Contact-->
+
+  <div style="clear:both;"></div>
+
+  <!--<div class="contentDiv">-->
+  <section>
+    <div id="about" style="display: block;">
+	
+    <!-- <h2> About </h2> -->
+    <p style="padding-top: 20px;">
+	<img class="rightimg" alt="Matt McLean" src="img/mesuit.jpg" width=150 height=190 style="padding-top: 20px;" />
+<!-- <p><img class="rightimg" alt="Matt McLean" src="meoffice.jpg" width=250 height=165/> -->
+	<blockquote>
+    Research Assistant Professor <br />
+    <a href="http://iamcs.tamu.edu/">Institute for Applied Mathematics and Computational Science</a><br />
+    <a href="http://www.tamu.edu/">Texas A&M University</a><br />
+
+    <p>
+  <!--  Email: mmclean [at] stat.tamu.edu<br />  -->
+  <!-- <div id="emailDiv"></div> -->
+  Email:
+<script type="text/javascript" language="javascript">
+<!--
+// Email obfuscator script 2.1 by Tim Williams, University of Arizona
+// Random encryption key feature by Andrew Moulden, Site Engineering Ltd
+// This code is freeware provided these four comment lines remain intact
+// A wizard to generate this code is at http://www.jottings.com/obfuscator/
+{ coded = "zzDKsqS@1MqM.Mqzg.s9g"
+  key = "rUzXaQV79BWT1AwNbtl0jRyu3qnhExCIecYJZOMKHPfmgG2SFdLvosD586kp4i"
+  shift=coded.length
+  link=""
+  for (i=0; i<coded.length; i++) {
+    if (key.indexOf(coded.charAt(i))==-1) {
+      ltr = coded.charAt(i)
+      link += (ltr)
+    }
+    else {
+      ltr = (key.indexOf(coded.charAt(i))-shift+key.length) % key.length
+      link += (key.charAt(ltr))
+    }
+  }
+document.write("<a href='mailto:"+link+"'>"+link+"</a>")
+}
+//-->
+</script><noscript>Get Javascript to see my email.</noscript>
+        <br />
+        <br />
+    I obtained my PhD in 2013 from the <a href="http://www.orie.cornell.edu/">School of ORIE</a> at <a href="http://www.cornell.edu/">Cornell University</a> <br />
+    under the supervision of <a href="http://people.orie.cornell.edu/davidr/index.html" target="_blank">David Ruppert</a> and <a href="http://www.bscb.cornell.edu/~hooker/" target="_blank">Giles Hooker</a>.
+    <br>
+    I am currently working with <a href="http://www.stat.tamu.edu/~carroll/" target="_blank">Ray Carroll</a>.
+<!--    <a href="http://www.smart-stats.org/">SMART</a> working group<br /> -->
+    </p>
+    </p>
+
+    <br />
+    <br />
+	</blockquote>
+    </div>
+  </section>
+
+
+
+<!--papers-->
+
+  <div style="clear:both;"></div>
+
+  <!--<div class="contentDiv">-->
+  <section>
+    <div id="papers" style="display: none;">
+
+	<blockquote style="padding-top: 10px;"> <h4> To Appear </h4> </blockquote>
+
+	<blockquote> <b> M. W. McLean</b>, <a href="http://www.bscb.cornell.edu/~hooker/" target="_blank">G. Hooker</a>, <a href="http://www4.stat.ncsu.edu/~staicu/" target="_blank">A.-M. Staicu</a>, <a href="http://www.statistik.lmu.de/~scheipl/" target="_blank">F. Scheipl</a>, <a href="http://people.orie.cornell.edu/davidr/index.html" target="_blank">D. Ruppert</a> (to appear).
+	Functional Generalized Additive Models.
+	<i> Journal of Computational and Graphical Statistics. </i>
+	<br /> [<a href="http://www.tandfonline.com/eprint/jBTSxuMkDyX4N5IqFcpT/full" target="_blank">PDF from T&amp;F Online</a>
+	| <a href="Downloads/FGAMsupplement.zip">Supplementary Materials</a>]
+	</blockquote>
+
+	<blockquote> <h4> 2011 </h4> </blockquote>
+	
+	<blockquote> <a href="http://www.stat.cornell.edu/~matteson/"> D. S. Matteson</a>, <b> M. W. McLean</b>, <a href="http://people.orie.cornell.edu/woodard/"> D. B. Woodard</a> , <a href="http://people.orie.cornell.edu/shane/"> S. G. Henderson</a> (2011).
+        Forecasting emergency medical service call arrival rates.
+	<i> Annals of Applied Statistics, </i>
+	<b>5(2B)</b>1379-1406.
+	<br /> [<a href="http://projecteuclid.org/DPubS?service=UI&version=1.0&verb=Display&handle=euclid.aoas/1310562725" target="_blank">PDF from ProjectEuclid</a>
+        | <a href="Downloads/FEMSCARsupplement.zip">Supplementary Materials</a>]
+	</blockquote>
+
+
+    <blockquote> <h4> Submitted/In Preparation </h4> </blockquote>
+
+	<blockquote>  <b> M. W. McLean</b>, <a href="http://www.statistik.lmu.de/~scheipl/" target="_blank">F. Scheipl</a>, <a href="http://www.bscb.cornell.edu/~hooker/" target="_blank">G. Hooker</a>, <a href="http://www.stat.uni-muenchen.de/~greven/index_e.html" target="_blank">S. Greven</a>, <a href="http://people.orie.cornell.edu/davidr/index.html" target="_blank">D. Ruppert</a>.  (Submitted).	 Bayesian Functional Generalized Additive Models for Sparsely Observed Covariates.
+        <br /> [<a href="http://arxiv.org/abs/1305.3585" target="_blank">PDF from arXiv</a>]
+	</blockquote>
+
+	<blockquote>   <b> M. W. McLean</b>, <a href="http://www.bscb.cornell.edu/~hooker/" target="_blank">G. Hooker</a>, <a href="http://people.orie.cornell.edu/davidr/index.html" target="_blank">D. Ruppert</a>.
+	(Submitted).  Restricted Likelihood Ratio Tests for Linearity in Scalar-on-Function Regression.
+	<br />
+	[<a href="http://arxiv.org/abs/1310.5811" target="_blank">PDF from arXiv</a>]
+	</blockquote>
+<!--
+	<blockquote>   <b> M. W. McLean</b>, <a href="http://www.bscb.cornell.edu/~hooker/" target="_blank">G. Hooker</a>, <a href="http://people.orie.cornell.edu/davidr/index.html" target="_blank">D. Ruppert</a>.
+	Bayes Factors for Penalized Splines Using Generalized g-Priors.
+	</blockquote> -->
+    <blockquote> <h4> PhD Thesis</h4> </blockquote>
+
+	<blockquote>  On Generalized Additive Models for Regression with Functional Data. (2013) School of Operations Research and Information Engineering, Cornell University.
+	</blockquote>
+
+    <br />
+
+    </div>
+  </section>
+
+<!--Talks-->
+
+  <div style="clear:both;"></div>
+
+  <!--<div class="contentDiv">-->
+  <section>
+    <div id="talks" style="display: none;">
+
+	<blockquote style="padding-top: 10px;"> <h4> Functional Generalized Additive Models </h4> </blockquote>
+
+	<blockquote> Annual Meeting of the German and Austrian Statistical Associations, Vienna, Austria (2012)
+	<br /> [<a href="Downloads/FGAMviennatalk.pdf" target="_blank">Slides (PDF)</a>]
+	</blockquote>
+
+	<blockquote> ORIE PhD Colloquium, Ithaca, NY (2012)
+	<br /> [<a href="Downloads/FGAMphdcolloq.pdf" target="_blank">Slides (PDF)</a>]
+	</blockquote>
+    
+	<hr width=100% size=3 align="center" color=#6a6a6a>
+	<blockquote>
+	<h3> Posters </h3>
+
+	 <h4> Functional Generalized Additive Models </h4> 
+
+	  <p> ORIE PhD Reunion / Jack Muckstadt Retirement Celebration, Ithaca, NY (2012)
+	   <br/>[<a href="Downloads/FGAMposterJAM.pdf" target="_blank">Poster (PDF)</a>]
+       </p>
+	   Statistical Methods for Very Large Datasets Conference, Baltimore, MD (2011)
+        <br /> 
+		SAMSI Analysis of Object Data Closing Workshop, Research Triangle Park, NC (2011)
+        <br /> 
+		Imaging, Communications and Finance: Stochastic Modeling of Real-world Problems, New York, NY (2011)
+	<br /> [<a href="Downloads/FGAMposter.pdf" target="_blank">Poster (PDF)</a>]
+	</blockquote>
+    <br />
+
+    </div>
+  </section>
+
+<!--Research-->
+
+  <div style="clear:both;"></div>
+
+  <!--<div class="contentDiv">-->
+  <section>
+    <div id="research" style="display: none;">
+	
+	<blockquote style="padding-top: 35px;"> I am an applied statistician whose research currently focuses on using semiparametric methods to model longitudinal and functional data.  
+	My research in graduate school concentrated on functional regression.  In this setting at least one of the predictors or the response are functions.  
+	I am also interested in Bayesian hierarchical modelling and problems involving missing data.  Past work has involved time series analysis; specifically various types of GARCH models.  
+	Previous areas of application have included diffusion tensor imaging, forecasting emergency medical service call arrival rates, and financial time series.
+	</blockquote>
+
+	<blockquote> Below is an introduction to a couple of applied problems I have worked on.
+	</blockquote>
+
+	<hr width=100% size=3 align="center" color=#6a6a6a>
+	<details>
+	<summary> Functional Generalized Additive Models </summary>
+	<blockquote> We have data from a study comparing certain white matter tracts of multiple sclerosis (MS) patients with control subjects. MS is a central nervous system disorder that leads to lesions in the white matter of the brain which disrupts the ability of cells in the brain to communicate with each other. Below is a human brain with two major white matter tracts, the corpus callosum and corticospinal tracts in red and blue, respectively (thanks to <a href="http://jeffgoldsmith.com/" target="_blank">Jeff Goldsmith</a>).
+
+       <a href="img/CCA_CStracts.gif"> <img alt="Brain and tracts" src="img/CCA_CStracts.gif" width=358 height=267 style="margin:auto;display:block;" /></a>
+        Using a Magnetic Resonance Imaging technique called Diffusion Tensor Imaging we obtain several measurements at each location in the white matter tracts.  Here it makes sense to treat these measurements as being from a continuous function <i>X(t)</i> where t is location along the tract and use tools from functional data analysis.  We wish to use the functions <i>X(t)</i> to predict a scalar health outcome <i>Y</i>.  For example, <i>Y</i> might be score on a cognitive test or disease status (case or control).  The typical approach in functional data analysis is to use the Functional Linear Model (FLM)
+        <br />
+        <br />
+<!--	<img alt="FLM formula" src="FLMeqn.svg" height="25px" style="margin:auto;display:block;" /> -->
+        <object type="image/svg+xml" data="img/FLMeqn.svg" style="margin:auto;display:block;" >Your browser does not support SVG</object>
+        <br />
+        where <i>&beta;(t)</i> is an unknown coefficient function that needs to be estimated and <i>g(&bull;)</i> is a known monotonic function called the link function.  Below is a plot of some of the curves <i>X<sub>i</sub>(t)</i> as well as a corresponding estimated <i>&beta;(t)</i>.
+        <br />
+        <a href="img/l0rcstFLM.jpeg"> <img alt="FLM fit" src="img/l0rcstFLM.jpeg" width=400 height=350 style="margin:auto;display:block;" /></a>
+        However, this model is often not flexible enough to model the true underlying relationship between the response and predictor.  We propose the new model
+        <br />
+	<br />
+<!--        <img alt="FGAM formula" src="FGAMeqn.svg" height="25px" /> -->
+        <object type="image/svg+xml" data="img/FGAMeqn.svg" style="margin:auto;display:block;" >Your browser does not support SVG</object>
+        <br />
+        where <i>F(x,t)</i> is an unknown smooth bivariate function that we estimate using penalized regression splines.  The model is much more general than the FLM, but retains the ease of interpretation.  Below is an example estimated surface.
+        <br />
+	<a href="img/FMSltRevised.jpg"> <img alt="FGAM fit" src="img/FMSltRevised.jpg" height="350px" style="margin:auto;display:block;" /></a>
+        Here <i>Y</i>  is 1 if the subject has MS and 0 if they do not and <i>g[E(Y|X)]</i> gives the estimated probability that subject <i>i</i> has MS.  The red plotted curve is <i>X(t)</i> for one subject with MS and blue curve is for a subject without MS.  We see that since the red curve traces out a higher path on the surface than the red curve, the subject corresponding to the red curve is more likely to be classified as having MS.
+
+		<br />
+        </blockquote>
+        <blockquote>
+		You may fit the FGAM and FLM yourself to several different data sets using 
+		<a href="javascript:toggleRand('shiny', 'rss');javascript:toggle('misc', 'about', 'papers', 'talks', 'research', 'r code', 'teaching');">an app I created</a>.
+		</blockquote>
+	  </details>	
+	<hr width=100% size=3 align="center" color=#6a6a6a>
+	<details>
+	<summary> Forecasting EMS Call Arrival Rates </summary>
+	  <blockquote>
+
+        In this project we are interested in determining how to best deploy ambulances in a given city to minimize response times to emergency calls while keeping costs low.  More specifically, we have data on every ambulance trip and every emergency call received by Toronto EMS between January 2007 and December 2008.  The operations research models that address these deployment problems require accurate estimates of the number of calls that will be received during each time period.  Below is a plot of the mean number of calls per hour for each day of the week.
+        <br />
+        <br />
+     <a href="img/FEMSCAp5.png"><img alt="Mean Calls" src="img/FEMSCAp5.png" height="400px" style="margin:auto;display:block;" /></a>
+ <!--             <a href="FEMSCAp5.svg"><object type="image/svg+xml" data="FEMSCAp5.svg" style="margin:auto;display:block;" >Your browser does not support SVG</object></a> -->
+        <br />
+        <br />
+        Methods used in practice to obtain estimates are quite ad hoc.  Instead, what we do is build what is called a factor model with constraints.  This provides dimension reduction, accounts for seasonal and intra-day patterns in the call arrival rate process, and lets us incorporate additional covariates.   The factor model is estimated using penalized regression splines so that the factors and loading in the factor model vary smoothly over time.  Using the factor model we obtain smooth estimates for the arrival process for every day of 2008 which is plotted below.  As is to be expected, there is a very noticeable difference between the estimates for weekdays and weekends.
+
+        <br />
+        <br />
+        <a href="img/FEMSCAp162.png"><img alt="Estimated Factor Model" src="img/FEMSCAp162.png" height="450px" style="margin:auto;display:block;" /></a>
+        <br />
+        Finally, an integer-value GARCH model is fit to the residual process to account for any remaining dependence.  Below is a plot of the estimated number of calls for each hour of weeks 8 and 9 of 2007 as well as a plot of the estimated integer-value GARCH model fit to the residual process.
+        <br />
+        <br />
+        <a href="img/FEMSCAp18.png"><img alt="Estimated IntGARCH" src="img/FEMSCAp18.png" height="450px" style="margin:auto;display:block;" /></a>
+        <br />
+        <br />
+
+        <br />
+		<b>How do we check whether our model improves staffing levels and response times?</b>
+        <br />
+		By simulating an M/M/s queueing system where the servers represent ambulances, calls for emergency medical services in hour, t, occur at rate &lambda;<sub>t</sub>, and each ambulance services callers at rate &nu;.  We use our model to obtain estimates of the number of callers for each period and these determine the number of ambulances to staff, say s<sub>t</sub>, in each period.  After fitting the model to 2007 data, to initialize are queueing system we assume the number of arrivals each hour is the observed number of calls for the corresponding hour for 2008 and simulate inter-hour arrival times and service times for each caller.
+		<br /><br />
+	    <a href="img/MMsqueue.png"><img alt="EMSqueue" src="img/MMsQueue.png" height="250px" /></a>
+	  </blockquote>
+	</details>
+
+
+    <br />
+
+    </div>
+  </section>
+
+
+<!--misc-->
+
+  <div style="clear:both;"></div>
+
+  <!--<div class="contentDiv">-->
+  <section>
+    <div id="misc" style="display: none;">
+		
+<!--
+  <div align = "center">
+  <a href="javascript:toggleRand('rss', 'shiny');" >
+    <div class="navDivRand" style="margin: 0px 10px 0px 0px;">
+      Stats Journal RSS Feeds
+    </div>
+  </a>
+  <a href="javascript:toggleRand('shiny', 'rss');">
+    <div class="navDivRand" style="margin: 0px 10px 0px 0px;">
+      Shiny FGAM
+    </div>
+  </a>
+    </div>
+	-->
+	<ul style="padding-top: 35px;">
+	<li><a href="javascript:toggleRand('rss', 'shiny');">RSS feeds for several statistics journals</a></li>
+	<li><a href="javascript:toggleRand('shiny', 'rss');">Shiny FGAM</a></li>
+	</ul>
+<!--  		<hr width=100% size=3 align="center" color=#F8F8FF> -->
+  	<hr width=100% size=3 align="center" color=#6a6a6a>
+  <article id="rss" style="display: none">
+	<h4> OPP: Other People's Papers (RSS feeds for some popular statistics journals)</h4>
+	<blockquote>
+	<a href="#feeds" onMouseDown="changeSrc(20,0)">All</a> &#9642;
+	<a href="#feeds" onMouseDown="changeSrc(1,0)">JASA</a> &#9642;
+	<a href="#feeds" onMouseDown="changeSrc(2,0)">JRSS-B</a> &#9642;
+	<a href="#feeds" onMouseDown="changeSrc(4,0)">AoS</a> &#9642;
+	<a href="#feeds" onMouseDown="changeSrc(5,0)">Biometrika</a> &#9642;
+	<a href="#feeds" onMouseDown="changeSrc(12,0)">StatSci</a> &#9642;
+	<a href="#feeds" onMouseDown="changeSrc(6,0)">BA</a> &#9642;
+	<a href="#feeds" onMouseDown="changeSrc(7,0)">JCGS</a> &#9642;
+	<a href="#feeds" onMouseDown="changeSrc(8,0)">Biometrics</a> &#9642;
+	<a href="#feeds" onMouseDown="changeSrc(9,0)">Biostat</a> &#9642;
+	<a href="#feeds" onMouseDown="changeSrc(22,0)">SInMed</a>
+	<br>
+	<a href="#feeds" onMouseDown="changeSrc(10,0)">AoAS</a> &#9642;
+	<a href="#feeds" onMouseDown="changeSrc(11,0)">STATCOMP</a> &#9642;
+	<a href="#feeds" onMouseDown="changeSrc(21,0)">JMLR</a> &#9642;
+	<a href="#feeds" onMouseDown="changeSrc(13,0)">EJS</a> &#9642;
+	<a href="#feeds" onMouseDown="changeSrc(14,0)">JMA</a> &#9642;
+	<a href="#feeds" onMouseDown="changeSrc(15,0)">Tech</a> &#9642;
+	<a href="#feeds" onMouseDown="changeSrc(16,0)">JABES</a> &#9642;
+	<a href="#feeds" onMouseDown="changeSrc(17,0)">JSS</a> &#9642;
+	<a href="#feeds" onMouseDown="changeSrc(18,0)">CSDA</a> &#9642;
+	<a href="#feeds" onMouseDown="changeSrc(19,0)">JSPI</a> &#9642;
+	<a href="#feeds" onMouseDown="changeSrc(3,0)">arXiv</a>
+	</blockquote>
+	<br>
+	<div id='feeds'></div>
+	<button onclick="changeSrc(-1,10)" style="float: right; display: none; background: #d4d4e8; font-weight: bold;" id="extraFeeds">More Articles</button>
+  </article>
+<!-- <iframe id="cal" style="border-style: outset; border-width: 3px; border-color: #500000;" width="776" height="600" scrolling="yes"></iframe>
+		// Checks if browser has built in support for RSS feeds (MSIE and Firefox).  Not needed now.
+   <script type="text/javascript">
+//function(){
+  bname = window.navigator.userAgent;
+    mydiv = document.getElementById('rss');
+        myif = document.getElementById('cal');
+  if(!/Firefox[\/\s](\d+\.\d+)/.test(bname) && !/MSIE (\d+\.\d+);/.test(bname)){
+
+  //  document.getElementById('rss').style.width = "0px";
+        mydiv.style.display = "none";
+               myif.style.display = "none";
+ //document.write('hello');
+  }
+  // document.write(!/Firefox[\/\s](\d+\.\d+)/.test(bname) && !/MSIE (\d+\.\d+);/.test(bname));
+  // document.write(/Firefox[\/\s](\d+\.\d+)/.test(bname));
+  // }
+  </script>
+  -->
+  <script type="text/javascript">
+  (function(l){l.fn.rssfeed=function(b,h,w){h=l.extend({limit:10,offset:1,header:!0,titletag:"h4",date:!0,dateformat:"datetime",content:!0,snippet:!0,media:!0,showerror:!0,errormsg:"",key:null,ssl:!1,linktarget:"_self",linkredirect:"",linkcontent:!1,sort:"",sortasc:!0,historical:!1},h);return this.each(function(z,q){var u=l(q),f="";h.ssl&&(f="s");u.hasClass("rssFeed")||u.addClass("rssFeed");if(null==b)return!1;0<h.offset&&(h.offset-=1);h.limit+=h.offset;f="http"+f+"://ajax.googleapis.com/ajax/services/feed/load?v=1.0&callback=?&q="+
+encodeURIComponent(b);f+="&num="+h.limit;h.historical&&(f+="&scoring=h");null!=h.key&&(f+="&key="+h.key);l.getJSON(f+"&output=json_xml",function(b){if(200==b.responseStatus){var f=b.responseData,e=h;if(b=f.feed){var j=[],d=0,m="",v="odd";if(e.media){var n=f.xmlString;"Microsoft Internet Explorer"==navigator.appName?(d=new ActiveXObject("Microsoft.XMLDOM"),d.async="false",d.loadXML(n)):d=(new DOMParser).parseFromString(n,"text/xml");n=d.getElementsByTagName("item")}e.header&&(m+='<div class="rssHeader"><a href="'+
+b.link+'" title="'+b.description+'">'+b.title+"</a></div>");m+='<div class="rssBody"><ul>';for(f=e.offset;f<b.entries.length;f++){d=f-e.offset;j[d]=[];var g=b.entries[f],a,c="",k=g.link;switch(e.sort){case "title":c=g.title;break;case "date":c=g.publishedDate}j[d].sort=c;if(g.publishedDate)switch(c=new Date(g.publishedDate),a=c.toLocaleDateString()+" "+c.toLocaleTimeString(),e.dateformat){case "datetime":break;case "date":a=c.toLocaleDateString();break;case "time":a=c.toLocaleTimeString();break;case "timeline":a=
+new Date(c);a=Math.round(((new Date).getTime()-a.getTime())/1E3);60>a?a="< 1 min":(3600>a?(a=Math.round(a/60)-1,c="min"):86400>a?(a=Math.round(a/3600)-1,c="hour"):604800>a?(a=Math.round(a/86400)-1,c="day"):(a=Math.round(a/604800)-1,c="week"),1<a&&(c+="s"),a=a+" "+c);break;default:a=c,c=new Date(a),a=e.dateformat,a=a.replace("dd",p(c.getDate())),a=a.replace("MMMM",x(c.getMonth())),a=a.replace("MM",p(c.getMonth()+1)),a=a.replace("yyyy",c.getFullYear()),a=a.replace("hh",p(c.getHours())),a=a.replace("mm",
+p(c.getMinutes())),a=a.replace("ss",p(c.getSeconds()))}e.linkredirect&&(k=encodeURIComponent(k));j[d].html="<"+e.titletag+'><a href="'+e.linkredirect+k+'" title="View this feed at '+b.title+'">'+g.title+"</a></"+e.titletag+">";e.date&&a&&(j[d].html+="<div>"+a+"</div>");e.content&&(g=e.snippet&&""!=g.contentSnippet?g.contentSnippet:g.content,e.linkcontent&&(g='<a href="'+e.linkredirect+k+'" title="View this feed at '+b.title+'">'+g+"</a>"),j[d].html+="<p>"+g+"</p>");if(e.media&&0<n.length&&(k=n[f].getElementsByTagName("enclosure"),
+0<k.length)){j[d].html+='<div class="rssMedia"><div>Media files</div><ul>';for(g=0;g<k.length;g++){var r=k[g].getAttribute("url"),s=k[g].getAttribute("type"),t=k[g].getAttribute("length"),c=j[d],y=j[d].html,r='<li><a href="'+r+'" title="Download this media">'+r.split("/").pop()+"</a> ("+s+", ",s=Math.floor(Math.log(t)/Math.log(1024)),t=(t/Math.pow(1024,Math.floor(s))).toFixed(2)+" "+"bytes kb MB GB TB PB".split(" ")[s];c.html=y+(r+t+")</li>")}j[d].html+="</ul></div>"}}e.sort&&j.sort(function(a,c){if(e.sortasc)var b=
+a.sort,d=c.sort;else b=c.sort,d=a.sort;if("date"==e.sort)return new Date(b)-new Date(d);b=b.toLowerCase();d=d.toLowerCase();return b<d?-1:b>d?1:0});l.each(j,function(a){m+='<li class="rssRow '+v+'">'+j[a].html+"</li>";v="odd"==v?"even":"odd"});m+="</ul></div>";l(q).html(m);l("a",q).attr("target",e.linktarget)}l.isFunction(w)&&w.call(this,u)}else h.showerror&&(d=""!=h.errormsg?h.errormsg:b.responseDetails),l(q).html('<div class="rssError"><p>'+d+"</p></div>")})})};var p=function(b){b+="";2>b.length&&
+(b="0"+b);return b},x=function(b){return"Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split(" ")[b]}})(jQuery);
+
+  var feeds = ["http://amstat.tandfonline.com/action/showFeed?ui=0&mi=6wnjqt&ai=4ep&jc=uasa20&type=etoc&feed=rss", //JASA
+				"http://onlinelibrary.wiley.com/rss/journal/10.1111/(ISSN)1467-9868",  // JRSS-B
+				"http://export.arxiv.org/rss/stat", // arXiv
+				"http://projecteuclid.org/feeds/euclid.aos_article_rss.xml", //Annals
+				"http://biomet.oxfordjournals.org/rss/ahead.xml", // 5)Biometrika
+				"http://projecteuclid.org/feeds/euclid.ba_article_rss.xml", // Bayesian Analysis
+				"http://amstat.tandfonline.com/action/showFeed?ui=0&mi=6wnjqt&ai=4er&jc=ucgs20&type=etoc&feed=rss", // JCGS 
+				"http://onlinelibrary.wiley.com/rss/journal/10.1111/(ISSN)1541-0420", // Biometrics
+				"http://biostatistics.oxfordjournals.org/rss/ahead.xml", // Biostatistics
+				"http://projecteuclid.org/feeds/euclid.aoas_article_rss.xml", // 10) Annals of Applied Stats
+				"http://link.springer.com/search.rss?facet-content-type=Article&facet-journal-id=11222&channel-name=Statistics%20and%20Computing", // Statistisc and Computing
+				"http://projecteuclid.org/feeds/euclid.ss_article_rss.xml", // Stat Science
+				"http://projecteuclid.org/feeds/euclid.ejs_article_rss.xml", // EJS
+				"http://rss.sciencedirect.com/publication/science/0047259X", // Multivariate Analysis
+				"http://amstat.tandfonline.com/action/showFeed?ui=0&mi=6wnjqt&ai=4eu&jc=utch20&type=etoc&feed=rss",  // 15) Technometrics
+				"http://link.springer.com/search.rss?facet-content-type=Article&facet-journal-id=13253&channel-name=Journal%20of%20Agricultural,%20Biological,%20and%20Environmental%20Statistics", //JABES
+				"http://www.jstatsoft.org/rss",  // Statistical Software
+				"http://rss.sciencedirect.com/publication/science/01679473", // CSDA
+				"http://rss.sciencedirect.com/publication/science/03783758", // JSPI 
+				"http://www.rssmix.com/u/3806626/rss.xml",  // 20) All, rss mix
+				"http://jmlr.org/jmlr.xml",  // JMLR
+				"http://onlinelibrary.wiley.com/rss/journal/10.1002/(ISSN)1097-0258"];  // Statistics in Medicine
+				
+				var numFeeds = 0;
+				var oldid = 0;
+				function changeSrc(id, upFeeds){
+					if( id > 0 ){
+						numFeeds = 10;
+						$('#feeds').rssfeed(feeds[id-1], { snippet: false, linktarget: '_blank', limit: numFeeds});
+						oldid = id;
+						var ele = document.getElementById("extraFeeds");
+						ele.style.display = "block";
+					}else{
+						console.log(oldid);
+						numFeeds += upFeeds;
+						$('#feeds').rssfeed(feeds[oldid-1], { snippet: false, linktarget: '_blank', limit: numFeeds});		
+					}
+				}
+  </script>
+  
+<div id="shiny"  style="display: none">
+<h4> Dynamic Fitting Of Functional Regression Models With <a href="http://www.rstudio.com/shiny/" target="_blank">Shiny</a> </h4>
+<blockquote>
+Below is a <a href="http://www.rstudio.com/shiny/" target="_blank">Shiny</a> app I created that performs estimation, visualization, inference, and prediction for the 
+functional generalized additive model (FGAM) and the functional linear model (FLM).  More information on these models can be found in the Research tab and in my papers from the Papers tab.  Begin by selecting a data set and choosing model parameters and an estimation method
+(if you are familar with penalized splines).  You may also specify options for displaying the fits, conducting a hypothesis test of FLM vs. FGAM, and performing out-of-sample prediction.  
+When you have selected the setting you want, you may fit the models by clicking the &quot;Fit Models&quot; button.
+</blockquote>
+<iframe data-src="http://spark.rstudio.com/mmclean/fgam/" style="border: 0px solid #CCC; width: 790px; height: 1800px; seamless" id="shinyframe"></iframe>
+</div>
+    <br />
+    <br />
+
+  
+  </div>
+  </section>
+
+
+<!--Software-->
+
+  <div style="clear:both;"></div>
+
+  <!--<div class="contentDiv">-->
+  <section>
+    <div id="r code" style="display: none; padding-top: 30px;">
+    <blockquote>
+	<h3> Packages </h3>
+	<h4> <tt>refund</tt> </h4>
+	The following functions were contributed to the <a href="http://cran.r-project.org/web/packages/refund/index.html" target="_blank"> <tt>refund</tt></a> package available on <a href="http://cran.r-project.org/" target="_blank"><tt>CRAN</tt></a>:
+	<ul>
+	  <li> <tt> fgam</tt> - a wrapper for the <tt> gam</tt> function in package <tt> mgcv</tt> to fit functional generalized additive models. </li>
+	  <li> <tt> predict.fgam</tt> - wrapper for  the <tt> predict.gam</tt> function in package <tt> mgcv</tt> for prediction with <tt> fgam</tt> fits. </li>
+	  <li> <tt> vis.fgam</tt> - for visualizing estimated surfaces produced by <tt> fgam</tt>. </li>
+	  <li> <tt> af</tt> - internal function for building fgam terms specified in model formulas passed to <tt> fgam</tt>. </li>
+	  <li> <tt> lf</tt> - internal function for building functional linear model terms specified in model formulas passed to <tt> fgam</tt>. </li>
+	</ul>
+        You can run all these functions as a stand-alone package by installing the .zip file <tt> <a href="Downloads/fgampkg_1.0.2.zip">here</a></tt> in <tt> R</tt>.
+
+	<h3> Article Supplements </h3>
+	<ul>
+	  <li> <a href="Downloads/FGAMsupplement.zip">Supplementary material</a> to "Functional Generalized Additive Models" - includes examples for fitting FGAM and code from conducting all simulations in the paper. </li>
+	  <li> <a href="Downloads/FEMSCARsupplement.zip">Supplementary material</a> to "Forecasting EMS Call Arrival Rates" - includes code for estimating the combined factor model and Integer-GARCH model as well as code for conducting the queueing system simulation study. </li>
+	</ul>
+
+	<h3>A reference manager for <tt>R</tt> </h3>
+	  I have written some code for storing references in a data.frame in <tt>R</tt>.  Adding to the data frame is done by providing a <tt>BibTeX</tt> entry such as provided by Google Scholar 
+	  (note that the <tt>bibentry</tt> function in the <tt>utils</tt> package in <tt>R</tt> requires a different syntax).  The code provides six functions: an add function for adding references and creating 
+	  the database; a search function; a print function; a function for opening documents in the database via a doi, url, eprint number (available for biblatex), or local copy; a remove function for removing entries; and a function for returning the original <tt>BibTeX</tt> 
+	  entry.  Just source in <tt>RefManager.R</tt> and try the examples in <tt>RefManagerTest.R</tt> if you'd like to give it a try.  I would appreciate any feedback or bug reports.  I have my 
+	  <tt>.Rprofile</tt> set up to automatically load my database of references and the functions for editing it into a separate environment when R starts and to automatically save the database when 
+	  <tt>R</tt> closes; I can provide the code for that if you send me an email.
+	<ul>
+<li> <a href="Downloads/RefManager.R">Functions defining the reference manager</a></li>
+<li> <a href="Downloads/RefManagerTest.R"> A test script demonstrating its use</a> </li>
+	</ul>
+	
+    <br />
+    </blockquote>
+    </div>
+  </section>
+
+    <div style="clear:both;"></div>
+
+  <!--<div class="contentDiv">-->
+  <section>
+    <div id="teaching" style="display: none;">
+	<blockquote style="padding-top: 30px;">
+	 <h4> Cornell University </h4>
+
+	<h4> Summer 2012 </h4>
+	<p> ENGRD 2700: Basic Engineering Probability and Statistics, Lead TA.
+
+	<h4> Spring 2011 </h4>
+	ORIE 4740, Statistical Data Mining, Co-Lead TA.
+	
+	<h4> Fall 2010 </h4>
+	ENGRD 2700: Basic Engineering Probability and Statistics, Lead TA.
+
+	<h4> Fall 2009 </h4>
+	ENGRD 2700: Basic Engineering Probability and Statistics.
+
+	<h4> Spring 2009 </h4>
+	ORIE 3510: Introductory Engineering Stochastic Processes I.
+
+	<h4> Fall 2008 </h4>
+	ENGRD 2700: Basic Engineering Probability and Statistics.
+</blockquote>
+    <br />
+    <br />
+
+    </div>
+  </section>
+
+
+<!--CV-->
+
+  <!--<div style="clear:both;"></div>
+
+  <a href="Downloads/MattMcLeanCV.pdf"><div id="contentDiv">
+    <div id="cv" style="display: none;">
+	
+	<h2> CV </h2>
+
+	<blockquote>
+    A pdf of my CV is available <a href="Downloads/MattMcLeanCV.pdf">here</a>.
+    </blockquote>
+
+    <br />
+    </div>
+  </div></a>-->
+
+
+<footer>
+  <hr width=100% size=3 align="center" color=#F8F8FF>
+
+  <table width=100% align="center">
+    <tr>
+    <td align="left" width=100%><tiny><FONT COLOR="#F8F8FF">
+    Institute for Applied Mathematics and Computational Science <br />
+   462 Blocker Building <br />
+    Texas A&M University <br />
+    College Station, Texas 77843 USA <br />
+    </tiny></td>
+
+    <td width=100% align="right"><tiny>
+        <img src="img/TAMUlogo.png" width="300" alt="TAMU logo" />
+<!--    <img src="ORIE2.jpg"/> -->
+    </tiny></td>
+    </tr>
+  </table>
+<p id="thanks" style="position:fixed;bottom:0;right:0;width:10%;height:6%"><FONT COLOR="#6a6a6a">html h/t to <a href="http://jeffgoldsmith.com/" target="_blank" id="showJeff" ref="license"><FONT COLOR="#6a6a6a">Jeff Goldsmith</a></p>
+<!--
+<p id="thanksTwo" style="position:fixed;bottom:0;right:5px;width:10%;height:6%;display:none;"><FONT COLOR="#6a6a6a">Made with <a href="http://www.rstudio.com/shiny/" target="_blank" id="showShiny" rel="nofollow"><FONT COLOR="#6a6a6a">Shiny</a></p>
+-->
+</footer>
+</body>
+</html>

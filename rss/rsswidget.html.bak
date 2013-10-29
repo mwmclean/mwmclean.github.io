@@ -1,0 +1,237 @@
+<html>
+<head>
+<!-- <script src="http://yui.yahooapis.com/3.12.0/build/yui/yui-min.js"></script> -->
+<!--<script type="text/javascript">
+function toggle() {
+var bname = window.navigator.userAgent;
+    mydiv = document.getElementById('rss');
+        myif = document.getElementById('call');
+  if(!/Firefox[\/\s](\d+\.\d+)/.test(bname) || !/MSIE (\d+\.\d+);/.test(bname)){
+
+  //  document.getElementById('rss').style.width = "0px";
+        mydiv.style.display = "none";
+                myif.style.display = "none";
+ document.write('fuck');
+  }
+          document.write('hello');
+}
+</script>-->
+<!--
+<style type="text/css">
+iframe{
+ display:none;
+}
+
+#rss{
+ display:none;
+ height:0;
+ width:0;
+ }
+
+</style>
+-->
+<!--<script type="text/javascript">
+window.onload = function() {
+  bname = window.navigator.userAgent;
+    if(!/Firefox[\/\s](\d+\.\d+)/.test(bname) && !/MSIE (\d+\.\d+);/.test(bname)){
+        document.getElementById('rss').style.display = 'none';
+    } else {
+        document.getElementById('rss').style.display = 'none';
+    }
+}
+</script>-->
+</head>
+<body>
+<!--<iframe src="http://www.rssmix.com/nb/522e34215f643/" frameborder="1" marginheight="0" marginwidth="0" scrolling="YES" width="625" height="600"></iframe>
+<br>-->
+
+<div id="rss">
+
+<a href="#" onMouseDown="changeToCal1()">JASA</a>
+<a href="#" onMouseDown="changeToCal2()">JRSS-B</a>
+<a href="#" onMouseDown="changeToCal4()">AoS</a>
+<a href="#" onMouseDown="changeToCal5()">Biometrika</a>
+<a href="#" onMouseDown="changeToCal12()">StatSci</a>
+<a href="#" onMouseDown="changeToCal6()">BA</a>
+<a href="#" onMouseDown="changeToCal7()">JCGS</a>
+<a href="#" onMouseDown="changeToCal8()">Biometrics</a>
+<a href="#" onMouseDown="changeToCal9()">Biostatistics</a>
+<a href="#" onMouseDown="changeToCal10()">AoAS</a>
+<a href="#" onMouseDown="changeToCal11()">STATCOMP</a>
+<a href="#" onMouseDown="changeToCal13()">EJS</a>
+<a href="#" onMouseDown="changeToCal14()">JMA</a>
+<a href="#" onMouseDown="changeToCal15()">Tech</a>
+<a href="#" onMouseDown="changeToCal16()">JABES</a>
+<a href="#" onMouseDown="changeToCal17()">JSS</a>
+<a href="#" onMouseDown="changeToCal18()">CSDA</a>
+<a href="#" onMouseDown="changeToCal19()">JSPI</a>
+<a href="#" onMouseDown="changeToCal3()">arXiv</a>
+</div>
+<br>
+<iframe id="cal" style="border: 0" width="800" height="600" frameborder="0" scrolling="yes"></iframe>
+   <script type="text/javascript">
+//function(){
+  bname = window.navigator.userAgent;
+    mydiv = document.getElementById('rss');
+        myif = document.getElementById('cal');
+  if(!/Firefox[\/\s](\d+\.\d+)/.test(bname) && !/MSIE (\d+\.\d+);/.test(bname)){
+
+  //  document.getElementById('rss').style.width = "0px";
+        mydiv.style.display = "none";
+               myif.style.display = "none";
+// document.write('hello');
+  }
+//   document.write(!/Firefox[\/\s](\d+\.\d+)/.test(bname) && !/MSIE (\d+\.\d+);/.test(bname));
+  // document.write(/Firefox[\/\s](\d+\.\d+)/.test(bname));
+  // }
+  </script>
+<script type="text/javascript">
+function changeToCal1()
+{
+    document.getElementById('cal').src = "http://amstat.tandfonline.com/action/showFeed?ui=0&mi=6wnjqt&ai=4ep&jc=uasa20&type=etoc&feed=rss";
+}
+
+function changeToCal2()
+{
+    document.getElementById('cal').src = "http://onlinelibrary.wiley.com/rss/journal/10.1111/(ISSN)1467-9868";
+}
+function changeToCal4()
+{
+    document.getElementById('cal').src = "http://projecteuclid.org/feeds/euclid.aos_article_rss.xml";
+}
+function changeToCal3()
+{
+    document.getElementById('cal').src = "http://export.arxiv.org/rss/stat";
+}
+function changeToCal5()
+{
+    document.getElementById('cal').src = "http://biomet.oxfordjournals.org/rss/ahead.xml";
+}
+function changeToCal6()
+{
+    document.getElementById('cal').src = "http://projecteuclid.org/feeds/euclid.ba_article_rss.xml";
+}
+function changeToCal7()
+{
+    document.getElementById('cal').src = "http://amstat.tandfonline.com/action/showFeed?ui=0&mi=6wnjqt&ai=4er&jc=ucgs20&type=etoc&feed=rss";
+}
+function changeToCal8()
+{
+    document.getElementById('cal').src = "http://onlinelibrary.wiley.com/rss/journal/10.1111/(ISSN)1541-0420";
+}
+function changeToCal9()
+{
+    document.getElementById('cal').src = "http://biostatistics.oxfordjournals.org/rss/ahead.xml";
+}
+function changeToCal10()
+{
+    document.getElementById('cal').src = "http://projecteuclid.org/feeds/euclid.aoas_article_rss.xml";
+}
+function changeToCal11()
+{
+    document.getElementById('cal').src = "http://link.springer.com/search.rss?facet-content-type=Article&facet-journal-id=11222&channel-name=Statistics%20and%20Computing";
+}
+function changeToCal12()
+{
+    document.getElementById('cal').src = "http://projecteuclid.org/feeds/euclid.ss_article_rss.xml";
+}
+function changeToCal13()
+{
+    document.getElementById('cal').src = "http://projecteuclid.org/feeds/euclid.ejs_article_rss.xml";
+}
+function changeToCal14()
+{
+    document.getElementById('cal').src = "http://rss.sciencedirect.com/publication/science/0047259X";
+}
+function changeToCal15()
+{
+    document.getElementById('cal').src = "http://amstat.tandfonline.com/action/showFeed?ui=0&mi=6wnjqt&ai=4eu&jc=utch20&type=etoc&feed=rss";
+}
+function changeToCal16()
+{
+    document.getElementById('cal').src = "http://link.springer.com/search.rss?facet-content-type=Article&facet-journal-id=13253&channel-name=Journal%20of%20Agricultural,%20Biological,%20and%20Environmental%20Statistics";
+}
+function changeToCal17()
+{
+    document.getElementById('cal').src = "http://www.jstatsoft.org/rss";
+}
+function changeToCal18()
+{
+    document.getElementById('cal').src = "http://rss.sciencedirect.com/publication/science/01679473";
+}
+function changeToCal19()
+{
+    document.getElementById('cal').src = "http://rss.sciencedirect.com/publication/science/03783758";
+}
+</script>
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="//smb_rss2html.xsl"?>
+<rss version="2.0">[http://www.rssmix.com/u/3806626/rss.xml]
+<!--
+<br>
+<script id="feed-1378762530339625" type="text/javascript" src="http://onlinelibrary.wiley.com/rss/journal/10.1111/(ISSN)1467-9868"></script>
+
+<script src="//www.gmodules.com/ig/ifr?url=http://www.rssmix.com/u/3806355/rss.xml&amp;synd=open&amp;w=320&amp;h=200&amp;title=&amp;border=%23ffffff%7C3px%2C1px+solid+%23999999&amp;output=js"></script>
+<div id="demo"></div>
+<script type="text/javascript">
+YUI().use("widget", "gallery-widget-io", "json-parse", "escape", function(Y) {
+
+    var formatRSS = function (val) {
+        var formatted = "Error parsing feed data";
+        try {
+            var json = Y.JSON.parse(val);
+
+            if (json && json.count) {
+                var html = ['<ul class="yui3-feed-data">'];
+                var linkTemplate = '<li><a href="{link}" target="_blank">{title}</a></li>';
+
+                Y.each(json.value.items, function(v, i) {
+                    if (i < 10) {
+                        v.title = Y.Escape.html(v.title);
+                        v.link = Y.Escape.html(v.link);
+                        html.push(Y.Lang.sub(linkTemplate, v));
+                    }
+                });
+                html.push("</ul>");
+                formatted = html.join("");
+            } else {
+                formatted = "No Data Available";
+            }
+        } catch(e) {
+            formatted = "Error parsing feed data";
+        }
+        return formatted;
+    };
+
+    Y.on('io:xdrReady', function() {
+
+        var widget = new Y.Widget();
+
+        widget.plug(Y.Plugin.WidgetIO, {
+            uri : 'http:/' + '/pipes.yahooapis.com/pipes/pipe.run?_id=6b7b2c6a32f5a12e7259c36967052387&_render=json&url=http:/' + '/rss.news.yahoo.com/rss/us',
+            cfg:{
+                xdr: {
+                    use:'flash'
+                }
+            },
+            formatter: formatRSS,
+            loading: '<img class="yui3-loading" width="32px" height="32px" src="../assets/widget/img/ajax-loader.gif">'
+        });
+        widget.render('#demo');
+
+        widget.io.refresh();
+    });
+
+    Y.io.transport({
+        id:'flash',
+        yid: Y.id,
+        src:'/yui/build/io-xdr/io.swf?stamp=' + (new Date()).getTime()
+    });
+
+});
+</script>
+-->
+
+   </body>
+
+   </html> 
