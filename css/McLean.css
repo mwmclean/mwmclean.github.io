@@ -16,7 +16,7 @@ a:link {
 	color: #990099;
 }
 a:visited {
-	color: #BDA0CB;//#754C78;	
+	color: #BDA0CB;
 }
 a:hover {
 	color: #500000 !important;
@@ -41,6 +41,12 @@ header h1 {
 	color: #FFFFFF;
 }
 
+.contentDiv,section{
+  background-color: #FFFFFF;
+  padding: 20px 5px 20px 10px;
+  margin: 10px 0px 10px 0px;
+}
+
 .navDiv {
     float: left; 
     width: 92px;
@@ -60,12 +66,13 @@ header h1 {
      background-color: #FFFFFF;
 }
 
+/*
 section {
-	width= 800px;
 	background-color: #FFFFFF;
-	margin: -10px 0px 20px 0px;
-	padding: 0em 10px 0em 10px;
+	margin: -10px 0px 20px 0px; 
+	padding: 0em 5px 0em 5px; 
 }
+*/
 section h1 {
 	font-size: 218%;
     color: #6a6a6a;
@@ -110,7 +117,7 @@ pre {
 	clear: both;
 }
 #thanksTwo {
-  display: hidden;
+  display: none;
 }
 
 #showShiny, #showJeff{

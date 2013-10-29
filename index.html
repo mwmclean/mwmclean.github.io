@@ -88,7 +88,7 @@ function showThanks()
 
   <nav style="margin: auto; text-align: center;">
     <div class="navDiv" style="background-color: #ffff80;">
-	  <a href="javascript:toggle('about', 'papers', 'talks', 'research', 'teaching', 'r code', 'misc');" style="bottom-border: #ffff80;" >	
+	  <a href="javascript:toggle('about', 'papers', 'talks', 'research', 'teaching', 'r code', 'misc');" style="border-bottom: #ffff80;" >	
       About
 	  </a>
     </div>
@@ -128,27 +128,28 @@ function showThanks()
 	  </a>
     </div>
 </nav>
-
+<br>
 <!--Contact-->
 
   <div style="clear:both;"></div>
 
   <!--<div class="contentDiv">-->
   <section>
-    <div id="about" style="display: block;">
+    <div id="about" style="display: block;" class="contentDiv">
 	
     <!-- <h2> About </h2> -->
-    <p style="padding-top: 20px;">
+   
 	<img class="rightimg" alt="Matt McLean" src="img/mesuit.jpg" width=150 height=190 style="padding-top: 20px;" />
 <!-- <p><img class="rightimg" alt="Matt McLean" src="meoffice.jpg" width=250 height=165/> -->
-	<blockquote>
-    Research Assistant Professor <br />
-    <a href="http://iamcs.tamu.edu/">Institute for Applied Mathematics and Computational Science</a><br />
-    <a href="http://www.tamu.edu/">Texas A&M University</a><br />
-
-    <p>
+	<p>
+		Research Assistant Professor <br />
+		<a href="http://iamcs.tamu.edu/">Institute for Applied Mathematics and Computational Science</a><br />
+		<a href="http://www.tamu.edu/">Texas A&M University</a><br />
+	</p>
+   
   <!--  Email: mmclean [at] stat.tamu.edu<br />  -->
   <!-- <div id="emailDiv"></div> -->
+  <p>
   Email:
 <script type="text/javascript" language="javascript">
 <!--
@@ -174,19 +175,16 @@ document.write("<a href='mailto:"+link+"'>"+link+"</a>")
 }
 //-->
 </script><noscript>Get Javascript to see my email.</noscript>
-        <br />
-        <br />
+  </p>
+  <p>  
     I obtained my PhD in 2013 from the <a href="http://www.orie.cornell.edu/">School of ORIE</a> at <a href="http://www.cornell.edu/">Cornell University</a> <br />
-    under the supervision of <a href="http://people.orie.cornell.edu/davidr/index.html" target="_blank">David Ruppert</a> and <a href="http://www.bscb.cornell.edu/~hooker/" target="_blank">Giles Hooker</a>.
-    <br>
+    under the supervision of <a href="http://people.orie.cornell.edu/davidr/index.html" target="_blank">David Ruppert</a> and 
+	<a href="http://www.bscb.cornell.edu/~hooker/" target="_blank">Giles Hooker</a>.
+    
     I am currently working with <a href="http://www.stat.tamu.edu/~carroll/" target="_blank">Ray Carroll</a>.
+	</p>
 <!--    <a href="http://www.smart-stats.org/">SMART</a> working group<br /> -->
-    </p>
-    </p>
 
-    <br />
-    <br />
-	</blockquote>
     </div>
   </section>
 
@@ -198,47 +196,49 @@ document.write("<a href='mailto:"+link+"'>"+link+"</a>")
 
   <!--<div class="contentDiv">-->
   <section>
-    <div id="papers" style="display: none;">
+    <div id="papers" style="display: none;" class="contentDiv">
 
-	<blockquote style="padding-top: 10px;"> <h4> To Appear </h4> </blockquote>
+	<h4> To Appear </h4> 
 
-	<blockquote> <b> M. W. McLean</b>, <a href="http://www.bscb.cornell.edu/~hooker/" target="_blank">G. Hooker</a>, <a href="http://www4.stat.ncsu.edu/~staicu/" target="_blank">A.-M. Staicu</a>, <a href="http://www.statistik.lmu.de/~scheipl/" target="_blank">F. Scheipl</a>, <a href="http://people.orie.cornell.edu/davidr/index.html" target="_blank">D. Ruppert</a> (to appear).
+	<p>
+	 <b> M. W. McLean</b>, <a href="http://www.bscb.cornell.edu/~hooker/" target="_blank">G. Hooker</a>, <a href="http://www4.stat.ncsu.edu/~staicu/" target="_blank">A.-M. Staicu</a>, <a href="http://www.statistik.lmu.de/~scheipl/" target="_blank">F. Scheipl</a>, <a href="http://people.orie.cornell.edu/davidr/index.html" target="_blank">D. Ruppert</a> (to appear).
 	Functional Generalized Additive Models.
 	<i> Journal of Computational and Graphical Statistics. </i>
 	<br /> [<a href="http://www.tandfonline.com/eprint/jBTSxuMkDyX4N5IqFcpT/full" target="_blank">PDF from T&amp;F Online</a>
 	| <a href="Downloads/FGAMsupplement.zip">Supplementary Materials</a>]
-	</blockquote>
+	</p>
 
-	<blockquote> <h4> 2011 </h4> </blockquote>
+	<h4> 2011 </h4> 
 	
-	<blockquote> <a href="http://www.stat.cornell.edu/~matteson/"> D. S. Matteson</a>, <b> M. W. McLean</b>, <a href="http://people.orie.cornell.edu/woodard/"> D. B. Woodard</a> , <a href="http://people.orie.cornell.edu/shane/"> S. G. Henderson</a> (2011).
+	<p> <a href="http://www.stat.cornell.edu/~matteson/"> D. S. Matteson</a>, <b> M. W. McLean</b>, <a href="http://people.orie.cornell.edu/woodard/"> D. B. Woodard</a> , <a href="http://people.orie.cornell.edu/shane/"> S. G. Henderson</a> (2011).
         Forecasting emergency medical service call arrival rates.
 	<i> Annals of Applied Statistics, </i>
 	<b>5(2B)</b>1379-1406.
 	<br /> [<a href="http://projecteuclid.org/DPubS?service=UI&version=1.0&verb=Display&handle=euclid.aoas/1310562725" target="_blank">PDF from ProjectEuclid</a>
         | <a href="Downloads/FEMSCARsupplement.zip">Supplementary Materials</a>]
-	</blockquote>
+	</p>
 
 
-    <blockquote> <h4> Submitted/In Preparation </h4> </blockquote>
+    <h4> Submitted/In Preparation </h4>
 
-	<blockquote>  <b> M. W. McLean</b>, <a href="http://www.statistik.lmu.de/~scheipl/" target="_blank">F. Scheipl</a>, <a href="http://www.bscb.cornell.edu/~hooker/" target="_blank">G. Hooker</a>, <a href="http://www.stat.uni-muenchen.de/~greven/index_e.html" target="_blank">S. Greven</a>, <a href="http://people.orie.cornell.edu/davidr/index.html" target="_blank">D. Ruppert</a>.  (Submitted).	 Bayesian Functional Generalized Additive Models for Sparsely Observed Covariates.
+	<p>  
+	  <b> M. W. McLean</b>, <a href="http://www.statistik.lmu.de/~scheipl/" target="_blank">F. Scheipl</a>, <a href="http://www.bscb.cornell.edu/~hooker/" target="_blank">G. Hooker</a>, <a href="http://www.stat.uni-muenchen.de/~greven/index_e.html" target="_blank">S. Greven</a>, <a href="http://people.orie.cornell.edu/davidr/index.html" target="_blank">D. Ruppert</a>.  (Submitted).	 Bayesian Functional Generalized Additive Models for Sparsely Observed Covariates.
         <br /> [<a href="http://arxiv.org/abs/1305.3585" target="_blank">PDF from arXiv</a>]
-	</blockquote>
+	</p>
 
-	<blockquote>   <b> M. W. McLean</b>, <a href="http://www.bscb.cornell.edu/~hooker/" target="_blank">G. Hooker</a>, <a href="http://people.orie.cornell.edu/davidr/index.html" target="_blank">D. Ruppert</a>.
+	<p>   
+	  <b> M. W. McLean</b>, <a href="http://www.bscb.cornell.edu/~hooker/" target="_blank">G. Hooker</a>, <a href="http://people.orie.cornell.edu/davidr/index.html" target="_blank">D. Ruppert</a>.
 	(Submitted).  Restricted Likelihood Ratio Tests for Linearity in Scalar-on-Function Regression.
 	<br />
 	[<a href="http://arxiv.org/abs/1310.5811" target="_blank">PDF from arXiv</a>]
-	</blockquote>
+	</p>
 <!--
 	<blockquote>   <b> M. W. McLean</b>, <a href="http://www.bscb.cornell.edu/~hooker/" target="_blank">G. Hooker</a>, <a href="http://people.orie.cornell.edu/davidr/index.html" target="_blank">D. Ruppert</a>.
 	Bayes Factors for Penalized Splines Using Generalized g-Priors.
 	</blockquote> -->
-    <blockquote> <h4> PhD Thesis</h4> </blockquote>
+    <h4> PhD Thesis</h4> 
 
-	<blockquote>  On Generalized Additive Models for Regression with Functional Data. (2013) School of Operations Research and Information Engineering, Cornell University.
-	</blockquote>
+	<p>  On Generalized Additive Models for Regression with Functional Data. (2013) School of Operations Research and Information Engineering, Cornell University.</p>
 
     <br />
 
@@ -250,21 +250,20 @@ document.write("<a href='mailto:"+link+"'>"+link+"</a>")
   <div style="clear:both;"></div>
 
   <!--<div class="contentDiv">-->
-  <section>
-    <div id="talks" style="display: none;">
+  
+    <section id="talks" style="display: none;"  class="contentDiv">
 
-	<blockquote style="padding-top: 10px;"> <h4> Functional Generalized Additive Models </h4> </blockquote>
+	<h4> Functional Generalized Additive Models </h4> 
 
-	<blockquote> Annual Meeting of the German and Austrian Statistical Associations, Vienna, Austria (2012)
+	<p> Annual Meeting of the German and Austrian Statistical Associations, Vienna, Austria (2012)
 	<br /> [<a href="Downloads/FGAMviennatalk.pdf" target="_blank">Slides (PDF)</a>]
-	</blockquote>
+	</p>
 
-	<blockquote> ORIE PhD Colloquium, Ithaca, NY (2012)
+	<p> ORIE PhD Colloquium, Ithaca, NY (2012)
 	<br /> [<a href="Downloads/FGAMphdcolloq.pdf" target="_blank">Slides (PDF)</a>]
-	</blockquote>
+	</p>
     
 	<hr width=100% size=3 align="center" color=#6a6a6a>
-	<blockquote>
 	<h3> Posters </h3>
 
 	 <h4> Functional Generalized Additive Models </h4> 
@@ -278,10 +277,9 @@ document.write("<a href='mailto:"+link+"'>"+link+"</a>")
         <br /> 
 		Imaging, Communications and Finance: Stochastic Modeling of Real-world Problems, New York, NY (2011)
 	<br /> [<a href="Downloads/FGAMposter.pdf" target="_blank">Poster (PDF)</a>]
-	</blockquote>
     <br />
 
-    </div>
+    <!-- </div>-->
   </section>
 
 <!--Research-->

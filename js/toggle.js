@@ -19,12 +19,9 @@ function toggle(showHideDiv, t1, t2, t3, t4, t5, t6) {
 	// change background of current navDiv
 	$(".navDiv a").each(function(){
 		if($.trim(this.innerHTML.toLowerCase()) == $.trim(showHideDiv)){
-		console.log($(this).css( "background-color"));
 			$(this).parent().css( "background-color", "#ffff80" );
 			$(this).css( "border-bottom", "#ffff80" );
 		}else{
-			console.log("blah"=="blah");
-			console.log(this.innerHTML.toLowerCase() + "+" + showHideDiv);
 			$(this).parent().css("background-color", "#FFFFFF");
 			$(this).css( "border-bottom", "#FFFFFF" );
 		}
