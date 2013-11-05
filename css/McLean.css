@@ -49,14 +49,17 @@ header h1 {
 
 .navDiv {
    /* float: left; */
-    width: 92px;
+    width: 97px;
     background-color: #FFFFFF;
 	display: inline-block;
     color: #5B447A;
 	font-weight: normal;
 	letter-spacing: -1px;
     font-size: 25px;
-    margin: 0px 8px 0px 0px;
+    margin: 2px 4px 2px 0px;
+	 line-height: 40px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
 	/*line-height: 35px;*/
 }
 .navDiv:hover {

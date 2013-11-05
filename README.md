@@ -21,7 +21,11 @@ Changes to webpage
 1) changed styling of tt and code tags to match GitHub  
 2) currently selected navDiv made different colour from other navDivs  
 3) In light of 2), removed headings from each div -- this will probably mess up document outline  
-3) used padding attribute to contentDiv to remove reliance on blockquote 
+3) used padding attribute to contentDiv (section element) to remove reliance on blockquote 
 4) changed toggle.js to only take one argument and use jquery 
+
+### 2013-11-05
+1) Made navigation divs have rounded border (border-radius attribute)
+2) fix issue with underline extending below border of navigation divs (line height and margin attributes)
 
 
