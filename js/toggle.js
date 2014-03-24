@@ -17,6 +17,13 @@ function toggle(divToShow) {
 			$(this).parent().css("background-color", "#FFFFFF");
 			$(this).css( "border-bottom", "#FFFFFF" );
 		}
+		// handle cv div specially
+		if ($.trim(this.innerHTML.toLowerCase()) == "html" && divToShow == "cv"){
+		   
+			$( "div.navDiv.nav-menu" ).css( "background-color", "#ffff80" );
+		}else if ($.trim(this.innerHTML.toLowerCase()) == "html"){
+			$( "div.navDiv.nav-menu" ).css("background-color", "#FFFFFF");
+		}
 	});
 	
 	//display thank you to Jeff if browser window at least as big as specified size

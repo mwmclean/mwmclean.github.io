@@ -45,6 +45,7 @@ header h1 {
   background-color: #FFFFFF;
   padding: 10px 5px 20px 10px;
   margin: 10px 0px 10px 0px;
+  position: relative;
 }
 
 .navDiv {
@@ -53,6 +54,7 @@ header h1 {
     background-color: #FFFFFF;
 	display: inline-block;
     color: #5B447A;
+	position: relative;
 	font-weight: normal;
 	letter-spacing: -1px;
     font-size: 25px;
@@ -65,6 +67,20 @@ header h1 {
 .navDiv:hover {
      color: #500000;
      background-color: #FFFFFF;
+}
+
+.hr-inner{
+  height: 3px;
+  align: center;
+  color: #6a6a6a;
+  background-color: #6a6a6a;
+}
+
+.hr-outer{
+  height: 5px;
+  align: center;
+  color: #F8F8FF;
+  background-color: #F8F8FF;
 }
 
 section h1 {
@@ -89,7 +105,7 @@ h1, h2, h3, h4, h5, h6{
   padding: 0px;
  }
 
-code, tt {
+code {
 	margin: 0 2px;
 	padding: 0px 5px;
 	border: 1px solid #ddd;
@@ -124,9 +140,22 @@ img, object{
 }
 
 #showShiny, #showJeff{
-       border-bottom: #500000 solid;
+    border-bottom: #500000 solid;
+	color: #6a6a6a;
 }
-
+#thanks{
+	color: #6a6a6a;
+}
 a#showShiny:hover, a#showJeff:hover{
 	 border-bottom: #FFFFFF solid;	
+}
+footer table{
+  text-align: center;
+}
+#footer-left{
+ color: #F8F8FF;
+ text-align: left;
+}
+#footer-right img{
+  margin-left: 50px;
 }

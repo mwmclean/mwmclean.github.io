@@ -1,0 +1,97 @@
+div.nav-menu ul
+{
+list-style: none;
+padding:0;
+margin: 0px;
+}
+/*
+div.nav-menu ul li
+{
+float:left;
+margin: 0 0;
+height:75px;
+}
+*/
+div.nav-menu ul li a
+{
+	background: url(./img/bg.gif) #fff top left repeat-x;
+	height: 36px;
+	line-height: 2em;
+	float: left;
+	width: 75px;
+	border: 0;
+	text-decoration: none;
+	font-size:18px;
+	text-align: center;
+	padding-bottom: 6px;
+}
+
+div.nav-menu ul li a:hover
+{
+background: url(./img/bg1.gif) #fff top left repeat-x;
+}
+
+div.nav-menu ul li ul
+{
+	margin:0;
+	padding:0;
+	display:none;
+	background-color:#999;
+	width: 90px;
+	left:0px;
+	top:40px;
+	z-index: 100;
+}
+
+div.nav-menu ul li:hover ul
+{
+display:block;
+position:absolute;
+height:0px;
+width:75px;
+z-index: 100;
+}
+
+div.nav-menu ul li ul li
+{
+list-style:none;
+display:list-item;
+width: 75px;
+height:25px;
+padding:0;
+margin-bottom: 6px;
+border-width: 1px;
+/* border-style: none solid solid solid ; */
+-moz-border-radius: 15px;
+border-radius: 15px;
+border-color: #BABABA;
+text-align: center;
+}
+
+div.nav-menu ul li:hover ul li a
+{
+	color:#000; 
+	text-decoration: none;
+	width: 75px;
+	height: 25px;
+	text-align:center;
+	background: none;
+	background-color:#E6E5E6;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	display:block;
+	position:absolute;
+	z-index: 100;
+}
+
+div.nav-menu ul li:hover ul li a:hover
+{
+	color:#000; 
+	text-decoration:underline;
+	background: none;
+	background-color:#E6E5E6;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	display:block;
+    position:absolute;
+}
