@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Real-time Semiparametric Regression</title>
+<link rel="stylesheet" href="./styles.css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
+<script type="text/javascript" src="./misc.js"></script>
+
+   <script type="text/javascript">
+      $(document).ready(function() {
+        setInterval( function() {
+          $(["result1", "result2","result3","result4","result5","result6","result8"]).map(
+                 function( idx , id ){
+                   $("#" + id).attr( "src" , id + ".png" + "?ign=" + (new Date()).valueOf() );
+                 } );
+          $("#updateMessage").text( "Last refresh was at " + formatted_time() + "." );
+        } , 60000 );
+      } );
+    </script>
+
+</head>
+
+<body>
+
+<br>
+<center><font size=100>U.S. domestic flight data</font></center>
+<br>
+
+<center>
+
+<table>
+<tr>
+<td><img id="result1" src="result1.png" width="640px"></td>
+<td><img id="result6" src="result6.png" height="640px"></td>
+</tr>
+<tr>
+<td align="center" valign="top">Geographical map of North America with most recently (i.e. during
+the last minutes) processed U.S. <br> domestic flights. Yellow points and dashed lines indicate airports and flights, respectively. The <br> total number of processed flights is included at the
+bottom. </td>
+<td align="center" valign="top">The approximate posterior density functions related to the METAR flight <br> category at departure and arrival airport: marginal visual flight rules, <br> instrument flight rules and low instrument flight rules versus visual flight rules.</td>
+</tr>
+</table>
+
+<p>
+<br>
+<p>
+
+<table>
+<tr>
+<td><img id="result8" src="result8.png" width="1140px"></td>
+</tr>
+<tr>
+<td align="center" valign="top">Regression fits and 95% credible sets for temperature, wind speed and flight distance. The former two are available for both the departure and arrival airport.</td>
+</tr>
+</table>
+
+<p>
+<br>
+<p>
+
+<table>
+<tr>
+<td><img id="result4" src="result4.png" width="500px" />
+<td><img id="result5" src="result5.png" width="500px" /></td>
+</tr>
+<tr>
+<td align="center" valign="top">Airlines having lowest delays</td>
+<td align="center" valign="top">Airlines having highest delays</td>
+</tr>
+</table>
+
+<p>
+<br>
+<p>
+
+<table>
+<tr>
+<td><img id="result2" src="result2.png" width="800px" />
+</tr>
+<tr>
+<td align="center" valign="top">Flight paths having lowest delays</td>
+</tr>
+</table>
+
+<p>
+<br>
+<p>
+
+<table>
+<tr>
+<td><img id="result3" src="result3.png" width="800px" /></td>
+</tr>
+<tr>
+<td align="center" valign="top">Flight paths having highest delays</td>
+</tr>
+</table>
+
+</center>
+
+
+<p>This data will be updated every few minutes.
+<span id="updateMessage"></span>
+</p>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-34649213-4']);
+  _gaq.push(['_setDomainName', 'realtime-semiparametric-regression.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+</body>
+</html>
+
+
+
+

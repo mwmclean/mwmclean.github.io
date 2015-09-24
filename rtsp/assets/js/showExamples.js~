@@ -1,0 +1,4 @@
+function toggle(exToShow){
+    window.location.href = "Example/index.html";
+    $(exToShow).trigger("click");
+}

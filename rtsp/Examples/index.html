@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Examples of real-time semiparametric regression">
+    <meta name="author" content="University of Technology Sydney">
+    <link rel="icon" href="../assets/img/UTSemblem.ico">
+
+    <title>Real-time Semiparametric Regression</title>
+    <!-- <link rel="stylesheet" href="styles.css" /> -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/rtspr.css" rel="stylesheet">
+    <!-- <link href="../assets/css/Examples.css" rel="stylesheet"> -->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="../assets/js/showExample.js" rel="stylesheet"></script>
+  </head>
+  <body> 
+
+    <nav class="navbar navbar-light bg-faded">
+      <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse"
+	      data-target="#navbar">
+	&#9776;
+      </button>
+      <div class="collapse navbar-toggleable-xs" id="navbar">
+	<a class="navbar-brand" href="../index.html">Real-time Semiparametric Regression</a>
+	<ul class="nav navbar-nav">
+	  <li class="nav-item">
+	    <a class="nav-link" href="../index.html">Home</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link" href="../About/">About</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link active" href="index.html">Examples
+	      <span class="sr-only">(current)</span></a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link" href="../Resources/">Resources</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link" href="../Contact/">Contact</a>
+	  </li>
+	</ul>
+      </div>
+    </nav>
+    </br>
+    <!-- PANELS for examples  
+     ================================== -->
+<div class = "container-fluid">
+<!-- <div class = "row"> -->
+    <div class="panel panel-default">
+      <div class="panel-heading">
+	<h3 class="panel-title">
+	  <script type="text/javascript">
+	    $('body').on('click', '#rental-btn',
+	      function(){
+		<!-- $('#test-span').html("Hi you clicked a button!"); -->
+		$("#ex-rental").load("../SydneyRealEstate/index.html");
+		<!-- $("#nav-footer").className += " navbar-static-bottom"; -->
+		<!-- console.log($("#nav-footer").className); -->
+		<!-- $("#nav-footer").className = -->
+		<!--  $("#nav-footer").className.replace -->
+		<!-- ( /(?:^|\s)navbar-fixed-bottom(?!\S)/g , '' ) -->
+		$("#nav-footer").toggleClass("navbar-static-bottom");
+		$("#nav-footer").toggleClass("navbar-fixed-bottom");		
+  	      });
+
+		<!-- Change navbar from fixed to static when example expands -->
+                <!-- document.getElementById("rental-btn").className += " navbar-static-bottom";		 -->
+		<!-- document.getElementById("nav-footer").className = -->
+		<!--  document.getElementById("nav-footer").className.replace -->
+		<!-- ( /(?:^|\s)navbar-fixed-bottom(?!\S)/g , '' ) -->
+<!-- Explanation of regex:
+<!--		(?:^|\s) # match the start of the string, or any single whitespace character -->
+
+<!-- MyClass  # the literal text for the classname to remove -->
+
+<!-- (?!\S)   # negative lookahead to verify the above is the whole classname -->
+<!--          # ensures there is no non-space character following -->
+<!--          # (i.e. must be end of string or a space) -->
+	  </script>
+	  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="collapse"
+		  data-target="#ex-rental" aria-expanded="false" id = "rental-btn">
+	    Sydney property rental data
+	    <!-- <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span> -->
+	  </button>
+	</h3>
+      </div>
+      <div class="panel-body collapse" aria-expanded="false" id = "ex-rental">
+	<!-- <script type="text/javascript"> -->
+	<!--   $('#test-span').html("Hi you clicked a button!"); -->
+	<!--   console.log('hello'); -->
+	<!--   </script> -->
+
+        <!-- <span id="test-span">&nbsp;</span> -->
+	<!-- <table> -->
+	<!--   <tr> -->
+	<!--     <td> -->
+	<!--       <img id="result2" src="../assets/img/rental/result2.png" width="640px"> -->
+	<!--     </td> -->
+	<!--     <td> -->
+	<!--       <img id="result1" src="../assets/img/rental/result1.png" width="640px"> -->
+	<!--     </td> -->
+	<!--     <td> -->
+	<!--       <img id="colorMap" src="../assets/img/rental/colorMap.png" width="80px"> -->
+	<!--     </td> -->
+	<!--   </tr> -->
+	<!--   <tr> -->
+	<!--     <td align="center" valign="top"> -->
+	<!--       Geographical map of Sydney with processed properties as small black dots and recently (i.e. during the last hour) added ones as yellow circles. The total number of processed properties is included at the bottom right. -->
+	<!--     </td> -->
+	<!--     <td align="center" valign="top">Color-coded geographical map of Sydney displaying the weekly rent for a two bedroom apartment with one bathroom and one car space for various geographical locations. -->
+	<!--     </td> -->
+	<!--   </tr> -->
+	<!-- </table> -->
+
+	<!-- <table> -->
+	<!--   <tr> -->
+	<!--     <th rowspan="2"> -->
+	<!--       <img id="result3" src="../assets/img/rental/result3.png" width="640px"> -->
+	<!--     </th> -->
+	<!--     <th rowspan="2" width="70"></th> -->
+	<!--     <td> -->
+	<!--       <img id="result4" src="../assets/img/rental/result4.png" width="500px"> -->
+	<!--     </td> -->
+	<!--   </tr> -->
+	<!--   <tr> -->
+	<!--     <td> -->
+	<!--       <img id="result5" src="../assets/img/rental/result5.png" width="500px" /> -->
+	<!--     </td> -->
+	<!--   </tr> -->
+	<!--   <tr> -->
+	<!--     <td align="center" valign="top"> -->
+	<!--       The approximate posterior density function for the impact of the property being a house or not. Regression fits and 95% credible sets for the number of bedrooms, bathrooms and car spaces for apartments. -->
+	<!--     </td> -->
+	<!--     <td align="center" valign="top"> List of rental agencies with the least and most expensive properties, after correcting for all -->
+	<!--     other covariates. -->
+	<!--     </td> -->
+	<!--   </tr> -->
+	<!-- </table> -->
+
+	<!-- <p>This data will be updated every hour. -->
+	<!--   <span id="updateMessage"></span> -->
+	<!-- </p> -->
+      </div> <!-- end panel-body -->
+    </div>  <!-- end panel for rental ex. -->
+
+    <!-- Flight data example
+	 =============================== -->
+    
+    <div class="panel panel-default">
+      <div class="panel-heading">
+	<h3 class="panel-title">
+	  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="collapse"
+		  data-target="#ex-flight" aria-expanded="false" id = "flight-btn">
+                  U.S. domestic flight data
+	    <!-- <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span> -->
+	  </button>
+	</h3>
+      </div>
+      <div class="panel-body collapse" aria-expanded="false" id = "ex-flight">    
+      </div>
+    </div>
+</div>
+<!-- </div> -->
+    <!-- End panels -->
+    <!-- <div class="list-group"> -->
+    <!--   <a href="#" class="list-group-item active"> -->
+    <!-- 	Cras justo odio -->
+    <!--   </a> -->
+    <!--   <a href="#" class="list-group-item">Dapibus ac facilisis in</a> -->
+    <!--   <a href="#" class="list-group-item">Morbi leo risus</a> -->
+    <!--   <a href="#" class="list-group-item">Porta ac consectetur ac</a> -->
+    <!--   <a href="#" class="list-group-item">Vestibulum at eros</a> -->
+    <!-- </div> -->
+      <footer class="footer-sb bg-footer">
+	
+	<div class="container-fluid">
+	  <nav class="navbar navbar-default navbar-fixed-bottom" id="nav-footer">
+
+	  <!--     <div class="navbar-header"> -->
+	  <!-- 	<button type="button" class="navbar-toggle" data-toggle="collapse" -->
+	  <!-- 		data-target="#footer-navbar"> -->
+	  <!-- 	  <span class="icon-bar"></span> -->
+	  <!-- 	  <span class="icon-bar"></span> -->
+	  <!-- 	  <span class="icon-bar"></span> -->
+	  <!-- 	</button>     -->
+	  <!--     </div> -->
+
+	    <a href="http://uts.edu.au" id="UTSemblem-footer" class="nav navbar-nav">
+		<img src="../assets/img/UTSemblem.png" height="50px" width="33px">
+	    </a>
+	  <!-- <div class="navbar-collapse collapse" id = "footer-navbar"> -->
+
+	    <ul class="nav navbar-nav">
+	      <li><a href="About/"></a>About</li> &middot;
+	      <li><a href="Contact/">Team Members</a></li>
+	    <!-- </ul> -->
+
+	    <!-- <ul class="nav navbar-nav push-right"> -->
+	      <li><a href="javascript:location='mailto:\u006d\u0061\u0074\u0068\u0065\u0077\u002e\u006d\u0063\u006c\u0065\u0061\u006e\u0040\u0075\u0074\u0073\u002e\u0065\u0064\u0075\u002e\u0061\u0075';void 0">
+		  Email</a></li>
+	      <li>&copy; <a href="http://stat.tamu.edu/~mmclean">Mathew W. McLean</a> </li>
+	    </ul>
+	  <!-- <p class="navbar-text"> -->
+	  <!--   &copy; <a href="http://stat.tamu.edu/~mmclean">Mathew W. McLean</a> &middot; -->
+	  <!--   <a href="javascript:location='mailto:\u006d\u0061\u0074\u0068\u0065\u0077\u002e\u006d\u0063\u006c\u0065\u0061\u006e\u0040\u0075\u0074\u0073\u002e\u0065\u0064\u0075\u002e\u0061\u0075';void 0"> -->
+	  <!-- 	Email</a> -->
+	  <!-- </p> -->
+
+	  <!-- </div> -->
+	  </nav>
+	</div>
+      </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

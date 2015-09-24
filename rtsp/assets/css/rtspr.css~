@@ -1,0 +1,4 @@
+footer > img{
+    border: 0;
+    verticle-align: bottom;
+}

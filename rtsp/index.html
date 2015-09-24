@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Examples of real-time semiparametric regression">
+    <meta name="author" content="University of Technology Sydney">
+    <link rel="icon" href="assets/img/UTSemblem.ico">
+
+    <title>Real-time Semiparametric Regression</title>
+    <!-- <link rel="stylesheet" href="styles.css" /> -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/rtspr.css" rel="stylesheet">
+  </head>
+  <body> <!-- BGCOLOR=steelblue TEXT=snow LINK=99FFFF >  -->
+
+    <!-- <div class="navbar-wrapper"> -->
+    <!--   <div class="container"> -->
+    <!--     <nav class="navbar navbar-default navbar-fixed-top"> -->
+    <!--       <div class="container"> -->
+    <!--         <div class="navbar-header"> -->
+    <!--           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#theNavbar"> <\!-- aria-expanded="true" aria-controls="navbar"> -\-> -->
+    <!--             <span class="sr-only">Toggle navigation</span> -->
+    <!--             <span class="icon-bar"></span> -->
+    <!--             <span class="icon-bar"></span> -->
+    <!--             <span class="icon-bar"></span> -->
+    <!--           </button> -->
+    <!--           <a class="navbar-brand" href="#">Real-time semiparametric regression</a> -->
+    <!--         </div> -->
+    <!--         <div id="theNavbar" class="navbar-collapse collapse"> -->
+    <!--           <ul class="nav navbar-nav"> -->
+    <!--             <li class="active"><a href="#">Home</a></li> -->
+    <!--             <li><a href="About/">About</a></li> -->
+    <!--             <li><a href="Examples/">Examples</a></li> -->
+    <!--             <li><a href="References/">References</a></li> -->
+    <!--             <li><a href="Contact/">Contact</a></li> -->
+    <!--           </ul> -->
+    <!--         </div> -->
+    <!--       </div> -->
+    <!--     </nav> -->
+    <!--   </div> -->
+    <!-- </div> -->
+    <nav class="navbar navbar-light bg-faded">
+      <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse"
+	      data-target="#navbar">
+	&#9776;
+      </button>
+      <div class="collapse navbar-toggleable-xs" id="navbar">
+	<a class="navbar-brand" href="#">Real-time Semiparametric Regression</a>
+	<ul class="nav navbar-nav">
+	  <li class="nav-item active">
+	    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link" href="About/">About</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link" href="Examples/index.html">Examples</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link" href="Resources/">Resources</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link" href="Contact/">Contact</a>
+	  </li>
+	</ul>
+      </div>
+    </nav>
+
+<!-- <nav class="navbar navbar-light bg-faded"> -->
+<!--   <a class="navbar-brand" href="#">Navbar</a> -->
+<!--   <ul class="nav navbar-nav"> -->
+<!--     <li class="nav-item active"> -->
+<!--       <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> -->
+<!--     </li> -->
+<!--     <li class="nav-item"> -->
+<!--       <a class="nav-link" href="#">Features</a> -->
+<!--     </li> -->
+<!--     <li class="nav-item"> -->
+<!--       <a class="nav-link" href="#">Pricing</a> -->
+<!--     </li> -->
+<!--     <li class="nav-item"> -->
+<!--       <a class="nav-link" href="#">About</a> -->
+<!--     </li> -->
+<!--   </ul> -->
+<!--   <form class="form-inline navbar-form pull-right"> -->
+<!--     <input class="form-control" type="text" placeholder="Search"> -->
+<!--     <button class="btn btn-success-outline" type="submit">Search</button> -->
+<!--   </form> -->
+<!-- </nav> -->
+    <!-- <nav class="navbar navbar-default navbar-static-top"> -->
+    <!--   <a href="#" class="navbar-brand">Carousel</a> -->
+    <!--   <ul class="nav nav-pills"> -->
+    <!--     <li class="nav-item active navbar-right"> -->
+    <!--       <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> -->
+    <!--     </li> -->
+    <!--     <li class="nav-item navbar-right"> -->
+    <!--       <a class="nav-link" href="#">About</a> -->
+    <!--     </li> -->
+    <!--     <li class="nav-item navbar-right"> -->
+    <!--       <a class="nav-link" href="#">Examples</a> -->
+    <!--     </li> -->
+    <!--     <li class="nav-item"> -->
+    <!--       <a class="nav-link" href="#">References/</a> -->
+    <!--     </li> -->
+	
+    <!--   </ul> -->
+    <!-- </nav> -->
+
+    <div class="container">
+      
+    <!-- FEATURETTES 
+	 =========================================== -->
+
+      <hr class="featurette-divider">
+	<!-- <a href="javascript:showExample('rental-btn');"> -->
+      <a href="Examples/index.html?ex=rental">
+        <div class="row featurette">
+	  <div class="col-md-7">
+	    <h2 class="featurette-heading">Sydney Real Estate Analysis
+	      <!-- <span class="text-muted">It'll blow your mind.</span> -->
+	    </h2>
+	    <p class="lead">
+	      Real-time analysis of property rental market in Sydney,
+	      Australia.  Weekly rent is modelled using a form of semiparametric
+	      regression known as geoadditive models.
+	    </p>
+	  </div>
+	  <div class="col-md-5">
+	    <img class="featurette-image img-responsive center-block"
+		 src="SydneyRealEstate/result2.png" alt="Sydney Rental Data">
+	  </div>
+	</div>
+      </a>
+      
+
+      <hr class="featurette-divider">
+
+      <a href="Examples/index.html?ex=flight">	
+	<div class="row featurette">
+	  <div class="col-md-7 col-md-push-5">
+	    <h2 class="featurette-heading">United States Domestic Flight Data
+	      <!-- <span class="text-muted">See for yourself.</span> -->
+	    </h2>
+	    <p class="lead">
+	      Real-time analysis of delays in U.S. domestic airline flights
+	      using data on flight distance, operating airline, flight path,
+	      temperature, wind speed, and aviation flight category.
+	    </p>
+	  </div>
+	  <div class="col-md-5 col-md-pull-7">
+	    <img class="featurette-image img-responsive center-block"
+		 src="FlightData/result1.png" alt="U.S. Flight Data">
+	  </div>
+	</div>
+      </a>
+      <hr class="featurette-divider">
+
+      <!-- /END THE FEATURETTES -->
+
+      <!-- <\!-- OLD FOOTER -\-> -->
+      <!-- <footer> -->
+      <!--   <p class="pull-right"><a href="#">Back to top</a></p> -->
+      <!--   <p>&copy; <a href="http://stat.tamu.edu/~mmclean">Mathew W. McLean</a> &middot; <a href="Contact/">Contact</a> &middot; <a href="#">Terms</a></p> -->
+      <!-- </footer> -->
+<!-- Footer
+================================================== -->
+      <footer class="footer-sb bg-footer">
+	<div class="container">
+	    <div class="row">
+	      <h2 class="col-sm-10 col-sm-offset-1 text-center">
+		<a href="Examples/" id="footer-more">More Examples</a>
+	      </h2>
+	    </div>
+	</div>
+	
+        <!-- <p class="pull-right"> -->
+	<!--   <a href="#">Back to top</a> -->
+	<!--   <a href="http://uts.edu.au" class="navbar-brand pull-right"> -->
+	<!--     <img src="assets/img/UTSemblem.ico" width="60" height="50"> -->
+	<!--   </a>   -->
+	<!-- </p> -->
+        <!-- <p>&copy; <a href="http://stat.tamu.edu/~mmclean">Mathew W. McLean</a> &middot; -->
+	<!--   <a href="javascript:location='mailto:\u006d\u0061\u0074\u0068\u0065\u0077\u002e\u006d\u0063\u006c\u0065\u0061\u006e\u0040\u0075\u0074\u0073\u002e\u0065\u0064\u0075\u002e\u0061\u0075';void 0">Contact</a> <\!-- &middot; <a href="#">Terms</a> -\-> -->
+	<!-- </p> -->
+	<!-- <div class = "container"> -->
+	<!--   <a href="http://uts.edu.au" class="navbar-brand pull-right" id = "UTSemblem-footer"> -->
+	<!--     <img src="assets/img/UTSemblem.ico" width="60" height="50"> -->
+	<!--   </a> -->
+	<!-- </div> -->
+
+	<div class="container">
+	  <nav class="navbar navbar-default navbar-static-bottom" id="nav-footer">
+
+	  <!--     <div class="navbar-header"> -->
+	  <!-- 	<button type="button" class="navbar-toggle" data-toggle="collapse" -->
+	  <!-- 		data-target="#footer-navbar"> -->
+	  <!-- 	  <span class="icon-bar"></span> -->
+	  <!-- 	  <span class="icon-bar"></span> -->
+	  <!-- 	  <span class="icon-bar"></span> -->
+	  <!-- 	</button>     -->
+	  <!--     </div> -->
+
+	    <a href="http://uts.edu.au" id="UTSemblem-footer" class="nav navbar-nav">
+		<img src="assets/img/UTSemblem.png" width="33" height="50">
+	    </a>
+	  <!-- <div class="navbar-collapse collapse" id = "footer-navbar"> -->
+
+	    <ul class="nav navbar-nav">
+	      <li><a href="About/"></a>About</li> &middot;
+	      <li><a href="Contact/">Team Members</a></li>
+	    <!-- </ul> -->
+
+	    <!-- <ul class="nav navbar-nav push-right"> -->
+	      <li><a href="javascript:location='mailto:\u006d\u0061\u0074\u0068\u0065\u0077\u002e\u006d\u0063\u006c\u0065\u0061\u006e\u0040\u0075\u0074\u0073\u002e\u0065\u0064\u0075\u002e\u0061\u0075';void 0">
+		  Email</a></li>
+	      <li>&copy; <a href="http://stat.tamu.edu/~mmclean">Mathew W. McLean</a> </li>
+	    </ul>
+	  <!-- <p class="navbar-text"> -->
+	  <!--   &copy; <a href="http://stat.tamu.edu/~mmclean">Mathew W. McLean</a> &middot; -->
+	  <!--   <a href="javascript:location='mailto:\u006d\u0061\u0074\u0068\u0065\u0077\u002e\u006d\u0063\u006c\u0065\u0061\u006e\u0040\u0075\u0074\u0073\u002e\u0065\u0064\u0075\u002e\u0061\u0075';void 0"> -->
+	  <!-- 	Email</a> -->
+	  <!-- </p> -->
+
+	  <!-- </div> -->
+	  </nav>
+	</div>
+      </footer>
+
+	<!--     <nav class="pull-left"> -->
+	<!-- 	<ul> -->
+	<!-- 	    <li><a href="Members/"></a>Members</li> -->
+	<!-- 	    <li><a href="javascript:location='mailto:\u006d\u0061\u0074\u0068\u0065\u0077\u002e\u006d\u0063\u006c\u0065\u0061\u006e\u0040\u0075\u0074\u0073\u002e\u0065\u0064\u0075\u002e\u0061\u0075';void 0">Contact</a></li> -->
+	<!-- 	</ul> -->
+	<!--     </nav> -->
+	<!--     <div class="pull-right"> -->
+	<!--       &copy; <a href="http://stat.tamu.edu/~mmclean">Mathew W. McLean</a> -->
+  	<!-- 	<a href="http://uts.edu.au"> -->
+	<!--           <img src="assets/img/UTSemblem.ico" width="60" height="50">	 -->
+	<!-- 	</a> -->
+	<!--     </div> -->
+
+	<!--     </div> -->
+	<!-- <nav class="navbar navbar-default navbar-fixed-bottom"> -->
+	<!--   <div class="container-fluid"> -->
+	<!-- 	<ul class="nav navbar-nav navbar-custom"> -->
+	<!-- 	    <li><a href="About/"></a>About</li> -->
+	<!-- 	    <li><a href="javascript:location='mailto:\u006d\u0061\u0074\u0068\u0065\u0077\u002e\u006d\u0063\u006c\u0065\u0061\u006e\u0040\u0075\u0074\u0073\u002e\u0065\u0064\u0075\u002e\u0061\u0075';void 0">Contact</a></li> -->
+	<!-- 	</ul> -->
+	<!--       <\!-- <div class="container"> -\-> -->
+
+	<!--       <\!-- </div> -\-> -->
+	<!--       <p class="navbar-text navbar-custom navbar-right"> -->
+	<!-- 	  &copy; <a href="http://stat.tamu.edu/~mmclean" class = "navbar-text">Mathew W. McLean</a> -->
+	<!-- 	  </p> -->
+	<!-- 	  <\!-- <div class="navbar-brand pull-right"> -\-> -->
+	<!-- 	    <a href="http://uts.edu.au" class="navbar-brand pull-right"> -->
+	<!-- 	      <img src="assets/img/UTSemblem.ico" width="60" height="50">	 -->
+	<!-- 	    </a> -->
+
+	<!-- 	</ul> -->
+	      <!-- 	<ul class="nav navbar-nav navbar-custom pull-right"> -->
+	      <!-- <\!-- <p class="navbar-text pull-right"> -\-> -->
+	      <!-- 	  <li>&copy; <a href="http://stat.tamu.edu/~mmclean" class = "navbar-text">Mathew W. McLean</a> -->
+	      <!-- 	  </li> -->
+	      <!-- 	  <\!-- </p> -\-> -->
+	      <!-- 	  <\!-- <div class="navbar-brand pull-right"> -\-> -->
+	      <!-- 	  <li> -->
+	      <!-- 	    <a href="http://uts.edu.au" class="navbar-brand"> -->
+	      <!-- 	      <img src="assets/img/UTSemblem.ico" width="60" height="50">	 -->
+	      <!-- 	    </a> -->
+	      <!-- 	  </li> -->
+
+	      <!-- 	</ul> -->
+	      <!-- </div> -->
+    <!--     </div> -->
+		
+    <!--   </nav> -->
+    <!-- </footer> -->
+    </div><!-- /.container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="assets/js/showExample.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+  </body>
+</html>
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-34649213-1']);
+  _gaq.push(['_setDomainName', 'realtime-semiparametric-regression.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+

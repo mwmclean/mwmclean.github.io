@@ -1,0 +1,65 @@
+/* footer img{ */
+/*     border: 0; */
+/*     verticle-align: bottom; */
+/* } */
+
+/* Make sure examples take up entire page */
+.panel button{
+    width: 100%;
+    margin-bottom: -5px;
+}
+
+/* to prevent vert. stacked li in footer navbar */
+/* .navbar-custom>li { */
+/*     display: inline-block; */
+/* } */
+
+/* Could not get nav-left and nav-right working together in footer;
+   work around was to put left and right items in same list and
+   float first two left and other two right
+*/
+#nav-footer li:first-child, #nav-footer li:nth-child(2){
+  float: left;
+}
+
+#nav-footer li{
+    /* float: none; */
+    /* text-align: center; */
+    /* display: inline-block; */
+    
+  /*     display:inline-block; */
+  /* vertical-align:middle; */
+  /* line-height:40px; */
+    /* padding:50px 10px 0px; */
+  list-style:none;
+  margin:10px;
+  float: right; 
+}
+
+#nav-footer{
+    min-height:50px;
+}
+
+/* centre UTS logo in footer */
+#UTSemblem-footer{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin: auto;
+    /* padding:10px 0px 0px; */
+}
+
+footer h2{
+    /* font-weight: 300; */
+    /* font-size: 50px; */
+    margin-bottom: 30px;
+}
+/* #nav-footer .navbar-text{ */
+/*     float: right; */
+/*     text-align: right; */
+/*     /\* verticle-align: middle; *\/ */
+/*     padding:0px 0px 50px */
+/*   line-height:10px;		 */
+/*     /\* display: table-cell; *\/ */
+/* } */
