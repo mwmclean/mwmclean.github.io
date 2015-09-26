@@ -43,7 +43,7 @@
     <!--     </nav> -->
     <!--   </div> -->
     <!-- </div> -->
-    <nav class="navbar navbar-light bg-faded">
+    <nav class="navbar navbar-light">
       <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse"
 	      data-target="#navbar">
 	&#9776;
@@ -142,7 +142,7 @@
       <a href="Examples/index.html?ex=flight">	
 	<div class="row featurette">
 	  <div class="col-md-7 col-md-push-5">
-	    <h2 class="featurette-heading">United States Domestic Flight Data
+	    <h2 class="featurette-heading">U.S. Domestic Flight Data
 	      <!-- <span class="text-muted">See for yourself.</span> -->
 	    </h2>
 	    <p class="lead">
@@ -158,7 +158,7 @@
 	</div>
       </a>
       <hr class="featurette-divider">
-
+   </div>
       <!-- /END THE FEATURETTES -->
 
       <!-- <\!-- OLD FOOTER -\-> -->
@@ -169,12 +169,12 @@
 <!-- Footer
 ================================================== -->
       <footer class="footer-sb bg-footer">
-	<div class="container">
-	    <div class="row">
-	      <h2 class="col-sm-10 col-sm-offset-1 text-center">
+	<div class="container-fluid">
+	    <!-- <div class="row"> -->
+	      <h2 class="text-center"> <!-- col-sm-10 col-sm-offset-1  -->
 		<a href="Examples/" id="footer-more">More Examples</a>
 	      </h2>
-	    </div>
+	    <!-- </div> -->
 	</div>
 	
         <!-- <p class="pull-right"> -->
@@ -192,9 +192,13 @@
 	<!--   </a> -->
 	<!-- </div> -->
 
-	<div class="container">
-	  <nav class="navbar navbar-default navbar-static-bottom" id="nav-footer">
-
+	<!-- <div class="container"> -->
+<!-- 	<script type="text/javascript"> -->
+<!--  $('ul.navbar-nav > li').click(function (e) { -->
+<!--         e.preventDefault(); -->
+<!-- </script> -->
+	  <nav class="navbar navbar-default navbar-fixed-bottom" id="nav-footer">
+<div class = "container-fluid navbar-inner">
 	  <!--     <div class="navbar-header"> -->
 	  <!-- 	<button type="button" class="navbar-toggle" data-toggle="collapse" -->
 	  <!-- 		data-target="#footer-navbar"> -->
@@ -204,20 +208,23 @@
 	  <!-- 	</button>     -->
 	  <!--     </div> -->
 
-	    <a href="http://uts.edu.au" id="UTSemblem-footer" class="nav navbar-nav">
-		<img src="assets/img/UTSemblem.png" width="33" height="50">
-	    </a>
 	  <!-- <div class="navbar-collapse collapse" id = "footer-navbar"> -->
+	    <div id="UTSemblem-footer" class = "navbar-brand">  
+	      <a href="http://uts.edu.au">
+		  <img src="assets/img/UTSemblem.png" width="33" height="50">
+	      </a>
+	    </div>
 
-	    <ul class="nav navbar-nav">
-	      <li><a href="About/"></a>About</li> &middot;
+	    <ul class="navbar-nav">
+	      <li><a href="About/" class="navbar-link">About</a></li>
 	      <li><a href="Contact/">Team Members</a></li>
-	    <!-- </ul> -->
-
+	      <!-- </ul> -->
+	    
 	    <!-- <ul class="nav navbar-nav push-right"> -->
 	      <li><a href="javascript:location='mailto:\u006d\u0061\u0074\u0068\u0065\u0077\u002e\u006d\u0063\u006c\u0065\u0061\u006e\u0040\u0075\u0074\u0073\u002e\u0065\u0064\u0075\u002e\u0061\u0075';void 0">
-		  Email</a></li>
-	      <li>&copy; <a href="http://stat.tamu.edu/~mmclean">Mathew W. McLean</a> </li>
+		  Email</a>
+	      </li>
+	      <li>&copy; <a href="http://stat.tamu.edu/~mmclean" class="navbar-link">Mathew W. McLean</a> </li>
 	    </ul>
 	  <!-- <p class="navbar-text"> -->
 	  <!--   &copy; <a href="http://stat.tamu.edu/~mmclean">Mathew W. McLean</a> &middot; -->
@@ -280,7 +287,7 @@
 		
     <!--   </nav> -->
     <!-- </footer> -->
-    </div><!-- /.container -->
+    <!-- /.container -->
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
