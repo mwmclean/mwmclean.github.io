@@ -3,6 +3,10 @@
 /*     verticle-align: bottom; */
 /* } */
 
+nav{
+    background: #191919;
+}
+
 /* Make sure examples take up entire page */
 .panel button{
     width: 100%;
@@ -32,13 +36,36 @@
   /* line-height:40px; */
     /* padding:50px 10px 0px; */
   list-style:none;
-  margin:10px;
-  float: right; 
+  margin:15px;
+  float: right;
+  font-variant: small-caps;
+  font-family: optima, "nimbus-sans-condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;  
 }
 
+
+/* issues with stacking for footer navbar and UTSemblem caused by needing
+   position: absolute for div for UTSemblem img; needed to give the div 
+   (#UTSemblem-footer) negative z-index, while giving
+   img z-index greater than navbar's z-index of 1000
+   Note: z-index needs element to have fixed, absolute, or relative
+         position; static won't work
+*/
 #nav-footer{
     min-height:50px;
+    /* width: 100%; */
+    color: white;
+    position: relative;
 }
+
+a:link{
+    color: #191919;
+}
+
+#nav-footer a:link{
+    color: white;
+}
+
+
 
 /* centre UTS logo in footer */
 #UTSemblem-footer{
@@ -47,9 +74,18 @@
     left: 0;
     text-align: center;
     margin: auto;
-    /* padding:10px 0px 0px; */
+    z-index: -1;
 }
 
+#UTSemblem-footer img{
+    margin: auto;
+    display: inline-block;
+    z-index: 10000;
+}
+
+.navbar-nav > li, #nav-footer ul{
+    z-index: 9999;
+}
 footer h2{
     /* font-weight: 300; */
     /* font-size: 50px; */
@@ -63,3 +99,60 @@ footer h2{
 /*   line-height:10px;		 */
 /*     /\* display: table-cell; *\/ */
 /* } */
+
+p, span{
+    font-family: adobe-caslon-pro, 'Times New Roman', Times, serif;
+}
+
+.navbar-brand{
+    font-weight: bold;
+    font-family: 'Courier New', Courier, 'Lucida Sans Typewriter',
+    'Lucida Typewriter', monospace;
+    color: white;
+    margin-right: 50px;
+}
+
+#navbar a{
+    color: white;
+}
+
+.featurette p{
+    color: rgb(85, 85, 85);
+    display: block;
+    font-family: adobe-caslon-pro, 'Times New Roman', Times, serif;
+    font-size: 16px;
+    font-stretch: normal;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    /* height: 648px; */
+    letter-spacing: 0.666666686534882px;
+    line-height: 22.8571434020996px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    text-rendering: optimizeLegibility;
+    vertical-align: baseline;
+}
+
+.featurette-heading, #footer-more{
+    /* text-transform: uppercase; */
+    font-variant: small-caps;
+    font-family: optima, "nimbus-sans-condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#navbar li{
+    /* text-transform: uppercase; */
+    text-transform: uppercase;
+    font-style: italic;
+    font-family: optima, "nimbus-sans-condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: white;
+}
+
+
+   
