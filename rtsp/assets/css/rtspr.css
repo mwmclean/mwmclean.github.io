@@ -57,7 +57,7 @@ nav{
     position: relative;
 }
 
-a:link{
+a:link, #footer-more{
     color: #191919;
 }
 
