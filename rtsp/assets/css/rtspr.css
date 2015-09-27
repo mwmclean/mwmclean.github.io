@@ -65,6 +65,10 @@ a:link{
     color: white;
 }
 
+#UTSemblem-footer > a{
+    z-index: 10000;
+    pointer-events: all;
+}
 
 
 /* centre UTS logo in footer */
@@ -75,16 +79,19 @@ a:link{
     text-align: center;
     margin: auto;
     z-index: -1;
+    pointer-events: none;
+    /* background: url('assets/img/UTSemblem.svg'); */
 }
 
 #UTSemblem-footer img{
     margin: auto;
     display: inline-block;
-    z-index: 10000;
+    z-index: 9999;
+    pointer-events: none;
 }
 
 .navbar-nav > li, #nav-footer ul{
-    z-index: 9999;
+    z-index: 9998;
 }
 footer h2{
     /* font-weight: 300; */
