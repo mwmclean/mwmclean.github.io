@@ -172,4 +172,10 @@ p, span{
 .tab-header{
     margin-top: 15px;
 }
-   
+
+img.team-photo{
+    height: auto;
+    width: auto;
+    max-height: 200px;
+    max-width: 150px;    
+}
