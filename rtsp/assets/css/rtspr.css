@@ -65,7 +65,7 @@ h3.example{
     position: relative;
 }
 
-a:link, #footer-more{
+a:link, #footer-more, a:visited{
     color: #191919;
 }
 
