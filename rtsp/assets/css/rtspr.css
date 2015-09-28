@@ -8,6 +8,7 @@ nav, .example > button, .example :hover{
     border-color: #191919;
 }
 
+/* add padding below top navbar */
 h3.example{
     padding-top: 20px;
 }
@@ -15,7 +16,7 @@ h3.example{
 /* Make sure examples take up entire page */
 .panel button{
     width: 100%;
-    margin-bottom: -5px;
+    /* margin-bottom: -5px; */
 }
 
 /* to prevent vert. stacked li in footer navbar */
@@ -127,11 +128,19 @@ p, span{
     margin-right: 50px;
 }
 
+#basic-info{
+    font-weight: bold;
+    font-family: 'Courier New', Courier, 'Lucida Sans Typewriter',
+    'Lucida Typewriter', monospace;
+    color: rgb(85, 85, 85);
+    display: block;
+}
+
 #navbar a{
     color: white;
 }
 
-.featurette p, #about-text{
+.featurette p{
     color: rgb(85, 85, 85);
     display: block;
     font-family: adobe-caslon-pro, 'Times New Roman', Times, serif;
@@ -155,7 +164,7 @@ p, span{
     vertical-align: baseline;
 }
 
-.featurette-heading, #footer-more{
+.featurette-heading, #footer-more, #basic-info{
     /* text-transform: uppercase; */
     font-variant: small-caps;
     font-family: optima, "nimbus-sans-condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
