@@ -178,6 +178,11 @@ p, span{
     color: white;
 }
 
+#navbar li.nav-item.active > a{
+    font-style: normal;
+    font-weight: bolder;
+}
+
 .tab-header{
     margin-top: 15px;
 }
