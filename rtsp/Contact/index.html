@@ -1,0 +1,228 @@
+<!DOCTYPE html><!--  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" -->
+	<!-- "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> -->
+<html lang= "en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Examples of real-time semiparametric regression">
+    <meta name="author" content="University of Technology Sydney">
+    <link rel="icon" href="../assets/img/UTSemblem.ico">
+
+    <title>Real-time Semiparametric Regression</title>
+    <!-- <link rel="stylesheet" href="styles.css" /> -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/rtspr.css" rel="stylesheet">
+    <link href="../assets/css/stickyFooter.css" rel="stylesheet">
+    <!-- <link href="../assets/css/panel.css" rel="stylesheet"> -->
+  </head>
+  <body> <!-- BGCOLOR=steelblue TEXT=snow LINK=99FFFF >  -->
+
+    <nav class="navbar navbar-light">
+      <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse"
+	      data-target="#navbar">
+	&#9776;
+      </button>
+      <div class="collapse navbar-toggleable-xs" id="navbar">
+	<a class="navbar-brand" href="../index.html">Real-time Semiparametric Regression</a>
+	<ul class="nav navbar-nav">
+	  <li class="nav-item">
+	    <a class="nav-link" href="../index.html">Home</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link" href="../About/">About</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link" href="../Examples/">Examples
+	    </a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link active" href="../Resources/">Resources</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link" href="index.html">Contact
+	    	      <span class="sr-only">(current)</span>
+	    </a>
+	  </li>
+	</ul>
+      </div>
+    </nav>
+
+
+    <div class="container-fluid">
+      <!-- Team Members
+	   ======================================== -->
+      <h2 class = "tab-header">Team Members</h2>
+      <!-- <div class="list-group"> -->
+      <!-- 	<div class="list-group-item"> -->
+      <!-- 	  <div class="row"> -->
+      <!-- 	    <img src="../assets/img/matt-wand2.svg" -->
+      <!-- 		     alt = "Matt Wand" class = "col-sm-2 team-photo"> -->
+      <!-- 	    <h5 class="list-group-item-heading col-xs-2"> -->
+      <!-- 		    Matt P. Wand -->
+      <!-- 	    </h5> -->
+      <!-- 	    <p class="list-group-item-text col-md-6"> -->
+      <!-- 	      Distinguished Professor of Statistics in the School of Mathematical -->
+      <!-- 	      and Physical Sciences which is in the Faculty of Science at University of Technology -->
+      <!-- 	      Sydney, and a Chief Investigator with the Australian Research Council Centre of -->
+      <!-- 	      Excellence for Mathematical and Statistical Frontiers of Big Data, Big Models, -->
+      <!-- 	      New Insights. -->
+      <!-- 	    </p> -->
+      <!-- 	    <div class = "col-sm-2"> -->
+      <!-- 	      <span class="label label-default label-pill pull-right"> -->
+      <!-- 		<a href="javascript:location='mailto:\u006d\u0061\u0074\u0074\u002e\u0077\u0061\u006e\u0064\u0040\u0075\u0074\u0073\u002e\u0065\u0064\u0075\u002e\u0061\u0075';void 0">Email</a> -->
+      <!-- 	      </span> -->
+      <!-- 	      <span class="label label-default label-pill pull-right"> -->
+      <!-- 		<a href="http://matt-wand.utsacademics.info/">Website</a> -->
+      <!-- 	      </span> -->
+      <!-- 	    </div> -->
+      <!-- 	  </div> -->
+	  
+
+      <!-- 	</div> -->
+      <!-- 	<div class="list-group-item"> -->
+      <!-- 	  <div class = "row"> -->
+      <!-- 	    <img src="../assets/img/matt-mclean.jpg" -->
+      <!-- 	     alt = "Matt McLean" class = "col-sm-2 team-photo"> -->
+      <!-- 	    <h5 class="list-group-item-heading col-xs-2"> -->
+      <!--         Mathew W. McLean -->
+      <!-- 	    </h5> -->
+      <!-- 	    <p class="list-group-item-text col-md-6"> -->
+      <!-- 	      Postdoctoral research fellow at University of Technology Sydney. -->
+      <!-- 	    </p>	     -->
+      <!-- 	    <div class = "col-sm-2"> -->
+      <!-- 	      <span class="label label-default label-pill pull-right"> -->
+      <!-- 		<a href="javascript:location='mailto:\u006d\u0061\u0074\u0068\u0065\u0077\u002e\u006d\u0063\u006c\u0065\u0061\u006e\u0040\u0075\u0074\u0073\u002e\u0065\u0064\u0075\u002e\u0061\u0075';void 0"> -->
+      <!-- 		    Email</a> -->
+      <!-- 		</span> -->
+      <!-- 		<span class="label label-default label-pill pull-right"> -->
+      <!-- 		  <a href="http://www.stat.tamu.edu/~mmclean/">Website</a> -->
+      <!-- 		</span> -->
+      <!-- 	      </div> -->
+      <!-- 	    </div> -->
+      <!-- 	    <div class = "list-group-item"> -->
+      <!-- 	      <h5 class="list-group-item-heading"> -->
+      <!-- 		Past team members -->
+      <!-- 	      </h5> -->
+      <!-- 	      <ul class="list-group-item-text"> -->
+      <!-- 		<li>Dr. Jan Luts</li> -->
+      <!-- 		<li>Dr. David Rohde</li> -->
+      <!-- 	      </ul> -->
+      <!-- 	    </div> -->
+      <!-- 	</div> -->
+	
+      <table class="table table-striped">
+	<tbody>
+	  <tr>
+	    <td scope="row">
+	      <img src="../assets/img/matt-wand2.svg"
+		   alt = "Matt Wand" class = "col-sm-2 team-photo">
+	    </td>
+	    <th scope = "row">
+		    Matt P. Wand
+	    </th>
+	    <td>
+	      Distinguished Professor of Statistics in the School of Mathematical
+	      and Physical Sciences which is in the Faculty of Science at University of Technology
+	      Sydney, and a Chief Investigator with the Australian Research Council Centre of
+	      Excellence for Mathematical and Statistical Frontiers of Big Data, Big Models,
+	      New Insights.
+	    </td>
+	    <td>
+	      <span class="label label-default label-pill pull-right">
+		<a href="javascript:location='mailto:\u006d\u0061\u0074\u0074\u002e\u0077\u0061\u006e\u0064\u0040\u0075\u0074\u0073\u002e\u0065\u0064\u0075\u002e\u0061\u0075';void 0">Email</a>
+	      </span>
+	      <span class="label label-default label-pill pull-right">
+		<a href="http://matt-wand.utsacademics.info/">Website</a>
+	      </span>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td scope = "row">
+	      <img src="../assets/img/matt-mclean.jpg"
+		   alt = "Matt McLean" class = "col-sm-2 team-photo">
+	    </td>
+	    <th>
+		Mathew W. McLean
+	    </th>
+	    <td>
+		Postdoctoral research fellow at University of Technology Sydney.
+	    </td>
+	    <td>
+		<span class="label label-default label-pill pull-right">
+		  <a href="javascript:location='mailto:\u006d\u0061\u0074\u0068\u0065\u0077\u002e\u006d\u0063\u006c\u0065\u0061\u006e\u0040\u0075\u0074\u0073\u002e\u0065\u0064\u0075\u002e\u0061\u0075';void 0">
+		    Email</a>
+		</span>
+		<span class="label label-default label-pill pull-right">
+		  <a href="http://www.stat.tamu.edu/~mmclean/">Website</a>
+		</span>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td colspan = "4">
+	      Past team members: Dr. Jan Luts, Dr. David Rohde
+	    </td>
+	  </tr>
+	</tbody>
+	<!--   <caption> -->
+	<!--   Past team members: Dr. Jan Luts, Dr. David Rohde -->
+	<!-- </caption> -->
+      </table>
+
+
+      <!-- end Team members -->
+    </div>
+    
+    <footer class="footer-sb bg-footer">
+      <nav class="navbar navbar-default navbar-fixed-bottom" id="nav-footer">
+<!-- <div class = "container-fluid navbar-inner"> -->
+	    <div id="UTSemblem-footer" class = "navbar-brand">  
+	      <a href="http://uts.edu.au">
+		<img src="../assets/img/UTSemblem.svg" width="33" height="50"
+		     alt = "UTS logo">
+	      </a>
+	    </div>
+
+	    <ul class="navbar-nav">
+	      <li><a href="../About/" class="navbar-link">About</a></li>
+	      <li><a href="../Contact/">Team Members</a></li>
+	      <!-- </ul> -->
+	    
+	    <!-- <ul class="nav navbar-nav push-right"> -->
+	      <li><a href="javascript:location='mailto:\u006d\u0061\u0074\u0068\u0065\u0077\u002e\u006d\u0063\u006c\u0065\u0061\u006e\u0040\u0075\u0074\u0073\u002e\u0065\u0064\u0075\u002e\u0061\u0075';void 0">
+		  Email</a>
+	      </li>
+	      <li>&copy; <a href="http://stat.tamu.edu/~mmclean"
+			    class="navbar-link">Mathew W. McLean</a>
+	      </li>
+	    </ul>
+	  <!-- </div> -->
+	</nav>
+      </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34649213-1']);
+      _gaq.push(['_setDomainName', 'realtime-semiparametric-regression.net']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+  </body>
+</html>
+
+
+
