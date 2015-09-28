@@ -1,0 +1,15 @@
+* [x] Fix bug on Example page: Expanding Sydney example causing flight data button
+     to be hidden under footer nav
+* [x] Potential fix for above: try using button groups for examples
+* [ ] fix Sydney ex. html being wider than its button
+* [x] make my name in footer white
+* [x] add Contacts page
+* [x] add About page
+* [x] add intro text to home page
+* convert old example html to bootstrap
+* add example descriptions
+* [x (seemingly)] make UTS logo anchor clickable
+* [ ] related to above, top of logo is not clickable and footer nav seems
+      heigher than it should be
+* make sure mp4 files works
+* try on mobile
