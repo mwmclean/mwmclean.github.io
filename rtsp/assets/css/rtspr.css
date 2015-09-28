@@ -3,8 +3,13 @@
 /*     verticle-align: bottom; */
 /* } */
 
-nav{
+nav, .example > button, .example :hover{
     background: #191919;
+    border-color: #191919;
+}
+
+h3.example{
+    padding-top: 20px;
 }
 
 /* Make sure examples take up entire page */
