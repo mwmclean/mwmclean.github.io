@@ -47,6 +47,9 @@ h3.example{
   font-family: optima, "nimbus-sans-condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;  
 }
 
+.label-pill{
+    font-size: 20px;
+}
 
 /* issues with stacking for footer navbar and UTSemblem caused by needing
    position: absolute for div for UTSemblem img; needed to give the div 
