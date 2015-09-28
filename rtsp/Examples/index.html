@@ -53,122 +53,143 @@
      ================================== -->
     <div class = "container-fluid">
       <h2 class = "tab-header">Examples</h2>
-<!-- <div class = "row"> -->
-    <div class="panel panel-default">
-      <div class="panel-heading">
-	<h3 class="panel-title example">
-	  <script type="text/javascript">
-	    $('body').on('click', '#rental-btn',
-	      function(){
-		<!-- $('#test-span').html("Hi you clicked a button!"); -->
-		$("#ex-rental").load("../SydneyRealEstate/index.html");
-		<!-- $("#nav-footer").className += " navbar-static-bottom"; -->
-		<!-- console.log($("#nav-footer").className); -->
-		<!-- $("#nav-footer").className = -->
-		<!--  $("#nav-footer").className.replace -->
-		<!-- ( /(?:^|\s)navbar-fixed-bottom(?!\S)/g , '' ) -->
-		<!-- $("#nav-footer").toggleClass("navbar-static-bottom"); -->
-		<!-- $("#nav-footer").toggleClass("navbar-fixed-bottom");		 -->
-  	      });
+      <!-- <div class = "row"> -->
+      <hr class="featurette-divider">
 
-		<!-- Change navbar from fixed to static when example expands -->
-                <!-- document.getElementById("rental-btn").className += " navbar-static-bottom";		 -->
-		<!-- document.getElementById("nav-footer").className = -->
-		<!--  document.getElementById("nav-footer").className.replace -->
-		<!-- ( /(?:^|\s)navbar-fixed-bottom(?!\S)/g , '' ) -->
-<!-- Explanation of regex:
-<!--		(?:^|\s) # match the start of the string, or any single whitespace character -->
-
-<!-- MyClass  # the literal text for the classname to remove -->
-
-<!-- (?!\S)   # negative lookahead to verify the above is the whole classname -->
-<!--          # ensures there is no non-space character following -->
-<!--          # (i.e. must be end of string or a space) -->
-	  </script>
-	  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="collapse"
-		  data-target="#ex-rental" aria-expanded="false" id = "rental-btn">
-	    Sydney property rental data
+      <div class = "btn-group">
+	  <input type="button" class="btn btn-info dropdown-toggle example-btn" data-toggle="collapse"
+		  data-target="#ex-rental" aria-expanded="false" id = "SydneyRealEstate-btn" 
+	    value="Sydney property rental data" onclick='javascript:toggle("SydneyRealEstate");'/>
 	    <!-- <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span> -->
-	  </button>
-	</h3>
+	  <!-- </button> -->
+	  <input type="button" class="btn btn-info dropdown-toggle example-btn" data-toggle="collapse"
+		  data-target="#ex-" aria-expanded="false" id = "FlightData-btn"
+	    value="U.S. domestic flight data" onclick='javascript:toggle("FlightData");'/>
+	    <!-- <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span> -->
+	  <!-- </button> -->
       </div>
-      <div class="panel-body collapse" aria-expanded="false" id = "ex-rental">
-	<!-- <script type="text/javascript"> -->
-	<!--   $('#test-span').html("Hi you clicked a button!"); -->
-	<!--   console.log('hello'); -->
-	<!--   </script> -->
+      <!-- <div class = "container collapse" id = "ex-viewer"></div> -->
+      <div class="panel panel-default">
+	<div class="panel-body collapse" aria-expanded="false" id = "ex-viewer">
+	</div>
+      </div>
+	
+      
+<!--     <div class="panel panel-default"> -->
+<!--       <div class="panel-heading"> -->
+<!-- 	<h3 class="panel-title example"> -->
+<!-- 	  <script type="text/javascript"> -->
+<!-- 	    $('body').on('click', '#rental-btn', -->
+<!-- 	      function(){ -->
+<!-- 		<\!-- $('#test-span').html("Hi you clicked a button!"); -\-> -->
+<!-- 		$("#ex-rental").load("../SydneyRealEstate/index.html"); -->
+<!-- 		<\!-- $("#nav-footer").className += " navbar-static-bottom"; -\-> -->
+<!-- 		<\!-- console.log($("#nav-footer").className); -\-> -->
+<!-- 		<\!-- $("#nav-footer").className = -\-> -->
+<!-- 		<\!--  $("#nav-footer").className.replace -\-> -->
+<!-- 		<\!-- ( /(?:^|\s)navbar-fixed-bottom(?!\S)/g , '' ) -\-> -->
+<!-- 		<\!-- $("#nav-footer").toggleClass("navbar-static-bottom"); -\-> -->
+<!-- 		<\!-- $("#nav-footer").toggleClass("navbar-fixed-bottom");		 -\-> -->
+<!--   	      }); -->
 
-        <!-- <span id="test-span">&nbsp;</span> -->
-	<!-- <table> -->
-	<!--   <tr> -->
-	<!--     <td> -->
-	<!--       <img id="result2" src="../assets/img/rental/result2.png" width="640px"> -->
-	<!--     </td> -->
-	<!--     <td> -->
-	<!--       <img id="result1" src="../assets/img/rental/result1.png" width="640px"> -->
-	<!--     </td> -->
-	<!--     <td> -->
-	<!--       <img id="colorMap" src="../assets/img/rental/colorMap.png" width="80px"> -->
-	<!--     </td> -->
-	<!--   </tr> -->
-	<!--   <tr> -->
-	<!--     <td align="center" valign="top"> -->
-	<!--       Geographical map of Sydney with processed properties as small black dots and recently (i.e. during the last hour) added ones as yellow circles. The total number of processed properties is included at the bottom right. -->
-	<!--     </td> -->
-	<!--     <td align="center" valign="top">Color-coded geographical map of Sydney displaying the weekly rent for a two bedroom apartment with one bathroom and one car space for various geographical locations. -->
-	<!--     </td> -->
-	<!--   </tr> -->
-	<!-- </table> -->
+<!-- 		<\!-- Change navbar from fixed to static when example expands -\-> -->
+<!--                 <\!-- document.getElementById("rental-btn").className += " navbar-static-bottom";		 -\-> -->
+<!-- 		<\!-- document.getElementById("nav-footer").className = -\-> -->
+<!-- 		<\!--  document.getElementById("nav-footer").className.replace -\-> -->
+<!-- 		<\!-- ( /(?:^|\s)navbar-fixed-bottom(?!\S)/g , '' ) -\-> -->
+<!-- <\!-- Explanation of regex: -->
+<!-- <\!--		(?:^|\s) # match the start of the string, or any single whitespace character -\-> -->
 
-	<!-- <table> -->
-	<!--   <tr> -->
-	<!--     <th rowspan="2"> -->
-	<!--       <img id="result3" src="../assets/img/rental/result3.png" width="640px"> -->
-	<!--     </th> -->
-	<!--     <th rowspan="2" width="70"></th> -->
-	<!--     <td> -->
-	<!--       <img id="result4" src="../assets/img/rental/result4.png" width="500px"> -->
-	<!--     </td> -->
-	<!--   </tr> -->
-	<!--   <tr> -->
-	<!--     <td> -->
-	<!--       <img id="result5" src="../assets/img/rental/result5.png" width="500px" /> -->
-	<!--     </td> -->
-	<!--   </tr> -->
-	<!--   <tr> -->
-	<!--     <td align="center" valign="top"> -->
-	<!--       The approximate posterior density function for the impact of the property being a house or not. Regression fits and 95% credible sets for the number of bedrooms, bathrooms and car spaces for apartments. -->
-	<!--     </td> -->
-	<!--     <td align="center" valign="top"> List of rental agencies with the least and most expensive properties, after correcting for all -->
-	<!--     other covariates. -->
-	<!--     </td> -->
-	<!--   </tr> -->
-	<!-- </table> -->
+<!-- <\!-- MyClass  # the literal text for the classname to remove -\-> -->
 
-	<!-- <p>This data will be updated every hour. -->
-	<!--   <span id="updateMessage"></span> -->
-	<!-- </p> -->
-      </div> <!-- end panel-body -->
-    </div>  <!-- end panel for rental ex. -->
+<!-- <\!-- (?!\S)   # negative lookahead to verify the above is the whole classname -\-> -->
+<!-- <\!--          # ensures there is no non-space character following -\-> -->
+<!-- <\!--          # (i.e. must be end of string or a space) -\-> -->
+<!-- 	  </script> -->
+<!-- 	  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="collapse" -->
+<!-- 		  data-target="#ex-rental" aria-expanded="false" id = "rental-btn"> -->
+<!-- 	    Sydney property rental data -->
+<!-- 	    <\!-- <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span> -\-> -->
+<!-- 	  </button> -->
+<!-- 	</h3> -->
+<!--       </div> -->
+<!--       <div class="panel-body collapse" aria-expanded="false" id = "ex-rental"> -->
+<!-- 	<\!-- <script type="text/javascript"> -\-> -->
+<!-- 	<\!--   $('#test-span').html("Hi you clicked a button!"); -\-> -->
+<!-- 	<\!--   console.log('hello'); -\-> -->
+<!-- 	<\!--   </script> -\-> -->
 
-    <!-- Flight data example
-	 =============================== -->
+<!--         <\!-- <span id="test-span">&nbsp;</span> -\-> -->
+<!-- 	<\!-- <table> -\-> -->
+<!-- 	<\!--   <tr> -\-> -->
+<!-- 	<\!--     <td> -\-> -->
+<!-- 	<\!--       <img id="result2" src="../assets/img/rental/result2.png" width="640px"> -\-> -->
+<!-- 	<\!--     </td> -\-> -->
+<!-- 	<\!--     <td> -\-> -->
+<!-- 	<\!--       <img id="result1" src="../assets/img/rental/result1.png" width="640px"> -\-> -->
+<!-- 	<\!--     </td> -\-> -->
+<!-- 	<\!--     <td> -\-> -->
+<!-- 	<\!--       <img id="colorMap" src="../assets/img/rental/colorMap.png" width="80px"> -\-> -->
+<!-- 	<\!--     </td> -\-> -->
+<!-- 	<\!--   </tr> -\-> -->
+<!-- 	<\!--   <tr> -\-> -->
+<!-- 	<\!--     <td align="center" valign="top"> -\-> -->
+<!-- 	<\!--       Geographical map of Sydney with processed properties as small black dots and recently (i.e. during the last hour) added ones as yellow circles. The total number of processed properties is included at the bottom right. -\-> -->
+<!-- 	<\!--     </td> -\-> -->
+<!-- 	<\!--     <td align="center" valign="top">Color-coded geographical map of Sydney displaying the weekly rent for a two bedroom apartment with one bathroom and one car space for various geographical locations. -\-> -->
+<!-- 	<\!--     </td> -\-> -->
+<!-- 	<\!--   </tr> -\-> -->
+<!-- 	<\!-- </table> -\-> -->
+
+<!-- 	<\!-- <table> -\-> -->
+<!-- 	<\!--   <tr> -\-> -->
+<!-- 	<\!--     <th rowspan="2"> -\-> -->
+<!-- 	<\!--       <img id="result3" src="../assets/img/rental/result3.png" width="640px"> -\-> -->
+<!-- 	<\!--     </th> -\-> -->
+<!-- 	<\!--     <th rowspan="2" width="70"></th> -\-> -->
+<!-- 	<\!--     <td> -\-> -->
+<!-- 	<\!--       <img id="result4" src="../assets/img/rental/result4.png" width="500px"> -\-> -->
+<!-- 	<\!--     </td> -\-> -->
+<!-- 	<\!--   </tr> -\-> -->
+<!-- 	<\!--   <tr> -\-> -->
+<!-- 	<\!--     <td> -\-> -->
+<!-- 	<\!--       <img id="result5" src="../assets/img/rental/result5.png" width="500px" /> -\-> -->
+<!-- 	<\!--     </td> -\-> -->
+<!-- 	<\!--   </tr> -\-> -->
+<!-- 	<\!--   <tr> -\-> -->
+<!-- 	<\!--     <td align="center" valign="top"> -\-> -->
+<!-- 	<\!--       The approximate posterior density function for the impact of the property being a house or not. Regression fits and 95% credible sets for the number of bedrooms, bathrooms and car spaces for apartments. -\-> -->
+<!-- 	<\!--     </td> -\-> -->
+<!-- 	<\!--     <td align="center" valign="top"> List of rental agencies with the least and most expensive properties, after correcting for all -\-> -->
+<!-- 	<\!--     other covariates. -\-> -->
+<!-- 	<\!--     </td> -\-> -->
+<!-- 	<\!--   </tr> -\-> -->
+<!-- 	<\!-- </table> -\-> -->
+
+<!-- 	<\!-- <p>This data will be updated every hour. -\-> -->
+<!-- 	<\!--   <span id="updateMessage"></span> -\-> -->
+<!-- 	<\!-- </p> -\-> -->
+<!--       </div> <\!-- end panel-body -\-> -->
+<!--     </div>  <\!-- end panel for rental ex. -\-> -->
+
+<!--     <\!-- Flight data example -->
+<!-- 	 =============================== -\-> -->
     
-    <div class="panel panel-default">
-      <div class="panel-heading">
-	<h3 class="panel-title example">
-	  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="collapse"
-		  data-target="#ex-flight" aria-expanded="false" id = "flight-btn">
-                  U.S. domestic flight data
-	    <!-- <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span> -->
-	  </button>
-	</h3>
-      </div>
-      <div class="panel-body collapse" aria-expanded="false" id = "ex-flight">    
-      </div>
-    </div>
-</div>
+<!--     <div class="panel panel-default"> -->
+<!--       <div class="panel-heading"> -->
+<!-- 	<h3 class="panel-title example"> -->
+<!-- 	  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="collapse" -->
+<!-- 		  data-target="#ex-flight" aria-expanded="false" id = "flight-btn"> -->
+<!--                   U.S. domestic flight data -->
+<!-- 	    <\!-- <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span> -\-> -->
+<!-- 	  </button> -->
+<!-- 	</h3> -->
+<!--       </div> -->
+<!--       <div class="panel-body collapse" aria-expanded="false" id = "ex-flight">     -->
+<!--       </div> -->
+<!--     </div> -->
 <!-- </div> -->
+<!-- <\!-- </div> -\-> -->
     <!-- End panels -->
     <!-- <div class="list-group"> -->
     <!--   <a href="#" class="list-group-item active"> -->
@@ -210,6 +231,6 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="../assets/js/bootstrap.min.js"></script>
-
+    <script src="../assets/js/toggle.js" rel="stylesheet"></script>    
   </body>
 </html>

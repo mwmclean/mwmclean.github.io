@@ -10,6 +10,17 @@ nav, .example > button, .example :hover, btn.active.btn-info.active,
     border-color: #191919;
 }
 
+.example-btn{
+    border-color: #191919;
+    color: #191919;
+    background: #eceeef;
+    margin-right: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px; /* future proofing */
+    -khtml-border-radius: 10px; /* for old Konqueror browsers */        
+}
+
 /* add padding below top navbar */
 h3.example{
     padding-bottom: 20px;

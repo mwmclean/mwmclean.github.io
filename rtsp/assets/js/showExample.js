@@ -14,6 +14,7 @@
 //     // console.message(button.href);
 //     // window.location = button.href;
 // }
+/* Visit Example page and display selected example from Home page */
 /* See: http://stackoverflow.com/a/24161846 */
     $(function() {
 
