@@ -3,7 +3,9 @@
 /*     verticle-align: bottom; */
 /* } */
 
-nav, .example > button, .example :hover{
+nav, .example > button, .example :hover, btn.active.btn-info.active,
+.btn-info.focus, .btn-info:active, .btn-info:focus, .btn-info:hover,
+.open>.btn-info.dropdown-toggle{
     background: #191919;
     border-color: #191919;
 }
