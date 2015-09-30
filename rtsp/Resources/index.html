@@ -16,6 +16,8 @@
     <link href="../assets/css/rtspr.css" rel="stylesheet">
     <link href="../assets/css/stickyFooter.css" rel="stylesheet">
     <!-- <link href="../assets/css/panel.css" rel="stylesheet"> -->
+
+
   </head>
   <body> <!-- BGCOLOR=steelblue TEXT=snow LINK=99FFFF >  -->
 
@@ -60,7 +62,7 @@
 	    <h5 class="list-group-item-heading col-md-10">
 		    Luts, J., Broderick, T. and Wand, M.P.  Real-time Semiparametric
 	    Regression. <i>Journal of Computational and Graphical Statistics</i>,
-		    (2014), 23.3, 589&mdash;615. DOI: 10.1080/10618600.2013.810150.
+		    (2014), 23.3, 589&mdash;615. <a is="d-o-i" data-doi="10.1080/10618600.2013.810150"></a>
 	    </h5>
 	    <div class = "col-sm-2">
 	      <span class="label label-default label-pill pull-right">
@@ -73,13 +75,13 @@
 	    This is the main paper describing the methodology.
 	  </p>
 	</div>
+	
 	<div class="list-group-item">
 	  <div class = "row">
 	    <h5 class="list-group-item-heading col-md-10">
-			    Luts, J.  Real-time Semiparametric Regression Modeling for
-	    Distributed Data Sets. <i>Knowledge and Data Engineering,
-	      IEEE Transactions on,</i> (2015), 27.2, 545&mdash;557.  DOI:
-	    10.1109/TKDE.2014.2334326.
+	      Luts, J.  Real-time Semiparametric Regression Modeling for Distributed
+	      Data Sets. <i>Knowledge and Data Engineering, IEEE Transactions on,</i>
+	      (2015), 27.2, 545&mdash;557.  <a is="d-o-i" data-doi="10.1109/TKDE.2014.2334326"></a>
 	    </h5>
 	    <div class = "col-sm-2">
 		      <span class="label label-default label-pill pull-right">
@@ -90,13 +92,50 @@
 	      </span>
 	    </div>
 	  </div>
-	  
 	  <p class="list-group-item-text">
 	    Considers real-time semiparametric regression in MapReduce framework
 	    as well as when there are multiple data owners.
 	  </p>
 	</div>
-      </div>
+
+	<div class="list-group-item">
+	  <div class = "row">
+	    <h5 class="list-group-item-heading col-md-10">
+	      Menictas, M. and Wand, M.P.  Variational Inference for
+	      Heteroscedastic Semiparametric Regression. <i>Australian and
+		New Zealand Journal of Statistics</i>, (2015), 57.1, 119&mdash;138.
+	      <a is="d-o-i" data-doi="10.1111/anzs.12105"></a>
+	    </h5>
+	    <div class = "col-sm-2">
+	      <span class="label label-default label-pill pull-right">
+		<a href="http://matt-wand.utsacademics.info/publicns/Menictas15.pdf">PDF</a>
+	      </span>
+	    </div>
+	  </div>
+	  <p class = "list-group-item-text">
+	    Section 7 considers real-time heteroscedastic nonparametric regression.
+	  </p>
+	</div>
+
+	<div class="list-group-item">
+	  <div class = "row">
+	    <h5 class="list-group-item-heading col-md-10">
+	      Luts, J. and Wand, M.P.  Variational Inference for
+	      Count Response Semiparametric Regression. <i>Bayesian Analysis</i>,
+	      (2015).  In press.  <a is="d-o-i" data-doi="10.1214/14-BA932"></a>
+	    </h5>
+	    <div class = "col-sm-2">
+	      <span class="label label-default label-pill pull-right">
+		<a href="http://matt-wand.utsacademics.info/publicns/Menictas15.pdf">PDF</a>
+	      </span>
+	    </div>
+	  </div>
+	  <p class = "list-group-item-text">
+	    Section 5 considers real-time count response semiparametric regression.
+	  </p>
+	</div>
+      </div>  <!-- End References -->
+	
       <!-- <div class="panel panel-primary" id = "references"> -->
       <!-- 	<div class="panel-heading"> -->
       <!-- 	  <h3 class = "panel title">References </h3> -->
@@ -169,6 +208,22 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/CreateDOILinks.js"></script>
+
+    <!-- <script type = "text/javascript"> -->
+    <!--       var DOI = document.registerElement('d-o-i', { -->
+    <!--   prototype: Object.create(HTMLAnchorElement.prototype), -->
+    <!--   extends: 'a' -->
+    <!-- }); -->
+
+    <!--   $("a").each(function(){ -->
+    <!-- 	  if ($(this).attr("is") == "d-o-i"){ -->
+    <!-- 	    <\!-- this.innerHTML = "DOI: " + this.attr("data-doi") + "."; -\-> -->
+    <!-- 	    this.text = "DOI: " + $(this).attr("data-doi") + "."; -->
+    <!-- 	    $(this).attr("href", "http://dx.doi.org/" + $(this).attr("data-doi")); -->
+    <!-- 	  } -->
+    <!--   }); -->
+    <!-- </script>     -->
     <script type="text/javascript">
 
       var _gaq = _gaq || [];
