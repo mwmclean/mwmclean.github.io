@@ -1,7 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Real-time Semiparametric Regression</title>
     <meta name="description" content="Sydney real estate real-time semiparametric regression">
     <meta name="author" content="University of Technology Sydney">
@@ -12,7 +14,7 @@
       <!-- <link href="../assets/css/rental.css" rel="stylesheet"> -->
       <!-- J. Luts used JQuery 1.3.0 -->	
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-      <script src="../assets/js/rental.js" rel="stylesheet"></script>
+      <script src="../assets/js/rental.js"></script>
 
      <script type="text/javascript">
 	$(document).ready(function() {
@@ -31,9 +33,10 @@
   <body>
 
     <div class = "row">
-      <div class = "col-md-5">
+      <div class = "col-xs-5">
 	<figure>
-	  <img id="result2" src="../SydneyRealEstate/result2.png" width="640px">
+	  <img id="result2" src="../SydneyRealEstate/result2.png"
+	       alt="Map of recent rentals">
 	  <figcaption>
 	    Geographical map of Sydney with processed properties as small black dots
 	    and recently (i.e. during the last hour) added ones as yellow circles.
@@ -43,13 +46,15 @@
       </div>
       <div class="col-xs-7" id = "rentalMapContainer">
 	<figure>
-	  <img id="rentalColourMap" src="../SydneyRealEstate/result1.png">
-	      <figcaption>
-		Color-coded geographical map of Sydney displaying the weekly rent for a
-		two bedroom apartment with one bathroom and one car space for various
-		geographical locations.
-	      </figcaption>
-	      <img  id="rentalColourBar"src="../SydneyRealEstate/colorMap.png" width = "80px">
+	  <img id="rentalColourMap" src="../SydneyRealEstate/result1.png"
+	       alt = "Weekly rent colour map">
+	    <img id="rentalColourBar" src="../SydneyRealEstate/colorMap.png" width = "80"
+		 alt = "Colour bar for rent map">
+	  <figcaption>
+	    Color-coded geographical map of Sydney displaying the weekly rent for a
+_	      two bedroom apartment with one bathroom and one car space for various
+	    geographical locations.
+	  </figcaption>
 	</figure>
       </div>
     </div>
@@ -57,7 +62,7 @@
     <div class = "row">
       <div class="col-md-6">
 	<figure>
-	  <img id="result3" src="../SydneyRealEstate/result3.png" width="640px"
+	  <img id="result3" src="../SydneyRealEstate/result3.png" width="640"
 	       alt = "Approximate posteriors">
 	  <figcaption class = "text-center">
 	    The approximate posterior density function for the impact of the property
@@ -81,7 +86,7 @@
 	<div class = "row">
 	  <div class = "col-md-3">
 	    <figure>
-	      <img id="result5" src="../SydneyRealEstate/result5.png" width="500px"
+	      <img id="result5" src="../SydneyRealEstate/result5.png" width="500"
 		     alt = "Most expensive rental agencies">
 	      <figcaption>
 		List of rental agencies with the most expensive properties,
