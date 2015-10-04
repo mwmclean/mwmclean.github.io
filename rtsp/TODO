@@ -1,15 +1,23 @@
-* [x] Fix bug on Example page: Expanding Sydney example causing flight data button
-     to be hidden under footer nav
-* [x] Potential fix for above: try using button groups for examples
-* [ ] fix Sydney ex. html being wider than its button
-* [x] make my name in footer white
+
 * [x] add Contacts page
 * [x] add About page
 * [x] add intro text to home page
-* convert old example html to bootstrap
-* add example descriptions
-* [x (seemingly)] make UTS logo anchor clickable
-* [ ] related to above, top of logo is not clickable and footer nav seems
-      heigher than it should be
+* [ ] convert old example html to bootstrap
+* [ ] add example descriptions
 * make sure mp4 files works
 * try on mobile
+
+Bugs
+========================
+* [ ] whitespace to left of footer
+* [ ] shape of buttons on example page
+* [ ] top of logo in footer is not clickable and footer nav seems
+      heigher than it should be
+* [x] Fix bug on Example page: Expanding Sydney example causing flight data button
+     to be hidden under footer nav
+* [x] Potential fix for above: try using button groups for examples
+* [x] fix Sydney ex. html being wider than its button
+* [x] make my name in footer white
+* [x (seemingly)] make UTS logo anchor clickable
+* [x] unclick example button should hide example and change button colour
+* [ ] Sydney example first row of plots: 2nd plot overlaps 1st if screen width reduced
