@@ -5,9 +5,19 @@ function toggle(folder) {
 	//     if(this.id == divToShow){ // || !this.hasClass('collapsed')){
 	    var file = '../' + folder + '/index.html';
     // $(btn).trigger("click");
-    $('#ex-viewer').load(file);
-    if($('#ex-viewer').hasClass('collapse'))
-      $('#ex-viewer').toggleClass('collapse');
+    var divToShow = '#ex-' + folder;
+    $(divToShow).load(file);
+    $(divToShow).toggleClass('in');
+    if($('#ex-viewer').attr('aria-expanded') == "true"){
+    	$('#ex-viewer').attr('aria-expanded', "false");
+    	console.log("hello");
+    }
+    $(".panel-body").each(function(){
+    	if(('#' + this.id) != divToShow && $(this).hasClass("in")){
+    	    $(this).toggleClass("in");
+    	}
+    });
+    // $('#' + folder + '-btn').trigger('click');
 	// }
 	
     // });
