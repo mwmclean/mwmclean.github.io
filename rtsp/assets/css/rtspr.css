@@ -331,3 +331,8 @@ figcaption{
     left: 0;
     top: 0;
 }
+
+.example-btn.shown{
+    background-color: #191919;
+    color: white;
+}
