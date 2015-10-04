@@ -6,11 +6,14 @@
 * [ ] add example descriptions
 * make sure mp4 files works
 * try on mobile
+* navbar on examples like theplayerstribune.com
 
 Bugs
 ========================
+* [x] Second button click does not work in examples
+    * proposed solution: have separate div for each example
 * [ ] whitespace to left of footer
-* [ ] shape of buttons on example page
+* [x] shape of buttons on example page
 * [ ] top of logo in footer is not clickable and footer nav seems
       heigher than it should be
 * [x] Fix bug on Example page: Expanding Sydney example causing flight data button
