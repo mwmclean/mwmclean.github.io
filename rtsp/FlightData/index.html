@@ -24,10 +24,10 @@
   <body>
     <hr class="featurette-header">
     <div class = "row">
-      <div class = "col-md-7">
+      <div class = "col-lg-7">
 	<figure>
 	  <img id="result1" src="../FlightData/result1.png"
-	       alt="Map of recent flights">
+	       alt="Map of recent flights" class="img-responsive">
 	  <figcaption>
             Geographical map of North America with most recently (i.e. during the last
 	    minutes) processed U.S. domestic flights. Yellow points and dashed lines
@@ -36,10 +36,10 @@
 	  </figcaption>
 	</figure>
       </div>
-      <div class="col-md-5">
+      <div class="col-lg-5">
 	<figure>
 	  <img id="result6" src="../FlightData/result6.png"
-	       alt = "Approximate Posteriors">
+	       alt = "Approximate Posteriors" class="img-responsive">
 	    <figcaption>
 	      The approximate posterior density functions related to the METAR flight
 	      category at departure and arrival airport: marginal visual flight rules,
@@ -52,7 +52,8 @@
 
     <div class="container-fluid text-center">
       <figure>   <!-- width="1140px" -->
-	<img id="result8" src="../FlightData/result8.png" alt = "Regression fits">
+	<img id="result8" src="../FlightData/result8.png"
+	     alt = "Regression fits" class="img-responsive">
 	<figcaption>
 	    Regression fits and 95% credible sets for temperature, wind speed and flight
 	    distance. The former two are available for both the departure and arrival
@@ -60,45 +61,46 @@
 	</figcaption>
       </figure>
     </div>
-      
+      <div class="container-fluid">
     <div class = "row">
-      <div class = "col-md-1">
+      <div class = "col-xs-2 col-md-1">
 	<figure>
 	  <img id="result4" src="../FlightData/result4.png"
-	       alt="Airlines having shortest delays">
+	       alt="Airlines having shortest delays" class="img-responsive">
 	  <figcaption>
             Airlines having shortest delays.
 	  </figcaption>
 	</figure>
       </div>
-      <div class="col-md-1">
+      <div class="col-xs-2 col-md-1">
 	<figure> <!-- width=500px -->
 	  <img id="result5" src="../FlightData/result5.png" 
-	       alt = "Airlines having longest delays">
+	       alt = "Airlines having longest delays" class="img-responsive">
 	    <figcaption>
 	      Airlines having longest delays.
 	    </figcaption>
 	</figure>
       </div>
-      <div class="col-md-5">
+      <div class="col-xs-8 col-lg-5">
 	<figure>
 	  <img id="result2" src="../FlightData/result2.png"
-	       alt = "Flight paths having shortest delays">
+	       alt = "Flight paths having shortest delays" class="img-responsive">
 	    <figcaption>
 	      Flight paths having shortest delays.
 	  </figcaption>
 	</figure>
       </div>	
-      <div class="col-md-5">
+      <div class="col-xs-8 col-md-5">
 	<figure>
 	  <img id="result3" src="../FlightData/result3.png"
-	       alt = "Flight paths having longest delays">
+	       alt = "Flight paths having longest delays" class="img-responsive">
 	  <figcaption>
 	      Flight paths having longest delays.
 	  </figcaption>
 	</figure>
       </div>
-    </div>
+      </div>
+      </div>
 
 <p>This data will be updated every few minutes.
 <span id="updateMessage"></span>
