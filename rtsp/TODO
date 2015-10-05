@@ -7,14 +7,14 @@
 * make sure mp4 files works
 * try on mobile
 * navbar on examples like theplayerstribune.com
-* [ ] glyphs for email and homepage on contacts
+* [x] glyphs for email and homepage on contacts
 * consider making use of .center-block
 
 Bugs
 ========================
 * [x] Second button click does not work in examples
     * proposed solution: have separate div for each example
-* [ ] whitespace to left of footer
+* [x] whitespace to left of footer
 * [x] shape of buttons on example page
 * [ ] top of logo in footer is not clickable and footer nav seems
       heigher than it should be
@@ -27,4 +27,5 @@ Bugs
 * [x] unclick example button should hide example and change button colour
 * [x] Sydney example first row of plots: 2nd plot overlaps 1st if screen width reduced
       (fixed using img-responsive class)
-      
+* [ ] Flight example: check img size (.img-responsive seems to make things too small)
+* [ ] part of Example html not displayed (hidden behind footer)
