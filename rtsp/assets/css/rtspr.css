@@ -142,7 +142,7 @@ p, span{
     margin-right: 50px;
 }
 
-#basic-info{
+#basic-info, .jumbotron.text-center.example.intro{
     font-weight: bold;
     font-family: 'Courier New', Courier, 'Lucida Sans Typewriter',
     'Lucida Typewriter', monospace;
