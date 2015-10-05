@@ -5,15 +5,11 @@ function toggle(folder) {
 	//     if(this.id == divToShow){ // || !this.hasClass('collapsed')){
 	    var file = '../' + folder + '/index.html';
     // $(btn).trigger("click");
-    var divToShow = '#ex-' + folder;
-    $(divToShow).load(file);
-    $(divToShow).toggleClass('in');
-    if($('#ex-viewer').attr('aria-expanded') == "true"){
-    	$('#ex-viewer').attr('aria-expanded', "false");
-    	console.log("hello");
-    }
+    var divToShow = "ex-" + folder;
+    $("#" + divToShow).load(file);
+    $("#" + divToShow).toggleClass("in");
     $(".panel-body").each(function(){
-    	if(('#' + this.id) != divToShow && $(this).hasClass("in")){
+    	if(this.id != divToShow && $(this).hasClass("in")){
     	    $(this).toggleClass("in");
     	}
     });
@@ -24,7 +20,7 @@ function toggle(folder) {
     
 	
     // change background of btns
-    var btn = folder + '-btn';
+    var btn = folder + "-btn";
     $(".example-btn").each(function(){
 	if(this.id == btn || $(this).hasClass("shown")){
 	    $(this).toggleClass("shown");
