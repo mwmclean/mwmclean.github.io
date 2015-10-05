@@ -292,27 +292,37 @@ img.team-photo{
     -khtml-border-radius: 10px; /* for old Konqueror browsers */    
 }
 
-p.list-group-item-text{
-    background-color: #191919; /* #eceeef; */
-    color: white;
-    padding: 10px;
-    /* margin-bottom: 10px; */
-    /* margin-right: 10px; */
-    color: white; /* rgb(85, 85, 85); */
-    font-family: adobe-caslon-pro, 'Times New Roman', Times, serif;
-    font-size: 16px;
-    font-stretch: normal;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: normal;
-    /* height: 648px; */
-    letter-spacing: 0.666666686534882px;
-    line-height: 22.8571434020996px;
-    text-rendering: optimizeLegibility;
-    /* -moz-border-radius: 10px; */
-    /* -webkit-border-radius: 10px; */
-    /* border-radius: 10px; /\* future proofing *\/ */
-    /* -khtml-border-radius: 10px; /\* for old Konqueror browsers *\/ */
+/* p.list-group-item-text{ */
+/*     background-color: #191919; /\* #eceeef; *\/ */
+/*     color: white; */
+/*     padding: 10px; */
+/*     /\* border: 1px dotted rgb(221, 221, 221); *\/ */
+/*     /\* margin-bottom: 10px; *\/ */
+/*     /\* margin-right: 10px; *\/ */
+/*     font-family: adobe-caslon-pro, 'Times New Roman', Times, serif; */
+/*     font-size: 16px; */
+/*     font-stretch: normal; */
+/*     font-style: normal; */
+/*     font-variant: normal; */
+/*     font-weight: normal; */
+/*     /\* height: 648px; *\/ */
+/*     letter-spacing: 0.666666686534882px; */
+/*     line-height: 22.8571434020996px; */
+/*     text-rendering: optimizeLegibility; */
+/*     /\* -moz-border-radius: 10px; *\/ */
+/*     /\* -webkit-border-radius: 10px; *\/ */
+/*     /\* border-radius: 10px; /\\* future proofing *\\/ *\/ */
+/*     /\* -khtml-border-radius: 10px; /\\* for old Konqueror browsers *\\/ *\/ */
+/* } */
+.list-hr{
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(221, 221, 221), rgba(0, 0, 0, 0));
+    margin: .5rem;
+}
+
+.list-group-item{
+    border-color: #191919;
 }
 
 div.jumbotron.about-box{
