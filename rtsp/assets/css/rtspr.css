@@ -63,6 +63,7 @@ h3.example{
 
 .label-pill{
     font-size: 20px;
+    background-color: white;
   }
 
 /* issues with stacking for footer navbar and UTSemblem caused by needing
