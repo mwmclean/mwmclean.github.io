@@ -31,12 +31,13 @@
   </head>
 
   <body>
-    <hr class="featurette-header">	
+    <hr class="featurette-header">
+    <div class = "container-fluid">  
     <div class = "row">
-      <div class = "col-md-5">
+      <div class = "col-lg-5">
 	<figure>
 	  <img id="result2" src="../SydneyRealEstate/result2.png"
-	       alt="Map of recent rentals">
+	       alt="Map of recent rentals" class="img-responsive">
 	  <figcaption>
 	    Geographical map of Sydney with processed properties as small black dots
 	    and recently (i.e. during the last hour) added ones as yellow circles.
@@ -44,7 +45,7 @@
 	  </figcaption>
 	</figure>
       </div>
-      <div class="col-md-7" id = "rentalMapContainer">
+      <div class="col-lg-7" id = "rentalMapContainer" class="img-responsive">
 	<figure>
 	  <img id="rentalColourMap" src="../SydneyRealEstate/result1.png"
 	       alt = "Weekly rent colour map">
@@ -57,13 +58,15 @@ _	      two bedroom apartment with one bathroom and one car space for various
 	  </figcaption>
 	</figure>
       </div>
-    </div>
+	</div>
+      </div>
+      
 
     <div class = "row">
       <div class="col-md-6">
 	<figure>
-	  <img id="result3" src="../SydneyRealEstate/result3.png" width="640"
-	       alt = "Approximate posteriors">
+	  <img id="result3" src="../SydneyRealEstate/result3.png" 
+	       alt = "Approximate posteriors" class="img-responsive">
 	  <figcaption class = "text-center">
 	    The approximate posterior density function for the impact of the property
 	    being a house or not. Regression fits and 95% credible sets for the number
