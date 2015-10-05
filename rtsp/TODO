@@ -7,6 +7,8 @@
 * make sure mp4 files works
 * try on mobile
 * navbar on examples like theplayerstribune.com
+* [ ] glyphs for email and homepage on contacts
+* consider making use of .center-block
 
 Bugs
 ========================
@@ -23,4 +25,6 @@ Bugs
 * [x] make my name in footer white
 * [x (seemingly)] make UTS logo anchor clickable
 * [x] unclick example button should hide example and change button colour
-* [ ] Sydney example first row of plots: 2nd plot overlaps 1st if screen width reduced
+* [x] Sydney example first row of plots: 2nd plot overlaps 1st if screen width reduced
+      (fixed using img-responsive class)
+      
