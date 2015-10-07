@@ -22,7 +22,7 @@ function toggle(folder) {
     activeTab = folder + "-tab";
     $("#" + activeTab).toggleClass("active");
     $("#example-tabs a.nav-link").each(function(){
-    	if(this.id != divToShow && $(this).hasClass("active"))
+    	if(this.id != activeTab && $(this).hasClass("active"))
       		$(this).toggleClass("active");
     });
     

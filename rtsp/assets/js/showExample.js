@@ -30,7 +30,7 @@
         // } else if (eventId == 'flight'){
 	//     $('#'+eventId).trigger('click');
         // } // end if/else
-        $("#" + exName + "-tab").tab("show");
+        // $("#" + exName + "-tab").tab("show");
 	toggle(exName);
 	// console.log('#example-tabs a[href="javascript:toggle(' + "'" + exName + "')" + '"]');
 	// $('#example-tabs a[href="javascript:toggle(' + "'" + exName + "')" + '"]').tab('show');
