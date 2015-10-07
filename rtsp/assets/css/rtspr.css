@@ -5,7 +5,7 @@
 
 nav, .example > button, .example :hover, btn.active.btn-info.active,
 .btn-info.focus, .btn-info:active, .btn-info:focus, .btn-info:hover,
-.open>.btn-info.dropdown-toggle{
+.open>.btn-info.dropdown-toggle, #example-tabs{
     background: #191919;
     border-color: #191919;
 }
@@ -150,7 +150,7 @@ p, span{
     display: block;
 }
 
-#navbar a{
+#navbar a, #example-tabs a{
     color: white;
 }
 
@@ -184,7 +184,7 @@ p, span{
     font-family: optima, "nimbus-sans-condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-#navbar li{
+#navbar li, #example-tabs li{
     /* text-transform: uppercase; */
     text-transform: uppercase;
     font-style: italic;
@@ -192,9 +192,14 @@ p, span{
     color: white;
 }
 
-#navbar li.nav-item.active > a{
+#navbar li.nav-item.active > a, #example-tabs a.nav-link.active{
     font-style: normal;
     font-weight: bolder;
+}
+
+#example-tabs a.nav-link.active{
+    background-color: #191919;
+    color: white;
 }
 
 .tab-header{
@@ -377,3 +382,4 @@ figcaption{
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
+
