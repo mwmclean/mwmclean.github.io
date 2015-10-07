@@ -52,8 +52,7 @@
 	</ul>
       </div>
     </nav>
-
-
+    
     <div class="container-fluid">
       <!-- References
 	   ======================================== -->
@@ -232,6 +231,15 @@
     <!-- 	  } -->
     <!--   }); -->
     <!-- </script>     -->
+    
+    <!-- odd/even styling for backgroud-color of list items -->    
+    <script type="text/javascript">
+      $(".list-group > .list-group-item:odd").css("background-color", "#fff");
+      $(".list-group > .list-group-item:odd .label-pill").css("background-color", "#fff");      
+      $(".list-group > .list-group-item:even").css("background-color", "#f9f9f9");
+      $(".list-group > .list-group-item:even .label-pill").css("background-color", "#f9f9f9");      
+    </script>
+
     <script type="text/javascript">
 
       var _gaq = _gaq || [];

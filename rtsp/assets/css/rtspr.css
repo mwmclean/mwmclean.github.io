@@ -383,3 +383,6 @@ figcaption{
     border-bottom-right-radius: 10px;
 }
 
+#references .list-group-item{
+  border: 1px solid #eceeef;
+}
