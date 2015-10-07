@@ -17,6 +17,7 @@
     <link href="../assets/css/stickyFooter.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="../assets/js/toggle.js" rel="stylesheet"></script>    
     <script src="../assets/js/showExample.js" rel="stylesheet"></script>
   </head>
   <body> 
@@ -50,60 +51,98 @@
     </nav>
 
     <!-- PANELS for examples  
-     ================================== -->
-    <div class = "container-fluid">
-      <h2 class = "tab-header">Examples</h2>
-      <!-- <div class = "row"> -->
-      <hr class="featurette-divider">
-      <div class = "text-center">
-	<div class = "btn-group">
-	    <input type="button" class="btn btn-info dropdown-toggle example-btn" data-toggle="collapse"
-		    data-target="#ex-RealEstate" aria-expanded="false" id = "SydneyRealEstate-btn" 
-	      value="Sydney property rental data" onclick='javascript:toggle("SydneyRealEstate");'/>
-	      <!-- <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span> -->
-	    <!-- </button> -->
-	    <input type="button" class="btn btn-info dropdown-toggle example-btn" data-toggle="collapse"
-		    data-target="#ex-Flight" aria-expanded="false" id = "FlightData-btn"
-		   value="U.S. domestic flight data" onclick='javascript:toggle("FlightData");'/>
-	    <input type="button" class="btn btn-info dropdown-toggle example-btn" data-toggle="collapse"
-		    data-target="#ex-Flight2" aria-expanded="false" id = "FlightDataForgetting-btn"
-		   value="Flight data revisited" onclick='javascript:toggle("FlightDataForgetting");'/>
-	    <input type="button" class="btn btn-info dropdown-toggle example-btn" data-toggle="collapse"
-		    data-target="#ex-Stock" aria-expanded="false" id = "StockData-btn"
-	      value="Stock price data" onclick='javascript:toggle("StockData");'/>
-	    <input type="button" class="btn btn-info dropdown-toggle example-btn" data-toggle="collapse"
-		    data-target="#ex-Simulated" aria-expanded="false" id = "SimulatedData-btn"
-	      value="Simulated data" onclick='javascript:toggle("SimulatedData");'/>
+	 ================================== -->
 
-	      <!-- <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span> -->
-	    <!-- </button> -->
-	</div>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs nav-justified" role="tablist" id = "example-tabs">
+      <li class="nav-item">
+	<a class="nav-link active" href="javascript:toggle('SydneyRealEstate')"
+	   role="tab" id = "SydneyRealEstate-tab">Sydney property rental data</a>
+      </li>
+      <li class="nav-item">
+	<a class="nav-link" href="javascript:toggle('FlightData')"
+	   role="tab" id ="FlightData-tab">U.S. domestic flight data</a>
+      </li>
+      <li class="nav-item">
+	<a class="nav-link" href="javascript:toggle('FlightDataForgetting')"
+	   role="tab" id="FlightDataForgetting-tab">Flight data revisited</a>
+      </li>
+      <li class="nav-item">
+	<a class="nav-link" href="javascript:toggle('StockData')"
+	   role="tab" id="StockData-tab">Stock price data</a>
+      </li>
+      <li class="nav-item">
+	<a class="nav-link" href="javascript:toggle('SimulatedData')"
+	   role="tab" id="SimulatedData-tab">Simulated data</a>
+      </li>    </ul>
+
+    <!-- Tab panes -->
+      <div class = "tab-content">
+	  <div role="tabpanel" class="tab-pane" id = "ex-SydneyRealEstate">
+	  </div>
+	  <div role="tabpanel" class="tab-pane" id = "ex-FlightData">
+	  </div>
+	  <div role="tabpanel" class="tab-pane" id = "ex-FlightDataForgetting">
+	  </div>
+	  <div role="tabpanel" class="tab-pane" id = "ex-StockData">
+	  </div>
+	  <div role="tabpanel" class="tab-pane" id = "ex-SimulatedData">
+	  </div>
       </div>
-    </div>
+
+    <!-- <div class = "container-fluid"> -->
+    <!--   <h2 class = "tab-header">Examples</h2> -->
+    <!--   <\!-- <div class = "row"> -\-> -->
+    <!--   <hr class="featurette-divider"> -->
+    <!--   <div class = "text-center"> -->
+    <!-- 	<div class = "btn-group"> -->
+    <!-- 	    <input type="button" class="btn btn-info dropdown-toggle example-btn" data-toggle="collapse" -->
+    <!-- 		    data-target="#ex-RealEstate" aria-expanded="false" id = "SydneyRealEstate-btn"  -->
+    <!-- 	      value="Sydney property rental data" onclick='javascript:toggle("SydneyRealEstate");'/> -->
+    <!-- 	      <\!-- <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span> -\-> -->
+    <!-- 	    <\!-- </button> -\-> -->
+    <!-- 	    <input type="button" class="btn btn-info dropdown-toggle example-btn" data-toggle="collapse" -->
+    <!-- 		    data-target="#ex-Flight" aria-expanded="false" id = "FlightData-btn" -->
+    <!-- 		   value="U.S. domestic flight data" onclick='javascript:toggle("FlightData");'/> -->
+    <!-- 	    <input type="button" class="btn btn-info dropdown-toggle example-btn" data-toggle="collapse" -->
+    <!-- 		    data-target="#ex-Flight2" aria-expanded="false" id = "FlightDataForgetting-btn" -->
+    <!-- 		   value="Flight data revisited" onclick='javascript:toggle("FlightDataForgetting");'/> -->
+    <!-- 	    <input type="button" class="btn btn-info dropdown-toggle example-btn" data-toggle="collapse" -->
+    <!-- 		    data-target="#ex-Stock" aria-expanded="false" id = "StockData-btn" -->
+    <!-- 	      value="Stock price data" onclick='javascript:toggle("StockData");'/> -->
+    <!-- 	    <input type="button" class="btn btn-info dropdown-toggle example-btn" data-toggle="collapse" -->
+    <!-- 		    data-target="#ex-Simulated" aria-expanded="false" id = "SimulatedData-btn" -->
+    <!-- 	      value="Simulated data" onclick='javascript:toggle("SimulatedData");'/> -->
+
+    <!-- 	      <\!-- <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span> -\-> -->
+    <!-- 	    <\!-- </button> -\-> -->
+    <!-- 	</div> -->
+    <!--   </div> -->
+    <!-- </div> -->
       
-      <!-- <div class = "container collapse" id = "ex-viewer"></div> -->
-      <div class = "container-fluid">
-	<div class="panel panel-default">
-	  <div class="panel-body collapse" aria-expanded="false" id = "ex-SydneyRealEstate">
-	  </div>
-	</div>
-	<div class="panel panel-default">
-	  <div class="panel-body collapse" aria-expanded="false" id = "ex-FlightData">
-	  </div>
-	</div>
-	<div class="panel panel-default">
-	  <div class="panel-body collapse" aria-expanded="false" id = "ex-FlightDataForgetting">
-	  </div>
-	</div>
-	<div class="panel panel-default">
-	  <div class="panel-body collapse" aria-expanded="false" id = "ex-StockData">
-	  </div>
-	</div>
-	<div class="panel panel-default">
-	  <div class="panel-body collapse" aria-expanded="false" id = "ex-SimulatedData">
-	  </div>
-	</div>
-      </div>
+    <!--   <\!-- <div class = "container collapse" id = "ex-viewer"></div> -\-> -->
+    <!--   <div class = "container-fluid"> -->
+    <!-- 	<div class="panel panel-default"> -->
+    <!-- 	  <div class="panel-body collapse" aria-expanded="false" id = "ex-SydneyRealEstate"> -->
+    <!-- 	  </div> -->
+    <!-- 	</div> -->
+    <!-- 	<div class="panel panel-default"> -->
+    <!-- 	  <div class="panel-body collapse" aria-expanded="false" id = "ex-FlightData"> -->
+    <!-- 	  </div> -->
+    <!-- 	</div> -->
+    <!-- 	<div class="panel panel-default"> -->
+    <!-- 	  <div class="panel-body collapse" aria-expanded="false" id = "ex-FlightDataForgetting"> -->
+    <!-- 	  </div> -->
+    <!-- 	</div> -->
+    <!-- 	<div class="panel panel-default"> -->
+    <!-- 	  <div class="panel-body collapse" aria-expanded="false" id = "ex-StockData"> -->
+    <!-- 	  </div> -->
+    <!-- 	</div> -->
+    <!-- 	<div class="panel panel-default"> -->
+    <!-- 	  <div class="panel-body collapse" aria-expanded="false" id = "ex-SimulatedData"> -->
+    <!-- 	  </div> -->
+    <!-- 	</div> -->
+    <!--   </div> -->
 	
       
 <!--     <div class="panel panel-default"> -->
@@ -262,6 +301,5 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="../assets/js/bootstrap.min.js"></script>
-    <script src="../assets/js/toggle.js" rel="stylesheet"></script>    
   </body>
 </html>

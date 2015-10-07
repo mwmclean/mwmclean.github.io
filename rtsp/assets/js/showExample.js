@@ -30,7 +30,12 @@
         // } else if (eventId == 'flight'){
 	//     $('#'+eventId).trigger('click');
         // } // end if/else
-	$('#' + exName + '-btn').trigger('click');
+        $("#" + exName + "-tab").tab("show");
+	toggle(exName);
+	// console.log('#example-tabs a[href="javascript:toggle(' + "'" + exName + "')" + '"]');
+	// $('#example-tabs a[href="javascript:toggle(' + "'" + exName + "')" + '"]').tab('show');
+	// for btngrp use:
+	// $('#' + exName + '-btn').trigger('click');
     });
 
     function getParameterByName(name) {
