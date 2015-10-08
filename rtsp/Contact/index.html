@@ -118,8 +118,10 @@
 	<tbody>
 	  <tr>
 	    <td scope="row">
-	      <img src="../assets/img/matt-wand2.svg"
-		   alt = "Matt Wand" class = "col-sm-2 team-photo img-circle">
+	      <div class="team-photo" id = "MW-photo">
+		<!-- <img src="../assets/img/matt-wand2.svg" -->
+		<!--      alt = "Matt Wand" class = "team-photo img-circle"> -->
+	      </div>
 	    </td>
 	    <th scope = "row">
 		    Matt P. Wand
@@ -143,8 +145,11 @@
 	  </tr>
 	  <tr>
 	    <td scope = "row">
-	      <img src="../assets/img/matt-mclean.jpg"
-		   alt = "Matt McLean" class = "col-sm-2 team-photo img-circle">
+	      <div class="team-photo" id = "MM-photo"></div>
+	      <!-- <div class = "img-div"> -->
+	      <!-- 	<img src="../assets/img/matt-mclean.svg" -->
+	      <!-- 	     alt = "Matt McLean" class = "team-photo img-circle"> -->
+	      <!-- </div> -->
 	    </td>
 	    <th>
 		Mathew W. McLean
@@ -215,6 +220,11 @@
       $(".table-striped tr:odd .label-pill").css("background-color", "#fff");      
       $(".table-striped tr:even .label-pill").css("background-color", "#f9f9f9");      
     </script>
+    <!-- <script type="text/javascript"> -->
+    <!--   $("div.team-photo").each(function(){ -->
+    <!--     $(this).css("background-image", "url('" + $(this).attr("data-img") + "')"); -->
+    <!--   }); -->
+    <!-- </script> -->
     <script type="text/javascript">
 
       var _gaq = _gaq || [];

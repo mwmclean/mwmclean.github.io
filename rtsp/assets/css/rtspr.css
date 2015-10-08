@@ -206,12 +206,48 @@ p, span{
     margin-top: 15px;
 }
 
-img.team-photo{
-    height: auto;
-    width: auto;
-    max-height: 200px;
-    max-width: 150px;    
+/* img.team-photo{ */
+/*     height: auto; */
+/*     width: auto; */
+/*     max-height: 150px; */
+/*     max-width: 150px; */
+/*     /\* border-radius: 50%; *\/ */
+/* } */
+
+/* Team photos on Contact page */
+div.team-photo{
+    width:175px;
+    height:175px;
+    border-radius:50%;
+    /* background-image:url("../../../assets/img/matt-mclean.svg"); */
+    display:block;
+    background-size:100%;
+    background-position:center;
 }
+
+#MW-photo{
+    background-image:url("../../../assets/img/matt-wand2.svg");
+    /* background-position-x:5% */
+}
+
+#MM-photo{
+    background-image:url("../../../assets/img/matt-mclean.svg");
+    background-position-y:10%;
+    /* background-position-x: 90%; */
+}
+
+/* alternative if use div > img for team photos */
+/* div.img-div{ */
+/*     height:250px; */
+/*     width:250px; */
+/*     overflow:hidden; */
+/*     border-radius:50%; */
+/* } */
+
+/* .img-div img{ */
+/*     -webkit-transform:translate(-50%); */
+/*     margin-left:100px; */
+/* } */
 
 .jumbotron.vertical-center {
   margin-bottom: 0; /* Remove the default bottom margin of .jumbotron */
@@ -385,4 +421,9 @@ figcaption{
 
 #references .list-group-item{
   border: 1px solid #eceeef;
+}
+
+#references .list-group-item-text{
+    font-family: optima, "nimbus-sans-condensed", "Helvetica Neue",
+    Helvetica, Arial, sans-serif;
 }
