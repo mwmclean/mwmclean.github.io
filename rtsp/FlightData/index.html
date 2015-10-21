@@ -1,64 +1,134 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html>
-<head>
-<title>Real-time Analysis of U.S. Flight Data</title>
-<link rel="stylesheet" href="../assets/css/rtspr.css" />
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
-<script type="text/javascript" src="../assets/js/rental.js"></script>
-
-   <script type="text/javascript">
-      $(document).ready(function() {
-        setInterval( function() {
-          $(["result1", "result2","result3","result4","result5","result6","result8"]).map(
-                 function( idx , id ){
-                   $("#" + id).attr( "src" , id + ".png" + "?ign=" + (new Date()).valueOf() );
-                 } );
-          $("#updateMessage").text( "Last refresh was at " + formatted_time() + "." );
-        } , 60000 );
-      } );
+  <head>
+    <title>Real-time Analysis of U.S. Flight Data</title>
+    <link href="../assets/css/rtspr.css" rel="stylesheet">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../assets/js/rental.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	extensions: ["tex2jax.js"],
+	jax: ["input/TeX", "output/HTML-CSS"],
+	tex2jax: {
+	  inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+	  displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+	  processEscapes: true
+	},
+      "HTML-CSS": {
+	availableFonts: ["TeX"],
+	linebreaks: { automatic: true, width: "container" },
+      }
+      });
+    </script>
+    <script type="text/javascript" async
+      src="http://cdn.mathjax.org/mathjax/latest/MathJax.js">
     </script>
 
-</head>
+    <script type="text/javascript">
+	$(document).ready(function() {
+	  setInterval( function() {
+	    $(["result1", "result2","result3","result4","result5","result6","result8"]).map(
+		   function( idx , id ){
+		     $("#" + id).attr( "src" , id + ".png" + "?ign=" + (new Date()).valueOf() );
+		   } );
+	    $("#updateMessage").text( "Last refresh was at " + formatted_time() + "." );
+	  } , 60000 );
+	} );
+    </script>
+  </head>
 
   <body>
-    <!-- <hr class="featurette-header"> -->
-      <div class = "container-fluid text-center">
-	<!-- <a title="By Alex Pereslavtsev [GFDL 1.2 (http://www.gnu.org/licenses/old-licenses/fdl-1.2.html) or GFDL 1.2 (http://www.gnu.org/licenses/old-licenses/fdl-1.2.html)], via Wikimedia Commons" -->
-	<!--    href="https://commons.wikimedia.org/wiki/File%3AAeroflot_Airbus_A330-200_de-icing_Pereslavtsev.jpg"> -->
-	<!--   <img width="512" alt="Aeroflot Airbus A330-200 de-icing Pereslavtsev" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Aeroflot_Airbus_A330-200_de-icing_Pereslavtsev.jpg/512px-Aeroflot_Airbus_A330-200_de-icing_Pereslavtsev.jpg" /> -->
-	<!-- </a> -->
-	<!-- <a title="By Micahmn at en.wikipedia [Public domain], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File%3AWashington_National_Airport_at_Night.jpg"><img style="width: 100%" alt="Washington National Airport at Night" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Washington_National_Airport_at_Night.jpg/512px-Washington_National_Airport_at_Night.jpg"/></a> -->
-	<img src="../assets/img/AeroflotAirbusde-icing.jpg"
-	     title="By Alex Pereslavtsev [GFDL 1.2 (http://www.gnu.org/licenses/old-licenses/fdl-1.2.html) or GFDL 1.2 (http://www.gnu.org/licenses/old-licenses/fdl-1.2.html)], via Wikimedia Commons" 
-	     alt="Airplane de-icing" class="header-img">
-      </div>
-	  <div class = "row">
-      <div class = "col-lg-7">
-	<figure>
-	  <img id="result1" src="../FlightData/result1.png"
-	       alt="Map of recent flights" class="img-responsive">
-	  <figcaption>
-            Geographical map of North America with most recently (i.e. during the last
-	    minutes) processed U.S. domestic flights. Yellow points and dashed lines
-	    indicate airports and flights, respectively. The total number of processed
-	    flights is included at the bottom.
-	  </figcaption>
-	</figure>
-      </div>
-      <div class="col-lg-5">
-	<figure>
-	  <img id="result6" src="../FlightData/result6.png"
-	       alt = "Approximate Posteriors" class="img-responsive">
-	    <figcaption>
-	      The approximate posterior density functions related to the METAR flight
-	      category at departure and arrival airport: marginal visual flight rules,
-	      instrument flight rules and low instrument flight rules versus visual
-	      flight rules.
-	  </figcaption>
-	</figure>
-      </div>
+    <div class = "text-center">
+      <img src="../assets/img/Bostondelay.jpg"
+	   title="By Daniel Schwen (Own work) [CC BY-SA 2.5 (http://creativecommons.org/licenses/by-sa/2.5)], via Wikimedia Commons"
+	   alt="Airplane de-icing" class="header-img">
     </div>
+    <div class = "container">
+      <div class = "jumbotron text-center example-intro">
+	Air traffic delays represent a critical problem for both airlines
+	and passengers.  Here, we demonstrate our methodology with real-time
+	analysis of U.S. domestic flights.  We use the website
+	<a href="https://www.flightstats.com">flightstats.com</a> to obtain data on
+	flight delay, flight distance, operating airline, and flight path.  Data
+	on temperature, wind speed, and aviation flight category are obtained
+	through the website <a href="https://aviationweather.gov">
+	  aviationweather.gov</a>.
+      </div>
+      <h2>Model Description</h2>
+      <div class="container-fluid">
+	<p>
+          The flight delay is assumed to follow a normal distribution with variance
+	  \(\sigma^2_\epsilon\) and mean
+	  \[
+	    E[\log(\text{delay}_{ijk}+120)] = \beta_0+U_i+V_j+
+	    \beta_1\text{MVFRdep}_{ijk}+
+	    \beta_2\text{IFRdep}_{ijk}+\beta_3\text{LIFRdep}_{ijk}+
+	    \beta_4\text{MVFRarr}_{ijk}+\beta_5\text{IFRarr}_{ijk}+
+	    \beta_6\text{LIFRarr}_{ijk}+f_7(\{\text{flight distance}\}_j)+
+	    f_8(\{\text{departure temperature}\}_{ijk})+
+	    f_9(\{\text{arrival temperature}\}_{ijk})+
+	    f_{10}(\{\text{departure wind speed}\}_{ijk})+
+	    f_{11}(\{\text{departure arrival speed}\}_{ijk}),
+	  \]
+	</p>
+	<p>
+	  where
+	</p>
+	<ul>
+	  <li>\(\text{delay}_{ijk}\) is the difference between the actual and
+	    scheduled runway arrival time in minutes for the \(k\)th flight of
+	    airline \(i\) on flight path \(j\). </li>
+	  <li>\(\text{MVFRdep}_{ijk},\text{IFRdep}_{ijk},\text{LIFRdep}_{ijk},
+	    \text{MVFRarr}_{ijk},\text{IFRarr}_{ijk},\text{LIFRarr}_{ijk}\) are
+	    indicator variables are used to distinguish flights with special
+	    flight rules at either the departure or arrival airport; for example,
+	    \(\text{MVFRdep}_{ijk}\) indicates whether marginal visual flight
+	    rules apply at the departure airport.</li>
+	  <li>\(U_i,1\leq i\leq 171\), are random intercepts for
+	    each of the 171 airlines.</li>
+	  <li>\(V_i,1\leq i\leq 2000\), are random intercepts for
+	    each of the 2000 flight paths.</li>
+	  <li>\(f_7,f_8,f_9,f_{10},f_{11}\) are unknown functions estimated
+	    using penalized spline methodology.</li>
+	</ul>
+	
+      </div> <!-- end description container -->
+      
+      <h2>Real-Time Results</h2>
+      <p>
+	The model is fit (and updated every few minutes) using mean field
+	variational Bayes as described in <a href="LutsBroderickWandPaper.pdf"
+	    target = "_blank">Luts, Broderick, and Wand (2014)
+	  <sup><i class="fa fa-external-link"></i></sup></a>.  Below we use
+	the fitted model to estimate the airlines and flight paths with the
+	lowest and highest delays.
+      </p>
+      <div class = "row">
+	<div class = "col-lg-7">
+	  <figure>
+	    <img id="result1" src="../FlightData/result1.png"
+		 alt="Map of recent flights" class="img-responsive">
+	    <figcaption>
+	      Geographical map of North America with most recently (i.e. during the last
+	      minutes) processed U.S. domestic flights. Yellow points and dashed lines
+	      indicate airports and flights, respectively. The total number of processed
+	      flights is included at the bottom.
+	    </figcaption>
+	  </figure>
+	</div>
+	<div class="col-lg-5">
+	  <figure>
+	    <img id="result6" src="../FlightData/result6.png"
+		 alt = "Approximate Posteriors" class="img-responsive">
+	      <figcaption>
+		The approximate posterior density functions related to the METAR flight
+		category at departure and arrival airport: marginal visual flight rules,
+		instrument flight rules and low instrument flight rules versus visual
+		flight rules.
+	    </figcaption>
+	  </figure>
+	</div>
+      </div>
 
     <div class="container-fluid text-center">
       <figure>   <!-- width="1140px" -->
@@ -112,27 +182,27 @@
       </div>
       </div>
 
-<p>This data will be updated every few minutes.
-<span id="updateMessage"></span>
-</p>
+	<p>
+	  This data will be updated every few minutes.
+	  <span id="updateMessage"></span>
+	</p>
+      </div>  <!-- End Example container -->
 
-<script type="text/javascript">
+    <script type="text/javascript">
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-34649213-4']);
-  _gaq.push(['_setDomainName', 'realtime-semiparametric-regression.net']);
-  _gaq.push(['_trackPageview']);
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34649213-4']);
+      _gaq.push(['_setDomainName', 'realtime-semiparametric-regression.net']);
+      _gaq.push(['_trackPageview']);
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+      (function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
 
-</script>
-
-
-</body>
+    </script>
+  </body>
 </html>
 
 
