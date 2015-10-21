@@ -148,6 +148,7 @@ p, span{
     'Lucida Typewriter', monospace;
     color: rgb(85, 85, 85);
     display: block;
+    margin-bottom: 0;
 }
 
 #navbar a, #example-tabs a{
