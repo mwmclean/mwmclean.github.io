@@ -426,6 +426,12 @@ figcaption{
 #references .list-group-item-text{
     font-family: optima, "nimbus-sans-condensed", "Helvetica Neue",
     Helvetica, Arial, sans-serif;
-}.tab-content{
+}
+
+header-img{
+    width: 100%;
+}
+
+.tab-content{
     padding-bottom: 65px;
 }
