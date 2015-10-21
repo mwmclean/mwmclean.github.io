@@ -15,6 +15,21 @@
       <!-- J. Luts used JQuery 1.3.0 -->	
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <script src="../assets/js/rental.js"></script>
+      <script type="text/x-mathjax-config">
+	MathJax.Hub.Config({
+	  extensions: ["tex2jax.js"],
+	  jax: ["input/TeX", "output/HTML-CSS"],
+	  tex2jax: {
+	    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+	    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+	    processEscapes: true
+	  },
+	  "HTML-CSS": { availableFonts: ["TeX"] }
+	});
+      </script>
+      <script type="text/javascript" async
+	src="http://cdn.mathjax.org/mathjax/latest/MathJax.js">
+      </script>
 
      <script type="text/javascript">
 	$(document).ready(function() {
@@ -35,6 +50,55 @@
       <img src="../assets/img/sydney-opera-house1.jpg"
 	     alt="Sydney Opera House" class="header-img">
     </div>
+    <!-- <hr class="featurette-header"> -->
+    <div class = "container">
+      <div class = "jumbotron text-center example-intro">
+	<!-- <h2>Introduction</h2> -->
+	This example involves real-time semiparametric regression analysis of data
+	from the property rental market in Sydney, Australia. Each day, hundreds
+	of properties come on the Sydney market and these fresh data are usually
+	advertised on rental agency and real estate websites such as
+	<a href="http://realestate.com.au">realestate.com.au</a>. This offers the
+	possibility to perform real-time analysis and produce live and up-to-date
+	summaries of the rental market status. An attractive approach to model
+	such data is the special case of semiparametric regression known as
+	geoadditive models
+	(<a href="http://matt-wand.utsacademics.info/publicns/Kammann03.pdf"
+	    target = "_blank">Kammann and Wand 2003
+	  <sup><i class="fa fa-external-link"></i></sup></a>).
+      </div>
+      <h2>Model Description</h2>
+      <div class="container-fluid">
+	<p>
+	  The logarithm of weekly rent is assumed to follow a normal distribution
+	  with variance \(\sigma^2_\epsilon\) and mean 
+	  \[
+	  E[\log((\text{weekly rent})_{ij})]
+	  =
+	  \beta_0+U_i+\beta_1\text{house}_{ij}+f_2((\text{number of bedrooms})_{ij})
+	  +f_3((\text{number of bathrooms})_{ij})\\
+	  +f_4((\text{number of car spaces})_{ij})
+	  +f_5(\text{longitude}_{ij}, \text{latitude}_{ij}),
+	  \]
+	</p>
+	  where
+	</p>
+	<ul>
+	  <li>\((\text{weekly rent})_{ij}\) is the weekly rental amount in Australian
+	    dollars of the \(j\)th property for the \(i\)th real estate agency
+	  </li>
+	  <li>\(U_1,\ldots,U_{992}\vert\sigma^2_U\overset{ind.}{\sim}
+	    N(0,\sigma_U^2)\) are random intercepts for the rental agency</li>
+	  <li>\(\text{house}_{ij}\) is an indicator for the property being a house
+	    or apartment </li>
+	  <li>\(\text{longitude}_{ij}\) and \(\text{latitude}_{ij}\) convey the
+	    geographic location of the property </li>
+	  <li>\(f_2,f_3,f_4,f_5\) are unknown functions estimated using penalized
+	    spline methodology </li>
+	</ul>
+      </div>
+    <h2>Real-Time Results</h2>
+    <div class = "container-fluid">
     <div class = "row">
       <div class = "col-lg-5">
 	<figure>
@@ -61,8 +125,7 @@
 	</figure>
       </div>
 	</div>
-      </div>
-      
+      </div>      
 
     <div class = "row">
       <div class="col-md-6">
@@ -103,9 +166,11 @@
       </div>
     </div>
       
-    <p>This data will be updated every hour.
+	<div class = "row">
+	  This data will be updated every hour.
       <span id="updateMessage"></span>
-    </p>
+    </div>
+    </div>
 
     <script type="text/javascript">
 
