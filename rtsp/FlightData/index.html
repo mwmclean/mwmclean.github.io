@@ -77,19 +77,19 @@
 	<ul>
 	  <li>\(\text{delay}_{ijk}\) is the difference between the actual and
 	    scheduled runway arrival time in minutes for the \(k\)th flight of
-	    airline \(i\) on flight path \(j\). </li>
+	    airline \(i\) on flight path \(j\)</li>
 	  <li>\(\text{MVFRdep}_{ijk},\text{IFRdep}_{ijk},\text{LIFRdep}_{ijk},
 	    \text{MVFRarr}_{ijk},\text{IFRarr}_{ijk},\text{LIFRarr}_{ijk}\) are
 	    indicator variables are used to distinguish flights with special
 	    flight rules at either the departure or arrival airport; for example,
 	    \(\text{MVFRdep}_{ijk}\) indicates whether marginal visual flight
-	    rules apply at the departure airport.</li>
+	    rules apply at the departure airport</li>
 	  <li>\(U_i,1\leq i\leq 171\), are random intercepts for
-	    each of the 171 airlines.</li>
+	    each of the 171 airlines</li>
 	  <li>\(V_i,1\leq i\leq 2000\), are random intercepts for
-	    each of the 2000 flight paths.</li>
+	    each of the 2000 flight paths</li>
 	  <li>\(f_7,f_8,f_9,f_{10},f_{11}\) are unknown functions estimated
-	    using penalized spline methodology.</li>
+	    using penalized spline methodology</li>
 	</ul>
 	
       </div> <!-- end description container -->
@@ -143,7 +143,7 @@
     </div>
       <div class="container-fluid">
     <div class = "row">
-      <div class = "col-xs-2 col-md-1">
+      <div class = "col-md-4">
 	<figure>
 	  <img id="result4" src="../FlightData/result4.png"
 	       alt="Airlines having shortest delays" class="img-responsive">
@@ -152,16 +152,7 @@
 	  </figcaption>
 	</figure>
       </div>
-      <div class="col-xs-2 col-md-1">
-	<figure> <!-- width=500px -->
-	  <img id="result5" src="../FlightData/result5.png" 
-	       alt = "Airlines having longest delays" class="img-responsive">
-	    <figcaption>
-	      Airlines having longest delays.
-	    </figcaption>
-	</figure>
-      </div>
-      <div class="col-xs-8 col-lg-5">
+      <div class="col-md-8">
 	<figure>
 	  <img id="result2" src="../FlightData/result2.png"
 	       alt = "Flight paths having shortest delays" class="img-responsive">
@@ -170,7 +161,18 @@
 	  </figcaption>
 	</figure>
       </div>	
-      <div class="col-xs-8 col-md-5">
+    </div>
+    <div class="row">  
+      <div class="col-md-4">
+	<figure> <!-- width=500px -->
+	  <img id="result5" src="../FlightData/result5.png" 
+	       alt = "Airlines having longest delays" class="img-responsive">
+	    <figcaption>
+	      Airlines having longest delays.
+	    </figcaption>
+	</figure>
+      </div>
+      <div class="col-md-8">
 	<figure>
 	  <img id="result3" src="../FlightData/result3.png"
 	       alt = "Flight paths having longest delays" class="img-responsive">
