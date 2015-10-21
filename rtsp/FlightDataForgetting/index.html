@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Real-time Semiparametric Regression</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
+  <script type="text/javascript" src="../assets/js/rental.js"></script>
+
+     <script type="text/javascript">
+	$(document).ready(function() {
+	  setInterval( function() {
+	    $(["result2_1","result2_2","result2_3","result3_1","result3_2","result3_3","result4_1","result4_2","result4_3","result5_1","result5_2","result5_3","result6_1","result6_2","result6_3","result7_1","result7_2","result7_3","result8_1","result8_2","result8_3","result9_1","result9_2","result9_3","result10_1","result10_2","result10_3",
+  "result11_1","result11_2","result11_3","result12_1","result12_2","result12_3","result13"]).map(
+		   function( idx , id ){
+		     $("#" + id).attr( "src" , id + ".png" + "?ign=" + (new Date()).valueOf() );
+		   } );
+	    $("#updateMessage").text( "Last refresh was at " + formatted_time() + "." );
+	  } , 30000 );
+	} );
+      </script>
+
+  </head>
+
+  <body>
+    <div class = "text-center">
+      <img src="../assets/img/AeroflotAirbusde-icing.jpg"
+	   title="By Alex Pereslavtsev [GFDL 1.2 (http://www.gnu.org/licenses/old-licenses/fdl-1.2.html) or GFDL 1.2 (http://www.gnu.org/licenses/old-licenses/fdl-1.2.html)], via Wikimedia Commons" 
+	   alt="Airplane de-icing" class="header-img">
+    </div>
+    <div class = "container">
+      <div class = "jumbotron text-center example-intro">
+	Air traffic delays represent a critical problem for both airlines
+	and passengers.  Here, we demonstrate our methodology with real-time
+	analysis of U.S. domestic flights.  We use the website
+	<a href="https://www.flightstats.com">flightstats.com</a> to obtain data on
+	flight delay, flight distance, operating airline, and flight path.  Data
+	on temperature, wind speed, and aviation flight category are obtained
+	through the website <a href="https://aviationweather.gov">
+	  aviationweather.gov</a>.
+      </div>
+      <h2>Model Description</h2>
+      <div class="container-fluid">
+	<p>
+	  As before, the flight delay is assumed to follow a normal distribution
+	  with variance \(\sigma^2_\epsilon\) and mean
+	  \[
+	    E[\log(\text{delay}_{ijk}+120)] = \beta_0+U_i+V_j+
+	    \beta_1\text{MVFRdep}_{ijk}+
+	    \beta_2\text{IFRdep}_{ijk}+\beta_3\text{LIFRdep}_{ijk}+
+	    \beta_4\text{MVFRarr}_{ijk}+\beta_5\text{IFRarr}_{ijk}+
+	    \beta_6\text{LIFRarr}_{ijk}+f_7(\{\text{flight distance}\}_j)+
+	    f_8(\{\text{departure temperature}\}_{ijk})+
+	    f_9(\{\text{arrival temperature}\}_{ijk})+
+	    f_{10}(\{\text{departure wind speed}\}_{ijk})+
+	    f_{11}(\{\text{departure arrival speed}\}_{ijk}),
+	  \]
+	</p>
+	<p>
+	  where
+	</p>
+	<ul>
+	  <li>\(\text{delay}_{ijk}\) is the difference between the actual and
+	    scheduled runway arrival time in minutes for the \(k\)th flight of
+	    airline \(i\) on flight path \(j\)</li>
+	  <li>\(\text{MVFRdep}_{ijk},\text{IFRdep}_{ijk},\text{LIFRdep}_{ijk},
+	    \text{MVFRarr}_{ijk},\text{IFRarr}_{ijk},\text{LIFRarr}_{ijk}\) are
+	    indicator variables used to distinguish flights with special
+	    flight rules at either the departure or arrival airport; for example,
+	    \(\text{MVFRdep}_{ijk}\) indicates whether marginal visual flight
+	    rules apply at the departure airport</li>
+	  <li>\(U_i,1\leq i\leq 171\), are random intercepts for
+	    each of the 171 airlines</li>
+	  <li>\(V_i,1\leq i\leq 2000\), are random intercepts for
+	    each of the 2000 flight paths</li>
+	  <li>\(f_7,f_8,f_9,f_{10},f_{11}\) are unknown functions estimated
+	    using penalized spline methodology</li>
+	</ul>
+      </div> <!-- end Model Description container -->
+
+      <h2>Real-Time Results</h2>
+      <p>
+	The model is fit (and updated every few minutes) using 
+	Algorithm 2 described in <a href="distributedRTVB.pdf"
+	    target = "_blank">Luts, Broderick, and Wand (2015)
+	  <sup><i class="fa fa-external-link"></i></sup></a>.  
+      </p>
+      <figure>
+        <img id="result13" src="../FlightDataForgetting/result13.png"
+	     class="img-responsive"><!-- width="1200px"> -->
+	<figcaption>
+	  On-time performance for the major airlines Delta Air Lines,
+	  United Airlines and Southwest Airlines based on the estimates
+	  for the airline random intercepts by combining summary
+	  statistics from 415 airports.  Each day a new data point is
+	  added to this figure for each of these airlines.
+	</figcaption>
+      </figure>
+      <p>
+	Next results from using only O'Hare International Airport (ORD)
+	streaming data and using only Dallas/Fort Worth International
+	Airport (DFW) streaming data are compared to the results using
+	data from all 415 airports.
+      </p>
+	
+	<!-- style="border:1px solid black;border-collapse:collapse;"> -->
+      <!-- <div class="row text-center"> -->
+      <!-- 	<div class="col-md-4 text-center">All airports</div> -->
+      <!-- 	<div class="col-md-4 text-center">O'Hare International Airport</div> -->
+      <!-- 	<div class="col-md-4 text-center">Dallas/Fort Worth International Airport</div> -->
+      <!-- </div> -->
+      <figure>
+	<div class="row">
+	  <div class="col-md-4">
+	    <img id="result6_1" src="../FlightDataForgetting/result6_1.png">
+	  </div>
+	  <div class="col-md-4">
+	    <img id="result6_2" src="../FlightDataForgetting/result6_2.png">
+	  </div>
+	  <div class="col-md-4">
+	    <img id="result6_3" src="../FlightDataForgetting/result6_3.png">
+	  </div>
+	</div>
+       	<figcaption>
+  	  The approximate posterior density functions for the impact of the
+	  aviation flight categories marginal visual flight rules (MVFR),
+	  instrument flight rules (IFR) and low instrument flight rules
+	  (LIFR) versus visual flight rules (VFR) at the <i>departure</i>
+	  airport on the flight delay.  Data for all airports used on left,
+	  only ORD in centre, and only DFW on right.
+	</figcation>
+      </figure>
+	
+      <figure>
+        <div class="row">
+	  <div class="col-md-4">
+	    <img id="result7_1" src="../FlightDataForgetting/result7_1.png">
+	  </div>
+	  <div class="col-md-4">
+	    <img id="result7_2" src="../FlightDataForgetting/result7_2.png">
+	  </div>	
+	  <div class="col-md-4">
+	    <img id="result7_3" src="../FlightDataForgetting/result7_3.png">
+	  </div>	
+	</div>
+       	<figcaption>
+  	  The approximate posterior density functions for the impact of the
+	  aviation flight categories marginal visual flight rules (MVFR),
+	  instrument flight rules (IFR) and low instrument flight rules
+	  (LIFR) versus visual flight rules (VFR) at the <i>arrival</i>
+	  airport on the flight delay.  Data for all airports used on left,
+	  only ORD in centre, and only DFW on right.
+	</figcation>
+      </figure>
+      <figure>
+        <div class="row">
+	  <div class="col-md-4">
+	    <img id="result8_1" src="../FlightDataForgetting/result8_1.png">
+	  </div>
+	  <div class="col-md-4">
+	    <img id="result8_2" src="../FlightDataForgetting/result8_2.png">
+	  </div>
+	  <div class="col-md-4">
+	    <img id="result8_3" src="../FlightDataForgetting/result8_3.png">
+	  </div>
+	</div>
+       	<figcaption>
+  	  Regression fits and 95% credible sets for the effect of flight distance
+	  on the flight delay.  Data for all airports used on left,
+	  only ORD in centre, and only DFW on right.
+	</figcation>
+      </figure>
+      <figure>
+	<div class="row">
+	  <div class="col-md-4">
+	    <img id="result9_1" src="../FlightDataForgetting/result9_1.png">
+	      </div>
+	  <div class="col-md-4">
+	    <img id="result9_2" src="../FlightDataForgetting/result9_2.png">
+	      </div>
+	  <div class="col-md-4">
+	    <img id="result9_3" src="../FlightDataForgetting/result9_3.png">
+	      </div> 
+	</div>
+       	<figcaption>
+  	  Regression fits and 95% credible sets for the effect of air temperature 
+	  at  the <i>departure</i> airport on the flight delay.  Data for all
+	  airports used on left, only ORD in centre, and only DFW on right.
+	</figcation>
+      </figure>
+	  <figure>
+	    <div class="row">
+	<div class="col-md-4">
+	  <img id="result10_1" src="../FlightDataForgetting/result10_1.png">
+	    </div>
+	<div class="col-md-4">
+	  <img id="result10_2" src="../FlightDataForgetting/result10_2.png">
+	    </div>
+	<div class="col-md-4">
+	  <img id="result10_3" src="../FlightDataForgetting/result10_3.png">
+	    </div>
+      </div>
+       	<figcaption>
+  	  Regression fits and 95% credible sets for the effect of air temperature 
+	  at  the <i>arrival</i> airport on the flight delay.  Data for all
+	  airports used on left, only ORD in centre, and only DFW on right.
+	</figcation>
+      </figure>
+      <figure>
+	<div class="row">
+	<div class="col-md-4">
+	  <img id="result11_1" src="../FlightDataForgetting/result11_1.png">
+	    </div>
+	<div class="col-md-4">
+	  <img id="result11_2" src="../FlightDataForgetting/result11_2.png">
+	    </div>
+	<div class="col-md-4">
+	  <img id="result11_3" src="../FlightDataForgetting/result11_3.png">
+	    </div>
+      </div>
+       	<figcaption>
+  	  Regression fits and 95% credible sets for the effect of wind speed 
+	  at  the <i>departure</i> airport on the flight delay.  Data for all
+	  airports used on left, only ORD in centre, and only DFW on right.
+	</figcation>
+      </figure>
+	<figure>
+	  <div class="row">
+	<div class="col-md-4">
+	  <img id="result12_1" src="../FlightDataForgetting/result12_1.png">
+	    </div>
+	<div class="col-md-4">
+	  <img id="result12_2" src="../FlightDataForgetting/result12_2.png">
+	    </div>
+	<div class="col-md-4">
+	  <img id="result12_3" src="../FlightDataForgetting/result12_3.png">
+	    </div>
+      </div>
+       	<figcaption>
+  	  Regression fits and 95% credible sets for the effect of wind speed 
+	  at  the <i>arrival</i> airport on the flight delay.  Data for all
+	  airports used on left, only ORD in centre, and only DFW on right.
+	</figcation>
+      </figure>
+      <figure>
+	<div class="row">
+	  <div class="col-md-4">
+	    <img id="result4_1" src="../FlightDataForgetting/result4_1.png">
+	    </div>
+	  <div class="col-md-4">
+	    <img id="result4_2" src="../FlightDataForgetting/result4_2.png">
+	  </div>
+	  <div class="col-md-4">
+	    <img id="result4_3" src="../FlightDataForgetting/result4_3.png">
+	  </div>
+	</div>
+       	<figcaption>
+          Lists of airlines with the lowest delays, after correcting for all
+	  other covariates.  Data for all airports used on left, only ORD
+	  in centre, and only DFW on right.
+	</figcation>
+      </figure>
+      <figure>
+	<div class="row">
+	  <div class="col-md-4">
+	    <img id="result5_1" src="../FlightDataForgetting/result5_1.png">
+	  </div>
+	  <div class="col-md-4">
+	    <img id="result5_2" src="../FlightDataForgetting/result5_2.png">
+	  </div>
+	  <div class="col-md-4">
+	    <img id="result5_3" src="../FlightDataForgetting/result5_3.png">
+	  </div>
+	</div>
+       	<figcaption>
+          Lists of airlines with the highest delays, after correcting for all
+	  other covariates.  Data for all airports used on left, only ORD in
+	  centre, and only DFW on right.
+	</figcation>
+      </figure>
+	
+  <!--     <table class="table"> -->
+  <!--     <thead>	   -->
+  <!-- 	<tr> -->
+  <!-- 	  <th>All airports</th> -->
+  <!-- 	  <th>O'Hare International Airport</th> -->
+  <!-- 	  <th>Dallas/Fort Worth International Airport</th> -->
+  <!-- 	</tr> -->
+  <!--     </thead> -->
+  <!--     <tbody> -->
+  <!--     <tr> -->
+  <!-- 	<td> -->
+  <!-- 	  <img id="result6_1" src="../FlightDataForgetting/result6_1.png" width="400px"> -->
+  <!-- 	</td> -->
+  <!-- 	<td> -->
+  <!-- 	  <img id="result6_2" src="../FlightDataForgetting/result6_2.png" width="400px"> -->
+  <!-- 	</td> -->
+  <!-- 	<td> -->
+  <!-- 	  <img id="result6_3" src="../FlightDataForgetting/result6_3.png" width="400px"> -->
+  <!-- 	</td> -->
+  <!--     </tr> -->
+  <!--     <tr> -->
+  <!-- 	<td> -->
+  <!-- 	  <img id="result7_1" src="../FlightDataForgetting/result7_1.png" width="400px"> -->
+  <!-- 	</td> -->
+  <!-- 	<td> -->
+  <!-- 	  <img id="result7_2" src="../FlightDataForgetting/result7_2.png" width="400px"> -->
+  <!-- 	</td>	 -->
+  <!-- 	<td> -->
+  <!-- 	  <img id="result7_3" src="../FlightDataForgetting/result7_3.png" width="400px"> -->
+  <!-- 	</td>	 -->
+  <!--     </tr> -->
+  <!--     <tr> -->
+  <!-- 	<td> -->
+  <!-- 	  <img id="result8_1" src="../FlightDataForgetting/result8_1.png" width="400px"> -->
+  <!-- 	</td> -->
+  <!-- 	<td> -->
+  <!-- 	  <img id="result8_2" src="../FlightDataForgetting/result8_2.png" width="400px"> -->
+  <!-- 	</td> -->
+  <!-- 	<td> -->
+  <!-- 	  <img id="result8_3" src="../FlightDataForgetting/result8_3.png" width="400px"> -->
+  <!-- 	</td> -->
+  <!--     </tr> -->
+  <!--     <tr> -->
+  <!-- 	<td> -->
+  <!-- 	  <img id="result9_1" src="../FlightDataForgetting/result9_1.png" width="400px"> -->
+  <!-- 	    </td> -->
+  <!-- 	<td> -->
+  <!-- 	  <img id="result9_2" src="../FlightDataForgetting/result9_2.png" width="400px"> -->
+  <!-- 	    </td> -->
+  <!-- 	<td> -->
+  <!-- 	  <img id="result9_3" src="../FlightDataForgetting/result9_3.png" width="400px"> -->
+  <!-- 	    </td>  -->
+  <!--     </tr> -->
+  <!--     <tr> -->
+  <!-- 	<td> -->
+  <!-- 	  <img id="result10_1" src="../FlightDataForgetting/result10_1.png" width="400px"> -->
+  <!-- 	    </td> -->
+  <!-- 	<td> -->
+  <!-- 	  <img id="result10_2" src="../FlightDataForgetting/result10_2.png" width="400px"> -->
+  <!-- 	    </td> -->
+  <!-- 	<td> -->
+  <!-- 	  <img id="result10_3" src="../FlightDataForgetting/result10_3.png" width="400px"> -->
+  <!-- 	    </td> -->
+  <!--     </tr> -->
+  <!--     <tr> -->
+  <!-- 	<td> -->
+  <!-- 	  <img id="result11_1" src="../FlightDataForgetting/result11_1.png" width="400px"> -->
+  <!-- 	    </td> -->
+  <!-- 	<td> -->
+  <!-- 	  <img id="result11_2" src="../FlightDataForgetting/result11_2.png" width="400px"> -->
+  <!-- 	    </td> -->
+  <!-- 	<td> -->
+  <!-- 	  <img id="result11_3" src="../FlightDataForgetting/result11_3.png" width="400px"> -->
+  <!-- 	    </td> -->
+  <!--     </tr> -->
+  <!--     <tr> -->
+  <!-- 	<td> -->
+  <!-- 	  <img id="result12_1" src="../FlightDataForgetting/result12_1.png" width="400px"> -->
+  <!-- 	    </td> -->
+  <!-- 	<td> -->
+  <!-- 	  <img id="result12_2" src="../FlightDataForgetting/result12_2.png" width="400px"> -->
+  <!-- 	    </td> -->
+  <!-- 	<td> -->
+  <!-- 	  <img id="result12_3" src="../FlightDataForgetting/result12_3.png" width="400px"> -->
+  <!-- 	    </td> -->
+  <!--     </tr> -->
+  <!--     <tr> -->
+  <!-- 	<td> -->
+  <!-- 	  <img id="result4_1" src="../FlightDataForgetting/result4_1.png" width="400px"> -->
+  <!-- 	  </td> -->
+  <!-- 	<td> -->
+  <!-- 	  <img id="result4_2" src="../FlightDataForgetting/result4_2.png" width="400px"> -->
+  <!-- 	</td> -->
+  <!-- 	<td> -->
+  <!-- 	  <img id="result4_3" src="../FlightDataForgetting/result4_3.png" width="400px"> -->
+  <!-- 	</td> -->
+  <!--     </tr> -->
+  <!--     <tr> -->
+  <!-- 	<td> -->
+  <!-- 	  <img id="result5_1" src="../FlightDataForgetting/result5_1.png" width="400px"> -->
+  <!-- 	</td> -->
+  <!-- 	<td> -->
+  <!-- 	  <img id="result5_2" src="../FlightDataForgetting/result5_2.png" width="400px"> -->
+  <!-- 	</td> -->
+  <!-- 	<td> -->
+  <!-- 	  <img id="result5_3" src="../FlightDataForgetting/result5_3.png" width="400px"> -->
+  <!-- 	</td> -->
+  <!--     </tr> -->
+  <!--   </tbody> -->
+  <!-- </table> -->
+ 
+      <figure>
+	<div class="row">
+	  <div class="col-md-8">
+	    <img id="result2_1" src="../FlightDataForgetting/result2_1.png">
+	    </div>
+	</div>
+	<div class="row">  
+	  <div class="col-md-6">
+	    <img id="result2_2" src="../FlightDataForgetting/result2_2.png">
+	  </div>
+	  <div class="col-md-6">
+	    <img id="result2_3" src="../FlightDataForgetting/result2_3.png">
+	  </div>
+        </div>
+	<figcaption>
+	  List of flight paths having lowest delays, after correcting for all
+	  other covariates.  Data for all airports used on left, only ORD in
+	centre, and only DFW on right.
+	</figcaption>
+      </figure>
+	  
+      <figure>
+	<div class="row">
+	  <div class="col-md-12">
+	    <img id="result3_1" src="../FlightDataForgetting/result3_1.png">
+	  </div>
+	</div>
+	<div class="row">
+	  <div class="col-md-6">
+	    <img id="result3_2" src="../FlightDataForgetting/result3_2.png">
+	  </div>  
+	  <div class="col-md-6">
+	    <img id="result3_3" src="../FlightDataForgetting/result3_3.png">
+	  </div>
+	</div>
+	<figcaption>
+	  List of flight paths having highest delays, after correcting for all
+	  other covariates.  Data for all airports used on left, only ORD in
+	  centre, and only DFW on right.
+	</figcaption>
+      </figure>
+    </div>  
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-34649213-5', 'realtime-semiparametric-regression.net');
+      ga('send', 'pageview');
+
+    </script>
+  </body>
+</html>
+
+
