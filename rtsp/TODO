@@ -9,6 +9,11 @@
 * navbar on examples like theplayerstribune.com
 * [x] glyphs for email and homepage on contacts
 * consider making use of .center-block
+* [ ] try row and column to center content; compare with .container-fluid
+   e.g. try .col-lg-offset-3
+* [ ] move example btns to left-aligned vertical navbar
+     OR use .nav .nav-tabs .nav-justified
+* [ ] make each example like docker.com/grantland feature
 
 Bugs
 ========================
@@ -28,4 +33,4 @@ Bugs
 * [x] Sydney example first row of plots: 2nd plot overlaps 1st if screen width reduced
       (fixed using img-responsive class)
 * [ ] Flight example: check img size (.img-responsive seems to make things too small)
-* [ ] part of Example html not displayed (hidden behind footer)
+* [x] part of Example html not displayed (hidden behind footer)
