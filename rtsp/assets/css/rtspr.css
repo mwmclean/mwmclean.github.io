@@ -374,6 +374,7 @@ div.jumbotron.about-box{
 
 figure{
     display: table;
+    border: 1px solid rgb(221, 221, 221);
 }
 
 figure > img{
