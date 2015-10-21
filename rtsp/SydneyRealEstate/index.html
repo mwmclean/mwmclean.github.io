@@ -24,7 +24,10 @@
 	    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
 	    processEscapes: true
 	  },
-	  "HTML-CSS": { availableFonts: ["TeX"] }
+	  "HTML-CSS": {
+	    availableFonts: ["TeX"],
+	    linebreaks: { automatic: true, width: "container" },
+	  }
 	});
       </script>
       <script type="text/javascript" async
@@ -76,7 +79,7 @@
 	  E[\log((\text{weekly rent})_{ij})]
 	  =
 	  \beta_0+U_i+\beta_1\text{house}_{ij}+f_2((\text{number of bedrooms})_{ij})
-	  +f_3((\text{number of bathrooms})_{ij})\\
+	  +f_3((\text{number of bathrooms})_{ij})
 	  +f_4((\text{number of car spaces})_{ij})
 	  +f_5(\text{longitude}_{ij}, \text{latitude}_{ij}),
 	  \]
