@@ -390,6 +390,10 @@ figcaption{
     background-color: rgb(236, 238, 239);
 }
 
+.fig-centre{
+  float: none;
+  margin: 0 auto;"
+}
 #rentalColourMap{
     position:relative;
     top: 0;
