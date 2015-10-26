@@ -23,17 +23,10 @@
     <script type="text/javascript" async
       src="http://cdn.mathjax.org/mathjax/latest/MathJax.js">
     </script>
-
+    <script src="../assets/js/checkImgUpdate.js"></script>
     <script type="text/javascript">
-	$(document).ready(function() {
-	  setInterval( function() {
-	    $(["result1", "result2","result3","result4","result5","result6","result8"]).map(
-		   function( idx , id ){
-		     $("#" + id).attr( "src" , id + ".png" + "?ign=" + (new Date()).valueOf() );
-		   } );
-	    $("#updateMessage").text( "Last refresh was at " + formatted_time() + "." );
-	  } , 60000 );
-	} );
+      checkImgUpdate("FlightData", ["result1", "result2", "result3",
+      "result4", "result5", "result6", "result8"]);
     </script>
   </head>
 
@@ -106,7 +99,7 @@
       <div class = "row">
 	<div class = "col-lg-7">
 	  <figure>
-	    <img id="result1" src="../FlightData/result1.png"
+	    <img id="result1" src="./FlightData/plots/result1.png"
 		 alt="Map of recent flights" class="img-responsive">
 	    <figcaption>
 	      Geographical map of North America with most recently (i.e. during the last
@@ -118,7 +111,7 @@
 	</div>
 	<div class="col-lg-5">
 	  <figure>
-	    <img id="result6" src="../FlightData/result6.png"
+	    <img id="result6" src="./FlightData/plots/result6.png"
 		 alt = "Approximate Posteriors" class="img-responsive">
 	      <figcaption>
 		The approximate posterior density functions related to the METAR flight
@@ -132,7 +125,7 @@
 
     <div class="container-fluid text-center">
       <figure>   <!-- width="1140px" -->
-	<img id="result8" src="../FlightData/result8.png"
+	<img id="result8" src="./FlightData/plots/result8.png"
 	     alt = "Regression fits" class="img-responsive">
 	<figcaption>
 	    Regression fits and 95% credible sets for temperature, wind speed and flight
@@ -145,7 +138,7 @@
     <div class = "row">
       <div class = "col-md-4">
 	<figure>
-	  <img id="result4" src="../FlightData/result4.png"
+	  <img id="result4" src="./FlightData/plots/result4.png"
 	       alt="Airlines having shortest delays" class="img-responsive">
 	  <figcaption>
             Airlines having shortest delays.
@@ -154,7 +147,7 @@
       </div>
       <div class="col-md-8">
 	<figure>
-	  <img id="result2" src="../FlightData/result2.png"
+	  <img id="result2" src="./FlightData/plots/result2.png"
 	       alt = "Flight paths having shortest delays" class="img-responsive">
 	    <figcaption>
 	      Flight paths having shortest delays.
@@ -165,7 +158,7 @@
     <div class="row">  
       <div class="col-md-4">
 	<figure> <!-- width=500px -->
-	  <img id="result5" src="../FlightData/result5.png" 
+	  <img id="result5" src="./FlightData/plots/result5.png" 
 	       alt = "Airlines having longest delays" class="img-responsive">
 	    <figcaption>
 	      Airlines having longest delays.
@@ -174,7 +167,7 @@
       </div>
       <div class="col-md-8">
 	<figure>
-	  <img id="result3" src="../FlightData/result3.png"
+	  <img id="result3" src="./FlightData/plots/result3.png"
 	       alt = "Flight paths having longest delays" class="img-responsive">
 	  <figcaption>
 	      Flight paths having longest delays.

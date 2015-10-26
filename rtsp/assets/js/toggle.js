@@ -3,7 +3,7 @@ function toggle(folder) {
 	// $(".example-btn").each(function(){
 	//     var btn = '#' + divToShow + 'btn';
 	//     if(this.id == divToShow){ // || !this.hasClass('collapsed')){
-	    var file = '../' + folder + '/index.html';
+	    var file = './' + folder + '/index.html';
     // $(btn).trigger("click");
     var divToShow = "ex-" + folder;
     $("#" + divToShow).load(file);

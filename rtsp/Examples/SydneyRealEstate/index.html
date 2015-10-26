@@ -33,17 +33,10 @@
       <script type="text/javascript" async
 	src="http://cdn.mathjax.org/mathjax/latest/MathJax.js">
       </script>
-
-     <script type="text/javascript">
-	$(document).ready(function() {
-	  setInterval( function() {
-	    $(["result1", "result2","result3","result4","result5" , "colorMap"]).map(
-		   function( idx , id ){
-		     $("#" + id).attr( "src" , id + ".png" + "?ign=" + (new Date()).valueOf() );
-		   } );
-	    $("#updateMessage").text( "Last refresh was at " + formatted_time() + "." );
-	  } , 30000 );
-	} );
+      <script src="../assets/js/checkImgUpdate.js"></script>
+      <script type="text/javascript">
+	checkImgUpdate("SydneyRealEstate", ["result1", "result2", "result3", "result4",
+	                "result5" , "colorMap"]);
       </script>
 
   </head>
@@ -105,7 +98,7 @@
       <div class = "row">
 	<div class = "col-lg-5">
 	  <figure>
-	    <img id="result2" src="../SydneyRealEstate/result2.png"
+	    <img id="result2" src="./SydneyRealEstate/plots/result2.png"
 		 alt="Map of recent rentals" class="img-responsive">
 	    <figcaption>
 	      Geographical map of Sydney with processed properties as small black dots
@@ -116,9 +109,9 @@
 	</div>
 	<div class="col-lg-7" id = "rentalMapContainer" class="img-responsive">
 	  <figure>
-	    <img id="rentalColourMap" src="../SydneyRealEstate/result1.png"
+	    <img id="rentalColourMap" src="./SydneyRealEstate/plots/result1.png"
 		 alt = "Weekly rent colour map">
-	      <img id="rentalColourBar" src="../SydneyRealEstate/colorMap.png" width = "80"
+	      <img id="rentalColourBar" src="./SydneyRealEstate/plots/colorMap.png" width = "80"
 		   alt = "Colour bar for rent map">
 	    <figcaption>
 	      Color-coded geographical map of Sydney displaying the weekly rent for a
@@ -133,7 +126,7 @@
       <div class = "row">
 	<div class="col-md-6">
 	  <figure>
-	    <img id="result3" src="../SydneyRealEstate/result3.png" 
+	    <img id="result3" src="./SydneyRealEstate/plots/result3.png" 
 		 alt = "Approximate posteriors" class="img-responsive">
 	    <figcaption class = "text-center">
 	      The approximate posterior density function for the impact of the property
@@ -144,7 +137,7 @@
 	</div>
 	<div class = "col-md-6">
 	  <figure>
-	    <img id="result4" src="../SydneyRealEstate/result4.png" 
+	    <img id="result4" src="./SydneyRealEstate/plots/result4.png" 
 		 alt = "Least expensive rental agencies">
 	    <figcaption>
 	      List of rental agencies with the least expensive properties,
@@ -157,7 +150,7 @@
 	  <div class = "row">
 	    <div class = "col-md-3">
 	      <figure>
-		<img id="result5" src="../SydneyRealEstate/result5.png" width="500"
+		<img id="result5" src="./SydneyRealEstate/plots/result5.png" width="500"
 		       alt = "Most expensive rental agencies">
 		<figcaption>
 		  List of rental agencies with the most expensive properties,
