@@ -1,4 +1,4 @@
-function(exName, arr){
+function = checkImgUpdate(exName, arr, millsec){
     $(document).ready(function() {
       setInterval( function() {
 	$(arr).map(
@@ -7,6 +7,6 @@ function(exName, arr){
 				     (new Date()).valueOf() );
 	       } );
 	$("#updateMessage").text( "Last refresh was at " + formatted_time() + "." );
-      } , 30000 );
+      } , millisec );
     } );
 }

@@ -1,34 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title>Real-time Semiparametric Regression</title>
-  <link rel="stylesheet" href="./styles.css" />
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
-  <script type="text/javascript" src="../assets/js/rental.js"></script>
-  <script src="../assets/js/checkImgUpdate.js"></script>
-  <script type="text/javascript">
-    checkImgUpdate("FlightDataForgetting", ["result2_1", "result2_2",
-    "result2_3", "result3_1", "result3_2", "result3_3", "result4_1",
-    "result4_2", "result4_3", "result5_1", "result5_2", "result5_3",
-    "result6_1", "result6_2", "result6_3", "result7_1", "result7_2",
-    "result7_3", "result8_1", "result8_2", "result8_3", "result9_1",
-    "result9_2", "result9_3", "result10_1", "result10_2", "result10_3",
-    "result11_1", "result11_2", "result11_3", "result12_1", "result12_2",
-    "result12_3", "result13"]);
-  </script>
-
-     <script type="text/javascript">
-	$(document).ready(function() {
-	  setInterval( function() {
-	    $([]).map(
-		   function( idx , id ){
-		     $("#" + id).attr( "src" , id + ".png" + "?ign=" + (new Date()).valueOf() );
-		   } );
-	    $("#updateMessage").text( "Last refresh was at " + formatted_time() + "." );
-	  } , 30000 );
-	} );
-      </script>
-
+    <title>Real-time Semiparametric Regression</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../assets/js/rental.js"></script>
+    <script src="../assets/js/checkImgUpdate.js"></script>
+    <script type="text/javascript">
+      checkImgUpdate("FlightDataForgetting", ["result2_1", "result2_2",
+      "result2_3", "result3_1", "result3_2", "result3_3", "result4_1",
+      "result4_2", "result4_3", "result5_1", "result5_2", "result5_3",
+      "result6_1", "result6_2", "result6_3", "result7_1", "result7_2",
+      "result7_3", "result8_1", "result8_2", "result8_3", "result9_1",
+      "result9_2", "result9_3", "result10_1", "result10_2", "result10_3",
+      "result11_1", "result11_2", "result11_3", "result12_1", "result12_2",
+      "result12_3", "result13"], 30000);
+    </script>
   </head>
 
   <body>
