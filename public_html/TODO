@@ -2,7 +2,7 @@
 * [x] add Contacts page
 * [x] add About page
 * [x] add intro text to home page
-* [ ] convert old example html to bootstrap
+* [x] convert old example html to bootstrap
 * [ ] add example descriptions
 * make sure mp4 files works
 * try on mobile
@@ -14,6 +14,13 @@
 * [ ] move example btns to left-aligned vertical navbar
      OR use .nav .nav-tabs .nav-justified
 * [ ] make each example like docker.com/grantland feature
+* [ ] make sure realtime-semiparametric-regression.net/FlightDataForgetting goes to example
+  for compatibility with Jan's paper
+* [ ] make sure links to papers in Resourses tab work
+* [ ] complete FlightDataForgetting example, including linking to movie for simulated data
+* [ ] complete SimulatedData example
+* [ ] make sure img's for Examples are stored in correct place
+* [ ] update UTSfinal.docx (including renaming of SydneyRealEstate script) and README
 
 Bugs
 ========================
