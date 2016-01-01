@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Real-time Semiparametric Regression</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <title>Real-Time Analysis of Flight Data With Forgetting</title>
+    <link rel="stylesheet" href="../assets/css/rtspr.css" />
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
     <script type="text/javascript" src="../assets/js/rental.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	extensions: ["tex2jax.js"],
+	jax: ["input/TeX", "output/HTML-CSS"],
+	tex2jax: {
+	  inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+	  displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+	  processEscapes: true
+	},
+      "HTML-CSS": {
+	availableFonts: ["TeX"],
+	linebreaks: { automatic: true, width: "container" },
+      }
+      });
+    </script>
+    <script type="text/javascript" async
+      src="http://cdn.mathjax.org/mathjax/latest/MathJax.js">
+    </script>
     <script src="../assets/js/checkImgUpdate.js"></script>
     <script type="text/javascript">
       checkImgUpdate("FlightDataForgetting", ["result2_1", "result2_2",
@@ -26,14 +44,12 @@
     </div>
     <div class = "container">
       <div class = "jumbotron text-center example-intro">
-	Air traffic delays represent a critical problem for both airlines
-	and passengers.  Here, we demonstrate our methodology with real-time
-	analysis of U.S. domestic flights.  We use the website
-	<a href="https://www.flightstats.com">flightstats.com</a> to obtain data on
-	flight delay, flight distance, operating airline, and flight path.  Data
-	on temperature, wind speed, and aviation flight category are obtained
-	through the website <a href="https://aviationweather.gov">
-	  aviationweather.gov</a>.
+	This example revisits the analysis of air traffic delays for domestic flights in the
+	United States.  The data is reanalyzed to highlight real-time semiparametric modelling
+	when the data is distributed over multiple hosts.  Here each airport is
+	treated as a data host.  Also, to avoid giving too much weight to older, less-relevant
+	samples, the algorithm used to fit the model is modified to only include the most recent
+	30 days of data.
       </div>
       <h2>Model Description</h2>
       <div class="container-fluid">
@@ -77,8 +93,8 @@
       <h2>Real-Time Results</h2>
       <p>
 	The model is fit (and updated every few minutes) using 
-	Algorithm 2 described in <a href="distributedRTVB.pdf"
-	    target = "_blank">Luts, Broderick, and Wand (2015)
+	Algorithm 2 described in <a href="../distributedRTVB.pdf"
+	    target = "_blank">Luts (2015)
 	  <sup><i class="fa fa-external-link"></i></sup></a>.  
       </p>
       <figure>
