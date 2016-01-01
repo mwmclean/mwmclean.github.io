@@ -23,11 +23,8 @@
     <script type="text/javascript" async
       src="http://cdn.mathjax.org/mathjax/latest/MathJax.js">
     </script>
-    <script src="../assets/js/checkImgUpdate.js"></script>
-    <script type="text/javascript">
-      checkImgUpdate("FlightData", ["result1", "result2", "result3",
-      "result4", "result5", "result6", "result8"], 60000);
-    </script>
+    <script type="text/javascript" src="../assets/js/checkImgUpdate.js"></script>
+
   </head>
 
   <body>
@@ -90,7 +87,7 @@
       <h2>Real-Time Results</h2>
       <p>
 	The model is fit (and updated every few minutes) using mean field
-	variational Bayes as described in <a href="LutsBroderickWandPaper.pdf"
+	variational Bayes as described in <a href="../LutsBroderickWandPaper.pdf"
 	    target = "_blank">Luts, Broderick, and Wand (2014)
 	  <sup><i class="fa fa-external-link"></i></sup></a>.  Below we use
 	the fitted model to estimate the airlines and flight paths with the
@@ -181,8 +178,12 @@
 	  This data will be updated every few minutes.
 	  <span id="updateMessage"></span>
 	</p>
-      </div>  <!-- End Example container -->
-
+    </div>  <!-- End Example container -->
+    
+    <script type="text/javascript">
+      checkImgUpdate("FlightData", ["result1", "result2", "result3",
+      "result4", "result5", "result6", "result8"], 60000);
+    </script>
     <script type="text/javascript">
 
       var _gaq = _gaq || [];
