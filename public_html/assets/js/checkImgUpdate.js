@@ -1,4 +1,4 @@
-function = checkImgUpdate(exName, arr, millsec){
+function checkImgUpdate(exName, arr, millisec){
     $(document).ready(function() {
       setInterval( function() {
 	$(arr).map(
