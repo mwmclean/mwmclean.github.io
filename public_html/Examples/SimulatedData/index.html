@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Real-Time Analysis of Flight Data With Forgetting</title>
+    <link rel="stylesheet" href="../assets/css/rtspr.css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../assets/js/rental.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	extensions: ["tex2jax.js"],
+	jax: ["input/TeX", "output/HTML-CSS"],
+	tex2jax: {
+	  inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+	  displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+	  processEscapes: true
+	},
+      "HTML-CSS": {
+	availableFonts: ["TeX"],
+	linebreaks: { automatic: true, width: "container" },
+      }
+      });
+    </script>
+    <script type="text/javascript" async
+      src="http://cdn.mathjax.org/mathjax/latest/MathJax.js">
+    </script>
+    <script src="../assets/js/checkImgUpdate.js"></script>
+    <script type="text/javascript">
+      checkImgUpdate("StockData", ["lse", "nasdaq"], 10000);
+    </script>
+  </head>
+
+  <body>
+    <!-- <div class = "text-center"> -->
+    <!--   <img src="../assets/img/stock-market.jpg" -->
+    <!-- 	   title="By Katrina.Tuliao [CC BY 2.0 (http://creativecommons.org/licenses/by/2.0)], via Wikimedia Commons"  -->
+    <!-- 	   alt="Stock market board" class="header-img"> -->
+    <!-- </div> -->
+    <div class = "container">
+      <div class = "jumbotron text-center example-intro">
+	The following videos demonstrate the methodology on simulated data analyzed in
+	our published work.  Please follow the links below to the relevant manuscripts.
+      </div>
+      
+      <!-- Videos for Luts, Broderick, and Wand (2014) -->
+      <h2><a href="../assets/pdf/LutsBroderickWandPaper.pdf"
+	    target = "_blank">Luts, Broderick, and Wand (2014), Section 6.1.
+	  <sup><i class="fa fa-external-link"></i></sup></a>
+      </h2>
+      <h3>Gaussian Additive Model</h3>
+      <video controls class="center-block">
+	<source src="../assets/webm/gaussian.webm" type="video/webm">		
+	<source src="../assets/mp4/gaussian.mp4" type="video/mp4">
+	I'm sorry; your browser doesn't support HTML5 video in WebM with VP8 or MP4 with H.264.
+	<!-- You can embed a Flash player here, to play your mp4 video in older browsers -->
+      </video>
+
+      <hr class="featurette-divider">
+
+      <h3>Logistic Additive Model</h3>
+      <video controls class="center-block">
+	<source src="../assets/webm/binary.webm" type="video/webm">	
+	<source src="../assets/mp4/binary.mp4" type="video/mp4">
+	I'm sorry; your browser doesn't support HTML5 video in WebM with VP8 or MP4 with H.264.
+	<!-- You can embed a Flash player here, to play your mp4 video in older browsers -->
+      </video>
+      
+      <hr class="featurette-divider">      
+
+      <h3>Wavelet Regression</h3>
+      <video controls class="center-block">
+	<source src="../assets/webm/wavelet.webm" type="video/webm">
+	<source src="../assets/mp4/wavelet.mp4" type="video/mp4">
+	I'm sorry; your browser doesn't support HTML5 video in WebM with VP8 or MP4 with H.264.
+	<!-- You can embed a Flash player here, to play your mp4 video in older browsers -->
+      </video>      
+
+      <hr class="example-divider">
+      
+      <!-- Videos for Luts (2015) -->
+      <h2><a href="../assets/pdf/distributedRTVB.pdf"
+	    target = "_blank">Luts (2015), Section 3.2.1
+	  <sup><i class="fa fa-external-link"></i></sup></a>
+      </h2>
+      <h3>Gaussian Additive Model for Distributed Data</h3>
+      <div class="embed-responsive embed-responsive-16by9">
+	<video controls class="center-block">
+	  <source src="../assets/webm/movieRealTimeDistributed.webm" type="video/webm">		
+	  <source src="../assets/avi/movieRealTimeDistributed.avi" type="video/avi">
+	  I'm sorry; your browser doesn't support HTML5 video in WebM with VP8 or MP4 with H.264.
+	</video>
+      </div>
+
+      <hr class="example-divider">
+      
+      <!-- Videos for Menictas and Wand (2015) -->
+      <h2><a href="http://matt-wand.utsacademics.info/publicns/Menictas15.pdf"
+	    target = "_blank">Menictas and Wand (2015), Section 4
+	  <sup><i class="fa fa-external-link"></i></sup></a>
+      </h2>
+      <h3>Poisson Nonparametric Regression</h3>
+      <video controls class="center-block">
+	<source src="../assets/webm/count.webm" type="video/webm">
+	<source src="../assets/mp4/count.mp4" type="video/mp4">
+	I'm sorry; your browser doesn't support HTML5 video in WebM with VP8 or MP4 with H.264.
+      </video>            
+
+      <hr class="featurette-divider">
+      
+      <h3>Heteroscedastic Nonparametric Regression</h3>
+      <div class="embed-responsive embed-responsive-16by9">      
+	<video controls class="center-block">
+	  <source src="../assets/webm/meanvar.webm" type="video/webm">	
+	  <source src="../assets/mp4/meanvar.mp4" type="video/mp4">
+	  I'm sorry; your browser doesn't support HTML5 video in WebM with VP8 or MP4 with H.264.
+	</video>
+      </div>
+    </div>  <!-- end example container -->
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-34649213-5', 'realtime-semiparametric-regression.net');
+      ga('send', 'pageview');
+
+    </script>
+  </body>
+</html>
+
+
