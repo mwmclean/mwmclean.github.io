@@ -49,8 +49,8 @@
 	  The stock price is assumed to follow a normal distribution
 	  with variance \(\sigma^2_\epsilon\) and mean
 	  \[
-	  E[\log(\text{Microsoft stock price}_{ijk}+120)] = \beta_0+
-	  f_1(\{\text{Intel stock price}\}_j).
+	  E[\log(\text{Microsoft stock price}_{i}+120)] = \beta_0+
+	  f_1(\{\text{Intel stock price}\}_i).
 	  \]
 	</p>
       </div> <!-- end Model Description container -->
@@ -61,10 +61,11 @@
 	    target = "_blank">Luts, Broderick, and Wand (2014)
 	  <sup><i class="fa fa-external-link"></i></sup></a>.  
       </p>
-      <figure>
-        <img id="nasdaq" src="./StockMarket/plots/nasdaq.png"
-	     class="img-responsive"><!-- width="1200px"> -->
-	<figcaption>
+      
+      <figure class="center-block">
+        <img id="nasdaq" src="./StockData/plots/nasdaq.png" width="640px" 
+	     class="img-responsive" alt="estimate of f_1">
+	<figcaption class="center-block">
 	  Estimate of \(f_1\) and 95% credible sets for true \(f_1\) along with
 	  observed data.
 	</figcaption>
@@ -76,8 +77,8 @@
 	  The stock price is assumed to follow a normal distribution
 	  with variance \(\sigma^2_\epsilon\) and mean
 	  \[
-	  E[\log(\text{HSBC Holdings stock price}_{ijk}+120)] = \beta_0+
-	  f_2(\{\text{Royal Bank of Scotland Group stock price}\}_j).
+	  E[\log(\text{HSBC Holdings stock price}_{i}+120)] = \beta_0+
+	  f_2(\{\text{Royal Bank of Scotland Group stock price}\}_i).
 	  \]
 	</p>
       </div> <!-- end Model Description container -->
@@ -88,15 +89,16 @@
 	    target = "_blank">Luts, Broderick, and Wand (2014)
 	  <sup><i class="fa fa-external-link"></i></sup></a>.  
       </p>
-      <figure>
-        <img id="lse" src="./StockMarket/plots/lse.png"
-	     class="img-responsive"><!-- width="1200px"> -->
-	<figcaption>
+
+      <figure class="center-block">
+        <img id="lse" src="./StockData/plots/lse.png" width="640px" 
+	     class="img-responsive" alt="estimate of f_2">
+	<figcaption class="center-block">
 	  Estimate of \(f_2\) and 95% credible sets for true \(f_2\) along with
 	  observed data.
 	</figcaption>
       </figure>
-      
+
       <p>
 	This data will be updated every ten seconds.
 	<span id="updateMessage"></span>
