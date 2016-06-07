@@ -24,9 +24,10 @@ header {
 text-decoration: underline;
 }
 
-#header-left p{
+#header-right p{
   position: relative; 
-  float: right; 
+  float: right;
+  clear: right;
 }
 
 header h1 {
