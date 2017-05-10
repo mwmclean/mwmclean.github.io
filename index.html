@@ -428,7 +428,9 @@ function showThanks()
  
 		<p>
 			You may fit the FGAM and FLM yourself to several different data sets using 
-			<a href="javascript:toggleRand('shiny', 'rss');javascript:toggle('misc');">an app I created</a>.
+			<a href="javascript:toggleRand('shiny', 'rss');javascript:toggle('misc');">an app I created</a>.  Source code for the app is available
+on <a href="https://github.com/mwmclean/fgam-app"
+target="_blank">GitHub</a>.
 		</p>
 	  </details>	
 	<hr class="hr-inner">
@@ -591,10 +593,20 @@ a.sort,d=c.sort;else b=c.sort,d=a.sort;if("date"==e.sort)return new Date(b)-new 
 <div id="shiny"  style="display: none">
 <h4> Dynamic Fitting Of Functional Regression Models With <a href="http://www.rstudio.com/shiny/" target="_blank">Shiny</a> </h4>
 <p>
-Below is a <a href="http://www.rstudio.com/shiny/" target="_blank">Shiny</a> app I created that performs estimation, visualization, inference, and prediction for the 
-functional generalized additive model (FGAM) and the functional linear model (FLM).  More information on these models can be found in the Research tab and in my papers from the Papers tab.  Begin by selecting a data set and choosing model parameters and an estimation method
-(if you are familar with penalized splines).  You may also specify options for displaying the fits, conducting a hypothesis test of FLM vs. FGAM, and performing out-of-sample prediction.  
-When you have selected the setting you want, you may fit the models by clicking the &quot;Fit Models&quot; button.
+Below is a <a href="http://www.rstudio.com/shiny/"
+target="_blank">Shiny</a> app I created that performs estimation,
+visualization, inference, and prediction for the functional
+generalized additive model (FGAM) and the functional linear model
+(FLM).  More information on these models can be found in the Research
+tab and in my papers from the Papers tab.  Begin by selecting a data
+set and choosing model parameters and an estimation method (if you are
+familar with penalized splines).  You may also specify options for
+displaying the fits, conducting a hypothesis test of FLM vs. FGAM, and
+performing out-of-sample prediction.  When you have selected the
+setting you want, you may fit the models by clicking the &quot;Fit
+Models&quot; button.  Source code for the app is available
+on <a href="https://github.com/mwmclean/fgam-app"
+target="_blank">GitHub</a>.
 </p>
 <iframe data-src="https://fgam.shinyapps.io/fgam/" style="border: 0px solid #CCC; width: 790px; height: 1800px; seamless" id="shinyframe"></iframe>
 </div>
