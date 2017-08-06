@@ -671,39 +671,68 @@ id="shinyframe"></iframe>
 	<details>
 		<summary><code>RefManageR</code> - a Reference Manager for <code>R</code> </summary>
 	 <p>
-  	 <code>RefManageR</code> provides tools for importing and working with bibliographic references. 
-	 It greatly enhances the <a href="http://stat.ethz.ch/R-manual/R-devel/library/utils/html/bibentry.html" target="_blank"><code>bibentry</code></a> class 
-	 by providing a class <code>BibEntry</code> which stores <a href="http://en.wikibooks.org/wiki/LaTeX/Bibliography_Management" target="_blank"><code>BibTeX</code></a> and 
-	 <a href="http://www.ctan.org/pkg/biblatex" target="_blank"><code>BibLaTeX</code></a> references, supports UTF-8 encoding, 
-	 and can be easily searched by any field, by date ranges, and by various formats for name lists (author by last names, translator by full names, etc.). 
-	 Entries can be updated, sorted, combined, printed in a number of styles, and exported. <code>BibTeX</code> and <code>BibLaTeX</code> <code>.bib</code> files can be read into R and converted to BibEntry objects.
-	 Interfaces to NCBI's <a href="http://www.ncbi.nlm.nih.gov/Class/MLACourse/Original8Hour/Entrez/" target="_blank"><code>Entrez</code></a>, 
+  	 <code>RefManageR</code> provides tools for importing and
+	 working with bibliographic references.  It greatly enhances
+	 the <a href="http://stat.ethz.ch/R-manual/R-devel/library/utils/html/bibentry.html"
+	 target="_blank"><code>bibentry</code></a> class by providing
+	 a class <code>BibEntry</code> which
+	 stores <a href="http://en.wikibooks.org/wiki/LaTeX/Bibliography_Management"
+	 target="_blank"><code>BibTeX</code></a> and
+	 <a href="http://www.ctan.org/pkg/biblatex"
+	 target="_blank"><code>BibLaTeX</code></a> references,
+	 supports UTF-8 encoding, and can be easily searched by any
+	 field, by date ranges, and by various formats for name lists
+	 (author by last names, translator by full names, etc.).
+	 Entries can be updated, sorted, combined, printed in a number
+	 of styles, and exported. <code>BibTeX</code>
+	 and <code>BibLaTeX</code> <code>.bib</code> files can be read
+	 into R and converted to BibEntry objects.  Interfaces to
+	 NCBI's <a href="http://www.ncbi.nlm.nih.gov/Class/MLACourse/Original8Hour/Entrez/"
+	 target="_blank"><code>Entrez</code></a>,
 	 <a href="http://www.crossref.org" target="_blank"><code>CrossRef</code></a> and 
 	 <a href="http://www.zotero.org" target="_blank"><code>Zotero</code></a> are provided for importing references
 	 and references can be created from locally stored <code>.bib</code> files or <code>PDFs</code> using 
-	 <a href="http://poppler.freedesktop.org" target="_blank"><code>Poppler</code></a>.  The package can also be used in <code>RMarkdown</code> and <code>RHTML</code> documents for including citations
-	 and printing a bibliography of all cited entries.  Both the bibliography and the citations can include automatically generated hyperlinks.
-	 The package is <a href="http://cran.r-project.org/web/packages/RefManageR/index.html" target = "_blank">available now</a> on <code>CRAN</code> and a vignette is available 
-	 <a href="Downloads/RefManageR-vignette-0.8.1.pdf" target = "_blank">here</a>.
+	 <a href="http://poppler.freedesktop.org"
+	 target="_blank"><code>Poppler</code></a>.  The package can
+	 also be used in <code>RMarkdown</code> and <code>RHTML</code>
+	 documents for including citations and printing a bibliography
+	 of all cited entries.  Both the bibliography and the
+	 citations can include automatically generated hyperlinks.
+	 The package
+	 is <a href="http://cran.r-project.org/web/packages/RefManageR/index.html"
+	 target = "_blank">available now</a> on <code>CRAN</code> and
+	 a vignette is available
+	 <a href="http://arxiv.org/abs/1403.2036" target = "_blank">here</a>.
 	 </p>
-	<ul>
-<li> <a href="Downloads/RefManageR_0.8.1.tar.gz">Package source</a></li>
-<li> <a href="Downloads/RefManageR_0.8.1.zip">Windows binary</a> </li>
+	 <ul>
+	   <li> <a href="http://github.com/ropensci/refmanager">Development version</a></li>
+	   <li> <a href="http://cran.r-project.org/web/packages/RefManageR/index.html">CRAN sources</a></li>
 	</ul>
 <!--	
-	<p>Some features are also demonstrated in the slides here: <a href="Downloads/TestRmd.Rmd" target="_blank">Rmd file</a> and <a href="Downloads/TestRmd.html" target="_blank">Output</a>. See also the slides 
+	<p>Some features are also demonstrated in the slides
+	here: <a href="Downloads/TestRmd.Rmd" target="_blank">Rmd
+	file</a> and <a href="Downloads/TestRmd.html"
+	target="_blank">Output</a>. See also the slides
 	<a href="http://www.stat.tamu.edu/~mmclean/iamcs2/#28" target="_blank">here</a>.</p>
-    <p>	
-	  You need to install <code>RefManageR</code> and <code>knitr</code> to convert the input <code>Rmd</code> file to <code>HTML</code>.  More examples of this variety
-	  for different bibliography styles are available by typing <code>?Cite</code> in the <code>R</code> console.  See also <code>?RefManageR</code>, 
+    <p> You need to install <code>RefManageR</code>
+	  and <code>knitr</code> to convert the input <code>Rmd</code>
+	  file to <code>HTML</code>.  More examples of this variety
+	  for different bibliography styles are available by
+	  typing <code>?Cite</code> in the <code>R</code> console.
+	  See also <code>?RefManageR</code>,
 	  <code>?print.BibEntry</code>, and <code>?SearchBib</code>.
 	</p>
 -->	
 	</details>
 	<details>
 	<summary> <code>refund</code> - REgression with FUNctional Data </summary>
-	<p>The following functions were contributed to the <a href="http://cran.r-project.org/web/packages/refund/index.html" target="_blank"> <code>refund</code></a> package available on 
-	<a href="http://cran.r-project.org/" target="_blank"><code>CRAN</code></a>:</p>
+	<p>The following functions were contributed to
+	the <a href="http://cran.r-project.org/web/packages/refund/index.html"
+	target="_blank"> <code>refund</code></a> package available on
+	<a href="http://cran.r-project.org/"
+	target="_blank"><code>CRAN</code></a>
+	and <a href="http://github.com/refunders/refund"
+	target="_blank"><code>GitHub</code></a>:</p>
 	<ul>
 	  <li> <code> fgam</code> - a wrapper for the <code> gam</code> function in package <code> mgcv</code> to fit functional generalized additive models. </li>
 	  <li> <code> predict.fgam</code> - wrapper for  the <code> predict.gam</code> function in package <code> mgcv</code> for prediction with <code> fgam</code> fits. </li>
@@ -711,17 +740,31 @@ id="shinyframe"></iframe>
 	  <li> <code> af</code> - internal function for building fgam terms specified in model formulas passed to <code> fgam</code>. </li>
 	  <li> <code> lf</code> - internal function for building functional linear model terms specified in model formulas passed to <code> fgam</code>. </li>
 	</ul>
-      <p>  You can run all these functions as a stand-alone package by installing the .zip file <code> <a href="Downloads/fgampkg_1.0.2.zip">here</a></code> in <code> R</code>.</p>
+	To fit FGAM in the latest versions of <code>refund</code>, the
+	function <code>fgam</code> is deprecated in favour of the
+	function <code>pfr</code>, which can fit several different scalar
+	on function regression models including FGAM.
+      <!-- <p>  You can run all these functions as a stand-alone package by installing the .zip file <code> <a href="Downloads/fgampkg_1.0.2.zip">here</a></code> in <code> R</code>.</p> -->
 	</details>
 	<hr class="hr-inner">
 	<h3> Article Supplements </h3>
 	<details>
-	<summary> <a href="Downloads/FGAMsupplement.zip">Supplementary material</a> to "Functional Generalized Additive Models"</summary>
-	Includes examples for fitting FGAM and code from conducting all simulations in the paper.
+	<summary> <a href="Downloads/FGAMsupplement.zip">Supplementary
+	material</a> to "Functional Generalized Additive
+	Models"</summary> Includes examples for fitting FGAM and code
+	from conducting all simulations in the paper.  Note that
+	changes to the <code>splines</code> package in <code>R</code>
+	means this code no longer runs in current versions
+	of <code>R</code>.  Those interested in fitting an FGAM should
+	see the <code>pfr</code> function in the
+	package <code>refund</code>.
 	</details>
 	<details>
-	<summary> <a href="Downloads/FEMSCARsupplement.zip">Supplementary material</a> to "Forecasting EMS Call Arrival Rates" </summary>
-	Includes code for estimating the combined factor model and Integer-GARCH model as well as code for conducting the queueing system simulation study.	
+	<summary> <a href="Downloads/FEMSCARsupplement.zip">Supplementary
+	material</a> to "Forecasting EMS Call Arrival
+	Rates" </summary> Includes code for estimating the combined
+	factor model and Integer-GARCH model as well as code for
+	conducting the queueing system simulation study.
 	</details>
 
     <br />
