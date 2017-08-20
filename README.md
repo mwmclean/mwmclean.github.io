@@ -6,8 +6,17 @@ My personal webpage
 TO DO: 
 --------
 
-1) select box for selecting journal (possibly distinguish To Appear from Published)  
-2) check document outline and fix if necessary  
+* [x] update VMP paper as conditionally accepted
+* [x] add ROpensci to software tab and papers tab
+* [x] remove old RefManageR downloads
+* [ ] update JOSS reference when accepted
+* [x] add note about outdated FGAMsupplement code and point to refund
+* [x] update contributions to refund on software tab
+* [ ] add contributions to curvHDR
+* [ ] add VMP code
+* [ ] add SMC code
+* ~~[ ] select box for selecting journal (possibly distinguish To Appear from Published)~~ 
+* [ ] check document outline and fix if necessary  
 
 Changes to webpage
 ------------------
