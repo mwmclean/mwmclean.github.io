@@ -1,0 +1,14 @@
+dependencies:
+
+ - name: style
+   version: 1.0.0
+   src: htmlwidgets/lib/style
+   stylesheet:
+     main.css
+
+# TEMPLATE ! change the name of the map file
+ - name: Maps
+   version: 1.0.0
+   src: htmlwidgets
+   script:
+     - rhtmlTemplate.js.map
