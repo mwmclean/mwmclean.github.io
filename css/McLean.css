@@ -13,18 +13,23 @@ a {
 }
 
 a:link {
-	color: #990099;
+	color: #008fd4;
 }
-a:visited {
-	color: #BDA0CB;
-}
+/* a:visited { */
+/* 	 color: #BDA0CB; */
+/* } */
 a:hover {
-	color: #500000 !important;
-	border-bottom: #500000 solid !important;	
+	/* color: #500000 !important; */
+	border-bottom: #008fd4 solid !important;	
 }
 
 .navDiv a{
-	color: #754C78;
+	color: #062a66;
+}
+
+.navDiv a:hover {
+	/* color: #500000 !important; */
+	border-bottom: #062a66 solid !important;	
 }
 
 header {
