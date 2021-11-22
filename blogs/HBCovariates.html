@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <style>    
+    .aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+  <h2>What are choice models and covariates?</h2>
+  <p>
+  Let's say you're conducting a stated preference choice experiment. In this experiment, your respondents are asked a series of questions and must make choices between alternatives with different attributes. For example, in a study on sports drinks, the alternatives may be different brands and the attributes may be price, bottle size, flavor, and sugar content. The mathematical model used to analyze these types of experiments is called a choice model. It is also commonly called a choice-based conjoint analysis.
+  </p>
+  <p>
+  The classic choice model does not include additional information about the respondents such as their income or age. In this post, I'll show you how we can modify the model to include this additional information. We'll be using Hierarchical Bayes (HB) to incorporate the covariates and to fit the model.
+  </p>
+  <p>
+    I'll discuss why we may want to include covariates in our choice models and explain how this can be done in an HB framework. I'll then demonstrate the approach using a discrete choice study examining fast food preferences.
+</p>
+<img class="aligncenter wp-image-6102 size-medium" src="https://www.displayr.com/wp-content/uploads/2018/07/bitmoji-fastfood-300x300.png" alt="bitmoji of Matt asking &quot;what's for lunch?&quot;" width="300" height="300" />
+<h2>A quick introduction to Hierarchical Bayes analysis with choice
+  models</h2>
+<p>
+  Before we begin adding respondent-specific variables (like demographics) to our discrete choice analyses, we need to quickly introduce Hierarchical Bayes (HB). You can read more about <a href="https://www.displayr.com/hb-maxdiff-displayr/">using Hierarchical Bayes for MaxDiff here</a>.
+</p>
+  <p>
+    Hierarchical Bayes is a powerful approach for analyzing data. It
+    allows us to incorporate prior beliefs about model parameters,
+    such as the part-worth means and variances. Using state-of-the-art
+    Monte Carlo methods, we can easily model the behavior of a
+    market. In contrast to other approaches, we can obtain samples
+    that teach us about the entire distribution of the part-worths and
+    other model parameters rather than only point estimates.
+</p>    
+<p>
+The &lsquo;hierarchical&rsquo; in Hierarchical Bayes refers to the multilevel
+structure of the model. Parameters at each level can have their own
+distinct distributions. At the individual level, we model the
+within-respondent variation and specify a distribution for the
+individual part-worths. At the population level, we pool information
+across respondents and describe how part-worths vary in the entire
+population.
+</p>
+<h2>Why include respondent-specific covariates?</h2>
+<p>
+Recent advances in computing have made it possible to include
+respondent-specific covariates in HB choice models. There are several
+reasons why we may want to do this in practice. It is possible that
+the information from additional covariates improves the estimates of
+the part-worths. This is more likely to be the case for surveys where
+respondents are asked fewer questions each and we have less
+information on each individual. Additionally, when respondents are
+segmented, we may be worried about the estimates for one segment being
+biased by another segment. Another concern is that HB may shrink the
+segment means overly close to each other. This is especially
+problematic if sample sizes vary greatly between segments.
+</p>
+<h2>How to include covariates in the model (skip this section if you
+  don&sbquo;t like math)</h2>
+<p>
+In the usual HB choice model, we model the part-worths for the ith
+respondent as β<sub>i</sub> ~ N(μ, ∑). Note that the mean and
+covariance parameters μ and ∑ do not depend on <em>i</em>, and are the
+same for each respondent in the population. The simplest way to
+include respondent-specific covariates in the model is to modify μ so
+that it depends on the respondent&sbquo;s covariates.
+</p>
+<p>
+We do this by modifying the model for the part-worths to β<sub>i</sub>
+~N(Θx<sub>i</sub>, ∑), where x<sub>i</sub> is a vector of known
+covariate values for the ith respondent and Θ is a matrix of unknown
+regression coefficients.  Each row of Θ is given a multivariate normal
+prior and the covariance matrix, ∑, is decomposed into a correlation
+matrix and vector of scales, which each receive their own priors.
+</p>
+<p>
+If you know what you&sbquo;re doing, you can fit this model in any of R,
+Sawtooth, Q, or Displayr, among others.
+</p>
+<h2>Practical example</h2>
+<p>
+To demonstrate the approach, I will use data from a choice experiment
+involving preferences for cruise vacations from
+the <a href="https://www.sawtoothsoftware.com/support/technical-papers?id=1624">2016
+    Sawtooth CBC Prediction Competition</a>. 600 respondents were
+asked 15 questions each involving four alternative cruise vacation
+options. Each option varied in a number of attributes including price
+per person per day, destination, cruise line, number of days, room
+type, and number of amenities. The questions asked for one version of
+the design are shown below using a preview from Displayr.
+</p>
+<div style="text-align: left;"><embed class="displayr-embed" src="https://embedded.azureedge.net/91705/360387/f64ce4c4-e78f-418e-9c1e-6900476fe3ee.html?v=33194-fae39a1e54-450587732" width="577" height="513" frameborder="0" allowfullscreen></embed></div>
+<p>
+<span style="font-family: 'Courier New';"><span style="font-family:
+						       circular-book;">To
+    fit a choice model using the collected responses in Displayr, we
+    select <strong>Insert &gt; More &gt; Choice Modeling &gt;
+      Hierarchical Bayes</strong> from the Ribbon at the
+    top. Displayr fits the model using the No-U-Turn sampler
+    implemented in <a href="http://mc-stan.org/">stan</a>,
+    state-of-the-art software for fitting Bayesian models such as
+    ours.  The software allows us to quickly and efficiently estimate
+    our model without having to worry (much) about selecting tuning
+    parameters (which are frequently a major hassle in Bayesian
+    computation and machine learning).  Once the model is fit,
+    Displayr also provides a number of features for visualizing the
+    results and diagnosing any issues with the model
+    fit. </span></span>
+</p>
+<p>
+<span style="font-family: 'Courier New';"><span style="font-family: circular-book;">A video showing all the steps to fit the model to a similar choice data set is available <a href="https://www.displayr.com/how-to-hierarchical-bayes-choice-model-displayr/">here</a>. </span></span>The Displayr output, including histograms of the respondent coefficients, appears below.
+<div style="text-align: left;">
+<iframe class="displayr-embed"
+	src="https://embedded.azureedge.net/91705/360387/d9d99771-770e-466b-9c11-7743c5617c6b.html?v=33194-fae39a1e54-2084356768"
+	width="577" height="513" frameborder="0"
+	scrolling="no"></iframe></div>
+</p>
+&nbsp;
+<p>
+We&sbquo;ll want to check some of the diagnostics available
+under <strong><span style="font-family: circular-book;">Insert &gt;
+    More &gt; Choice Modeling &gt; Diagnostics</span></strong>. Two
+useful diagnostics - Rhat and effective sample size - are available
+using <span style="font-family:
+		   circular-book;"><a href="https://wiki.q-researchsoftware.com/wiki/Choice_Modeling_-_Diagnostic_-_Parameter_Statistics">Parameter
+    Statistics</a></span> from that menu, as
+are <a href="https://wiki.q-researchsoftware.com/wiki/Choice_Modeling_-_Diagnostic_-_Trace_Plots">Trace
+  Plots</a>. For further discussion of the diagnostics,
+see <a href="https://www.displayr.com/convergence-hb-maxdiff/">this
+  post</a>. The results shown used 200 iterations and eight Markov
+chains and held-out one choice question for validation.
+</p>
+<p>
+After checking the diagnostics, we can now make inferences with our
+model. For example, we see that the respondents strongly prefer rooms
+with a balcony and also have a slight preference for shorter cruises.
+</p>
+<h2>Including covariates in the model</h2>
+<p>
+Next, I will re-fit the model including a covariate. In Displayr,
+covariates are added to the model by dragging variables from the Data
+Sets tab on the right into the dropbox called
+&ldquo;Respondent-specific covariates&rdquo; or using the
+&ldquo;ADVANCED&rdquo; tab in the object inspector on the right. For
+demonstration, I fit a model including a categorical variable
+indicating the respondent&sbquo;s favorite cruise line. This was asked
+as a separate question before the choice questions. Since the cruise
+line is included as an attribute in the design that we might expect to
+be important, we expect this covariate to be important as well. The
+Displayr output is below.
+</p>
+<div style="text-align: left;">
+  <p>
+    <iframe class="displayr-embed"
+				       src="https://embedded.azureedge.net/91705/360387/2918703e-73d0-44ec-8188-8849a1b2e61e.html?v=33194-fae39a1e54-553352045"
+				       width="577" height="513"
+				       frameborder="0"
+				       scrolling="no"></iframe></div>
+</p>
+<p>
+  We see that our prediction accuracy on the held-out task has improved
+  and that the mean root likelihood statistic (RLH) has improved
+  slightly as well. A more complete analysis should be done with more
+  iterations and include all the covariates of interest.
+</p>
+<p>
+To see how to add covariates to a Hierarchical Bayes MaxDiff analysis,
+see <a href="https://www.displayr.com/how-to-use-covariates-to-improve-your-maxdiff-model/">this
+  blog post</a>.
+</p>
+<p>
+<b>You can play around with the data yourself using
+  this <a href="http://app.displayr.com/Try/Cruise%20Vacation%20Choice%20Model">link</a>. Don&sbquo;t
+  forget to subscribe to
+  the <a href="https://www.displayr.com/blog">blog</a> for more data
+  science insights!</b>
+</p>
+</body>
+</html>

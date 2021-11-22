@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"> -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <style>    
+    .aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+<img class=" wp-image-7150 aligncenter" src="https://www.displayr.com/wp-content/uploads/2018/08/articleLead-212x300.png" alt="Man carrying packages" width="312" height="442" />
+<p>
+  An R package is a collection of functions, documentation, data, and
+  tests that makes it easy to share code and automate workflows. All but
+  the simplest one line tasks should be written up as an R function if
+  they need to be done repeatedly. This saves time and helps ensure your
+  work is easy to reproduce at a later time or by a colleague. Once you
+  have a collection of functions for related tasks, R has a great
+  package system that allows you to bundle and share the
+  collection. There are currently more than 12,000 packages on the
+  Comprehensive R Archive Network (CRAN), and if you use R, you've no
+  doubt made use of some of them via calling <span style="font-family:
+							  'Courier
+							  New';">install.packages()</span>
+  and <span style="font-family: 'Courier New';">library()</span>. Today,
+  we'll see how we can create a pseudo-package in Displayr to mimic the
+  features provided by an actual R package without the hassle of
+  creating one.
+</p>
+<h2>Creating a pseudo-package</h2>
+<p>The approach we will use makes use of R's <em>environments</em>, a collection of objects (functions, vectors, etc.) similar to a package. A less elegant solution would be to make use of lists. We will write one function that defines all the functions needed for our pseudo-package, adds them to a single environment and then returns the environment.
+</p>
+<p>
+I will demonstrate the approach with a simple example involving working with names. Imagine we are frequently working with data sets that have a name variable in the format "Family name, Given name" and a variable containing email addresses. To keep things simple, we won't worry about things like middle names and name suffixes. Let's assume our name variable has inconsistent capitalization, which we need to fix so that the first letter of both names is capitalized.
+</p>
+<p>
+Our pseudo-package will have three functions, one to capitalize the names, one to combine a single name and email into a pretty format, and one that applies our formatting function to name and email variables . I'll make use of the <span style="font-family: 'Courier New';">person</span> function in the <span style="font-family: 'Courier New';">utils</span> package, which offers useful functionality for working with names.
+<pre><span style="font-family: 'Courier New';">CreatePseudoPackage &lt;- function()</span><span style="font-family: 'Courier New';">{</span>
+<span style="font-family: 'Courier New';">    CapitalizeString &lt;- function(x)</span><span style="font-family: 'Courier New';">{</span>
+<span style="font-family: 'Courier New';">        s &lt;- strsplit(x, " ")[[1]]</span>
+<span style="font-family: 'Courier New';">        paste(toupper(substring(s, 1, 1)), 
+</span><span style="font-family: 'Courier New';">              tolower(substring(s, 2)),</span>
+<span style="font-family: 'Courier New';">              sep = "", collapse = " ")</span>
+<span style="font-family: 'Courier New';">    }</span></pre>
+<span style="font-family: 'Courier New';">    FormatSingleName &lt;- function(name, email)</span><span style="font-family: 'Courier New';">{</span>
+<span style="font-family: 'Courier New';">        name.caps &lt;- CapitalizeString(name)</span>
+<span style="font-family: 'Courier New';">        names.split &lt;- strsplit(name.caps, ", ")[[1L]]</span>
+<span style="font-family: 'Courier New';">        format(utils::person(given = names.split[2],</span>
+<span style="font-family: 'Courier New';">                     family = names.split[1],</span>
+<span style="font-family: 'Courier New';">                     email = email))</span>
+<span style="font-family: 'Courier New';">    }</span>
+
+<span style="font-family: 'Courier New';">    FormatNames &lt;- function(names, emails)</span>
+<span style="font-family: 'Courier New';">        mapply(FormatSingleName, names, emails)</span>
+
+<span style="font-family: 'Courier New';">    environment()</span>
+<span style="font-family: 'Courier New';">}</span>
+</p>
+<p>
+We can store this code in an R script on a file sharing service, such as Dropbox, so that other people in our organization can easily use the functions in their projects as well. The exact code above could be copied to an .R file and uploaded. Our collaborator could then use the functions by inserting an R Output into their document and using R's <span style="font-family: 'Courier New';">source</span> function with the URL to the .R file.
+</p>
+<p>
+Inside Displayr, we go to <strong><span style="font-family: circular-book;">Insert &gt; R Output</span></strong> and either use <span style="font-family: 'Courier New';">source()</span> or paste in the above code into the code editor. In the last line of code, we create and name our pseudo-package:
+
+<span style="font-family: 'Courier New';">mypkg &lt;- CreatePseudoPackage()</span>
+
+With the pseudo-package created, we can now use it in future R Outputs with either R's <span style="font-family: 'Courier New';">attach</span> or <span style="font-family: 'Courier New';">with</span> functions.
+
+<span style="font-family: 'Courier New';">with(mypkg, FormatNames(names, emails))</span>
+
+or
+<pre><span style="font-family: 'Courier New';">attach(mypkg)
+FormatNames(names, emails)</span></pre>
+where <span style="font-family: 'Courier New';">names</span> and <span style="font-family: 'Courier New';">emails</span> are the labels we've given for the names and emails in our Data Set.
+</p>
+<img src="https://www.displayr.com/wp-content/uploads/2018/09/PseudoPackageOutput.png"
+     alt="Output from running pseudo-package function FormatNames"
+     class="aligncenter" width = 900, height = 542 />
+
+&nbsp;
+<p>
+<strong>Try this yourself in <a href="https://app.displayr.com/SignUp?plan_id=0">Displayr</a>, or check out more tips about using <a href="https://www.displayr.com/category/r/r-in-displayr/">R in Displayr</a>!</strong>
+</p>
+</body>
+</html>

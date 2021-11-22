@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <style>    
+    .aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+    }
+    pre .rcodeblock {
+	background-color: #eee;
+	border: 1px solid #999;
+	display: block;
+	padding: 0px 10px 10px;
+    }
+  </style>
+</head>
+<body>
+<p>
+R provides a number of handy features for working with date-time
+data. However, the sheer number of options/packages available can make
+things seem overwhelming at first. There
+are <a href="https://cran.r-project.org/web/views/TimeSeries.html"
+       target="_blank" rel="noopener noreferrer">more than 10
+    packages</a> providing support for working with date-time data in
+R, as well as being able to use the <code>as.Date( )</code> function to
+convert character data to <em>dates.</em> In this post, I will provide
+an introduction to the functionality R offers for
+converting <a href="https://www.tutorialspoint.com/r/r_strings.htm"
+	      target="_blank" rel="noopener
+				   noreferrer"><em>strings</em></a> to
+dates. Converting dates entered as strings into numeric dates in R is
+relatively simple for a single string and for a vector of strings if
+you have consistent date information. It is far trickier if the date
+information is represented inconsistently. I'll discuss common
+pitfalls and give helpful tips to make working with dates in R less
+painful. Finally, I introduce some code that my colleagues and I wrote
+to make things a bit easier (with the <code>flipTime</code> package).
+</p>
+
+<h2>Background</h2>
+<p>
+When dates are provided in the format of year followed by month
+followed by day, such as <code>2017-12-02</code>, you can use
+the <code>as.Date</code> function.This tells R to think of them as
+being calendar dates. For example:
+</p>
+<ul>
+ 	<li><code>months(as.Date("2017-12-02"))</code> returns a value of <code>December</code></li>
+ 	<li><code>weekdays(as.Date("2017-12-02"))</code> returns a value of <code>Saturday</code></li>
+ 	<li><code>as.Date("2017-06-09") - as.Date("2016-05-01")</code> returns a value of of <code>404 </code>and prints on the screen <code><code>Time difference of 404 days.</code></code></li>
+ 	<li><code>difftime(as.Date("2017-06-09"), as.Date("2016-05-01"), units = "hours")</code> returns a value of <code>9696</code> and prints on the screen <code>Time difference of 9696</code><code> hours</code>.</li>
+ 	<li><code>format(as.Date("2017-01-02"), "%A, %d-%b. %Y")</code> prints <code>"Monday, 02-Jan. 2017"</code></li>
+</ul>
+Unfortunately, more often than not, we have dates in some other format. As a result, <code><span style="font-family: 'Courier New';">as.Date</span></code> does not work. For example, <span style="font-family: 'Courier New';"><code>as.Date("17-12-2010")</code></span> returns <span style="font-family: 'Courier New';"><code>0017-12-20</code>.</span>
+
+Things get even more complicated when input data contain times, as then we need to handle issues like time zones and leap seconds. R provides the <em>classes</em> <code>POSIXct</code> and <code>POSIXlt</code> for working with date-time data. <code>POSIXct</code> corresponds to the POSIX standard for calendar time and <code>POSIXlt</code> corresponds to the POSIX standard for local time. Also, the <code>POSIXct</code> class is more convenient for inclusion in R data frames.
+
+I am now going to review some of the more useful packages. However, if you are a bit of a guru, just skip to the section on <code>flipTime</code>, where I have documented the stuff we have done.
+<h2><code>lubridate</code></h2>
+The <code>lubridate</code> package provides a number of useful functions for reading, manipulating, and doing arithmetic with dates in R. It provides the functions <code>parse_date_time()</code> and <code>parse_date_time2()</code>, which can be used to quickly convert strings to date-time objects. Their convenience stems from allowing the user to specify <em>orders</em>  to convert the strings, but without the need to specify how to separate the different components.
+
+The <code>parse_date_time()</code> function allows the user to specify multiple orders at once. Additionally, it determines internally which is best to use to convert the input strings. It does this by training itself on a subset of the input strings and ranking the supplied orders. (The ranking is based on how often they successfully convert the strings in the subset). By contrast, the <code>parse_date_time2()</code> function does not allow multiple orders to be specified at once since it supports fewer orders overall. However, it is faster when you need to convert a large number of strings.
+
+For example, if we use:
+<pre>
+<code>
+parse_date_time("10-31/2010", orders = c("ymd", "dmy", "mdy"))
+</code>
+</pre>
+we get <code>2010-10-31 UTC</code>
+
+For shorter input vectors, <code>lubridate</code> can give strange results because it is so "aggressive" when performing the conversion. (Because I want to make things easier for skim reading, for the rest of the post I will put the output immediately beneath the code, with <code>##</code> indicating it is the result of running the code.)
+<pre>
+<code class = "rcodeblock">
+  parse_date_time("July/1998", orders = c("bdy", "bY"))
+
+  ## [1] "1998-07-19 UTC"
+</code>
+</pre>
+<pre>
+<code class = "rcodeblock">
+parse_date_time2("Jan 128", orders = "mdy")
+
+## [1] "2008-01-12 UTC"
+</code>
+</pre>
+<pre>
+<code class = "rcodeblock">
+parse_date_time2("3.122", orders = "ymd")
+
+## [1] "2003-12-02 UTC"
+</code>
+</pre>
+<h2><code>anytime</code></h2>
+<p>
+Another popular package for reading date strings into R is <a href="https://github.com/eddelbuettel/anytime" target="_blank" rel="noopener noreferrer">anytime</a>, which uses the <a href="http://www.boost.org/doc/libs/1_61_0/doc/html/date_time.html"><code>Boost date_time</code></a> C++ library. It provides functions <code>anytime()</code> and <code>anydate()</code> for date conversion. The package supports converting other R classes such as <em>integer </em>and <em>factor </em>to dates in addition to converting character strings. The user does not need to specify any orders or formats, as <code>anytime()</code> and <code>anydate()</code> will guess the format (from a default list of supported formats). Furthermore, you have the possibility of including additional formats using the <code>addFormats()</code> function.
+</p>
+<p>
+As with <code>lubridate</code>, <code>anytime</code> can give strange results because of how aggressive it is with trying to convert the strings. For example, it does not support formats with two-digit years by default. Furthermore, it does not support at all strings containing “AM/PM” indicators. It is inconvenient, sometimes impossible, in some situations to specify whether a numeric month comes before or after the day in a date string.
+</p>
+<p>
+Additionally, there may be situations where there is ambiguity (eg: is “01/02” January 2nd or February 1st?). In these situations, we’d like to be able to tell the function whether day comes before month or not. Where we are not sure, it's helpful to have a warning. Unfortunately we don't get that here.
+</p>
+<pre>
+<code class = "rcodeblock">
+library(anytime) 
+anydate("3.145")
+
+## [1] "1400-03-14"
+</code>
+</pre>
+<pre>
+<code class = "rcodeblock">
+anydate(3.145)
+
+## [1] "1970-01-04"
+</code>
+</pre>
+<pre>
+<code class = "rcodeblock">
+anytime(c("10-11-2011 5:30AM", "16-10-2011 10:10pm"))
+
+## [1] "2011-10-10 23:00:00 AEDT" NA
+</code>
+</pre>
+<h2><code>flipTime</code></h2>
+<p>
+The package <code>flipTime</code> provides utilities for working with time series and date-time data. The package can be installed from <code>GitHub</code> using
+</p>
+<pre>
+<code class = "codeblock">
+require(devtools)
+install_github("Displayr/flipTime")
+</code>
+</pre>
+<p>
+I will discuss only two functions from the package in this post, <code>AsDate()</code> and <code>AsDateTime().</code> These are used for the conversion of date and date-time strings, respectively. These functions build on the convenience and speed of the <code>lubridate</code> function. Furthermore, the <code>flipTime</code> functions provide additional functionality (making them easier to use). The functions are smart about identifying the proper format to use. So the user doesn't need to specify the format(s) as inputs. At the same time, both <code>AsDate()</code> and <code>AsDateTime()</code> are careful to not convert any strings to dates when they are not formatted as dates. Additionally, it will also warn the user when the dates are not in an unambiguous format.
+</p>
+<code>AsDate()</code> and <code>AsDateTime()</code> are very flexible with respect to what they permit as characters to separate the components of the date strings.
+<pre>
+<code class = "rcodeblock">
+library(flipTime)
+AsDate("Jan. 10, 2016")
+
+## [1] "2016-01-10"
+</code>
+</pre>
+<pre>
+<code class = "codeblock">
+AsDate("Jan/10 - 2016")
+
+## [1] "2016-01-10"
+</code>
+</pre>
+<p>
+However, they are also careful to not convert strings to dates that are clearly not dates:
+</p>
+<pre>
+<code class = "codeblock">
+AsDate("Jan 128")
+
+## Error in AsDate("Jan 128"): Could not parse "Jan 128" into a valid
+## date in any format.
+
+AsDate("3.122")
+
+## Error in AsDate("3.122"): Could not parse "3.122" into a valid date in 
+## any format.
+</code>
+</pre>
+<p>
+The above example also demonstrates the default behaviour of the functions to throw an error. This occurs when the date strings cannot be interpreted as dates. Both functions have an argument <code>on.parse.failure</code>, which is used to control this behaviour.
+</p>
+<pre>
+<code class = "rcodeblock">
+AsDate("foo", on.parse.failure = "warn")
+
+## Warning in AsDate("foo", on.parse.failure = "warn"): Could not parse 
+## "foo" into a valid date in any format.
+
+## [1] NA
+</code>
+</pre>
+<pre>
+<code class = "rcodeblock">
+AsDateTime("foo", on.parse.failure = "silent")
+
+## [1] NA
+</code>
+</pre>
+<p>
+Both functions provide an argument <code>us.format</code>, to allow the user to specify whether the date strings are in a U.S. or international format. U.S. format is with the month coming before the day, such as <code>Jan.</code> 2, 1988. By contrast, international format, has the day before the month, such as <code>21-10-1999</code>. The default behaviour is to check both formats. In this case, if the format is ambiguous, the date strings will be converted according to the U.S. format. The user will also receive a warning.
+</p>
+<pre>
+<code class = "rcodeblock">
+AsDateTime("9/10/2010 10:20PM")
+
+## Warning: Date formats are ambiguous, US format has been used.
+
+## [1] "2010-09-10 22:20:00 UTC"
+</code>
+</pre>
+<pre>
+<code class = "rcodeblock">
+AsDateTime("9/10/2010 10:20PM", us.format = FALSE)
+
+## [1] "2010-10-09 22:20:00 UTC"
+</code>
+</pre>
+We can also combine the <code>flipTime</code> functions with functions from <code>lubridate</code>. 
+<pre>
+<code class = "rcodeblock">
+library(lubridate)
+dt &lt; AsDateTime("10/30/08 11:10AM")
+dt + dminutes(6)
+
+## [1] "2008-10-30 11:16:00 UTC"
+</code>
+</pre>
+<pre>
+<code class = "rcodeblock">
+birthday = "Dec. 8, 86"
+days.alive = (AsDate(Sys.time()) - AsDate(birthday)) / ddays(1)
+days.alive
+
+## [1] 11322
+</code>
+</pre>
+The function <code>AsDate()</code> is also able to interpret date intervals or <em>periods</em>, which can be useful when working with aggregated data. If the function encounters date periods, it will convert the start of the period to a date and return it.
+<pre>
+<code class = "rcodeblock">
+AsDate("10/20/2015-12/02/2016")
+## [1] "2015-10-20"
+
+AsDate("may 2017-september 2017")
+## [1] "2017-05-01"
+
+AsDate("Dec/Apr 16")
+## [1] "2015-12-01"
+</code>
+</pre>
+<p>
+The following example shows how <code>AsDate()</code> can be useful when working with dates inside a custom function. Say we have the following data on monthly returns of Apple and Yahoo. (A full copy of the dataframe can be found on this Displayr page <a href="https://app.displayr.com/Try/Convert%20Strings%20to%20Date-Time" target="_blank" rel="noopener noreferrer">here</a>).
+</p>
+<pre>
+<code class = "rcodeblock">
+head(df)
+
+##                        YHOO         AAPL
+## 01/2007-02/2007  0.09516441 -0.006488240
+## 02/2007-03/2007  0.09007418 -0.013061224
+## 03/2007-04/2007  0.01393390  0.097601323
+## 04/2007-05/2007 -0.10386705  0.074604371
+## 05/2007-06/2007  0.02353780  0.213884993
+## 06/2007-07/2007 -0.05470383  0.006932409
+</code>
+</pre>
+<p>
+We can plot this data as time series with formatted axis labels. For instance, we might write the following function and it produces the plot below.
+</p>
+<pre>
+<code class = "rcodeblock">
+PlotSeries = function(data, max.labels = 20, ...){
+    n = nrow(data)
+    xlabs = AsDate(rownames(data), on.parse.failure = "silent")
+    if (any(is.na(xlabs)))  # no dates present, use original rownames
+        xlabs = rownames(data)[seq.int(1, n, length.out = max.labels)]
+    else{  # dates, present; format for pretty labels
+        xlabs = seq(xlabs[1L], xlabs[n], length.out = max.labels)
+        xlabs = format(xlabs, "%b, %Y")
+    }
+    matplot(data, type = "l", xaxt = "n", ...)
+    axis(1, labels = xlabs, at = seq.int(1, n, length.out = max.labels),
+         las = 2)
+    legend("bottomright", names(data), lty = 1:ncol(data), 
+           col = 1:ncol(data))
+}
+PlotSeries(df, lwd = 2, ylab = "Return")
+</code>
+</pre>
+<iframe class="displayr-embed" src="https://embedded.azureedge.net/75668/248427/d039517e-b022-4fb1-a242-91edb635195d.html?v=29946-1051b90c4e2013340294" width="451" height="396.6538" frameborder="0" scrolling="no"></iframe>
+
+<h2>References</h2>
+<p>
+The source code for <span style="font-family: 'Courier New';">flipTime</span> can be viewed and downloaded <a href="https://github.com/Displayr/flipTime" target="_blank" rel="noopener noreferrer">here</a>.
+</p>
+<p>
+<strong>You can find more information about working with dates and times in R below. For more handy tips for <a href="https://www.displayr.com/category/r/r-in-displayr/">using R in Displayr</a> or to <a href="https://www.displayr.com/category/r/r-how-to/">learn how to do something in R</a>, check out the Displayr blog. </strong>
+</p>
+<ol>
+ 	<li><a href="http://www.noamross.net/blog/2014/2/10/using-times-and-dates-in-r---presentation-code.html" target="_blank" rel="noopener noreferrer">Bonnie Ross - Using Dates and Times in R</a></li>
+ 	<li><a href="https://statistics.berkeley.edu/computing/r-dates-times" target="_blank" rel="noopener noreferrer">Phil Spector - Dates and Times in R</a></li>
+ 	<li><a href="http://biostat.mc.vanderbilt.edu/wiki/pub/Main/ColeBeck/datestimes.pdf" target="_blank" rel="noopener noreferrer">Cole Beck - Handling date-times in R</a></li>
+ 	<li>For an introduction to <code>lubridate</code>, see <a href="http://r4ds.had.co.nz/dates-and-times.html" target="_blank" rel="noopener noreferrer">Garrett Grolemund and Hadley Wickham: R for Data Science</a></li>
+ 	<li>For an introduction to <code>anytime</code>, see <a href="http://dirk.eddelbuettel.com/code/anytime.html" target="_blank" rel="noopener noreferrer">Dirk Eddelbuettel's blog</a></li>
+</ol>
+</body>
+</html>
