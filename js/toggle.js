@@ -23,20 +23,6 @@ function toggle(divToShow) {
 	}else if ($.trim(this.innerHTML.toLowerCase()) == "html"){
 	    $( "div.navDiv.nav-menu" ).css("text-decoration", "none");
 	}
-    });
-	
-    //display thank you to Jeff if browser window at least as big as specified size
-    var w=window.outerWidth;
-    if (divToShow == "about") 
-    {
-        if(w>=1100){
-            document.getElementById("thanks").style.display="block";
-        }
-    }
-    else 
-    {
-        document.getElementById("thanks").style.display="none";
-    }
-
+    });	
 } 
 
