@@ -59,14 +59,14 @@ segment means overly close to each other. This is especially
 problematic if sample sizes vary greatly between segments.
 </p>
 <h2>How to include covariates in the model (skip this section if you
-  don&sbquo;t like math)</h2>
+  don&apos;t like math)</h2>
 <p>
 In the usual HB choice model, we model the part-worths for the ith
 respondent as β<sub>i</sub> ~ N(μ, ∑). Note that the mean and
 covariance parameters μ and ∑ do not depend on <em>i</em>, and are the
 same for each respondent in the population. The simplest way to
 include respondent-specific covariates in the model is to modify μ so
-that it depends on the respondent&sbquo;s covariates.
+that it depends on the respondent&apos;s covariates.
 </p>
 <p>
 We do this by modifying the model for the part-worths to β<sub>i</sub>
@@ -77,7 +77,7 @@ prior and the covariance matrix, ∑, is decomposed into a correlation
 matrix and vector of scales, which each receive their own priors.
 </p>
 <p>
-If you know what you&sbquo;re doing, you can fit this model in any of R,
+If you know what you&apos;re doing, you can fit this model in any of R,
 Sawtooth, Q, or Displayr, among others.
 </p>
 <h2>Practical example</h2>
@@ -105,13 +105,18 @@ the design are shown below using a preview from Displayr.
     ours.  The software allows us to quickly and efficiently estimate
     our model without having to worry (much) about selecting tuning
     parameters (which are frequently a major hassle in Bayesian
-    computation and machine learning).  Once the model is fit,
+    computation and machine learning). Once the model is fit,
     Displayr also provides a number of features for visualizing the
     results and diagnosing any issues with the model
-    fit. </span></span>
+    fit.</span></span>
 </p>
 <p>
-<span style="font-family: 'Courier New';"><span style="font-family: circular-book;">A video showing all the steps to fit the model to a similar choice data set is available <a href="https://www.displayr.com/how-to-hierarchical-bayes-choice-model-displayr/">here</a>. </span></span>The Displayr output, including histograms of the respondent coefficients, appears below.
+<span style="font-family: 'Courier New';"><span style="font-family:
+                                                       circular-book;">A
+    video showing all the steps to fit the model to a similar choice
+    data set is available <a href="https://www.displayr.com/how-to-hierarchical-bayes-choice-model-displayr/">here</a>.
+  </span>
+</span>The Displayr output, including histograms of the respondent coefficients, appears below.
 <div style="text-align: left;">
 <iframe class="displayr-embed"
 	src="https://embedded.azureedge.net/91705/360387/d9d99771-770e-466b-9c11-7743c5617c6b.html?v=33194-fae39a1e54-2084356768"
@@ -146,7 +151,7 @@ Sets tab on the right into the dropbox called
 &ldquo;Respondent-specific covariates&rdquo; or using the
 &ldquo;ADVANCED&rdquo; tab in the object inspector on the right. For
 demonstration, I fit a model including a categorical variable
-indicating the respondent&sbquo;s favorite cruise line. This was asked
+indicating the respondent&apos;s favorite cruise line. This was asked
 as a separate question before the choice questions. Since the cruise
 line is included as an attribute in the design that we might expect to
 be important, we expect this covariate to be important as well. The
@@ -168,12 +173,12 @@ Displayr output is below.
 </p>
 <p>
 To see how to add covariates to a Hierarchical Bayes MaxDiff analysis,
-see <a href="https://www.displayr.com/how-to-use-covariates-to-improve-your-maxdiff-model/">this
+see <a href="https://www.displayr.com/how-to-use-covariates-to-improve-your-maxdiff-model/">this
   blog post</a>.
 </p>
 <p>
 <b>You can play around with the data yourself using
-  this <a href="http://app.displayr.com/Try/Cruise%20Vacation%20Choice%20Model">link</a>. Don&sbquo;t
+  this <a href="http://app.displayr.com/Try/Cruise%20Vacation%20Choice%20Model">link</a>. Don&apos;t
   forget to subscribe to
   the <a href="https://www.displayr.com/blog">blog</a> for more data
   science insights!</b>
